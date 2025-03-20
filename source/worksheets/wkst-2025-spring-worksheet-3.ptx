@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-2025-worksheet-3">
+  <title>Worksheet Three</title>
+
+  <introduction>
+    <p>
+      The questions in this worksheet were given out in the third week of the course, the week of February 3rd-7th, 2025. They address questions about:
+
+      <ul>
+        <li>
+          Section 1.6: Predicates and quantifiers.
+        </li>
+
+        <li>
+          Section 1.7: Quantified statements.
+        </li>
+
+        <li>
+          Section 1.8: De Morgan's law for quantified statements.
+        </li>
+
+        <li>
+          Section 1.9: Nested quantifiers.
+        </li>
+
+        <li>
+          Section 1.10: More nested quantified statements.
+        </li>
+
+        <li>
+          Section 1.11: Logical reasoning.
+        </li>
+      </ul>
+    </p>
+  </introduction>
+
+  <worksheet xml:id="wkst-2025-worksheet-3" margin="0.7in">
+    <title>Worksheet Three</title>
+
+    <introduction>
+      <p>
+        The questions in this worksheet were given out in the third week of the course, the week of February 3rd-7th, 2025. They address questions about predicate logic and logical reasoning.
+      </p>
+    </introduction>
+
+    <page>
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Use laws of logic to prove that <m>p \rightarrow (r \rightarrow p)</m> is a tautology.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            We have
+            <md>
+              <mrow>
+              p \rightarrow (r \rightarrow p) \amp \equiv \neg p \vee (r \rightarrow p)
+            </mrow>
+            <mrow>
+            \amp \equiv \neg p \vee (\neg r \vee p)
+          </mrow>
+          <mrow>
+          \amp \equiv (\neg p \vee p) \vee r
+        </mrow>
+        <mrow>
+        \amp \equiv T \vee r
+      </mrow>
+      <mrow>
+      \amp \equiv T
+    </mrow>
+  </md>
+  The first two equivalences here use the conditional identtiies, the third uses the associative and commutative laws, the forth uses the complement law, and the last uses the domination law.
+</p>
+</solution>
+</exercise>
+
+
+
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Show that <m>\neg (p \rightarrow (q \rightarrow p))</m> is logically equivalent to <m>p \wedge q \wedge \neg r</m> using the laws of propositional logic.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      We have
+      <md>
+        <mrow>
+        \neg (p \rightarrow (q \rightarrow r)) \amp \equiv \neg ( \neg p \vee (q \rightarrow r) )
+      </mrow>
+      <mrow>
+      \amp \equiv \neg \neg p \wedge \neg (q \rightarrow r)
+    </mrow>
+    <mrow>
+    \amp \equiv p \wedge \neg (q \rightarrow r)
+  </mrow>
+  <mrow>
+  \amp \equiv p \wedge \neg (\neg q \vee r)
+</mrow>
+<mrow>
+\amp \equiv p \wedge \neg \neg q \wedge \neg r
+</mrow>
+<mrow>
+\amp p \wedge q \wedge \neg r
+</mrow>
+</md>
+In this calculation, we used, in order, the conditional identity, De Morgan's law, the double negation law, the conditional identity, De Morgan's law, and the double negation law.
+</p>
+</solution>
+</exercise>
+
+
+
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Write <q>Every cat is a bird</q> as a predicate logic statement. Be sure to define all predicates and state your domain.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Let <m>C(x)</m> be the predicate <q><m>x</m> is a cat</q> and let <m>B(x)</m> be the predicate <q><m>x</m> is a bird</q>. Then the sentence <q>Every cat is a bird</q> can be written in predicate logic as the statement <m>\forall x (C(x) \rightarrow B(x))</m>. There are many choices of domain that correctly formalize the statement, as long as that domain contains the set of all cats: one choice is the set of all animals.
+    </p>
+  </solution>
+</exercise>
+
+
+
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Let <m>F(x,y)</m> be the predicate <q><m>x</m> is friends with <m>y</m></q>, where our domain is the set of all students in Math 240. Interpret the following statements in English:
+    </p>
+
+    <p>
+      <ol marker="(a)">
+        <li><m>\forall x \exists y F(x,y)</m>.</li>
+        <li><m>\exists x \forall y F(x,y)</m>.</li>
+        <li><m>\exists x \exists y F(x,y)</m>.</li>
+        <li><m>\forall x \forall y F(x,y)</m>.</li>
+      </ol>
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      <ol marker="(a)">
+        <li>
+          Every student is friends with every student (including themselves!).
+        </li>
+
+        <li>
+          Every student has another student as a friend (possibly themselves).
+        </li>
+
+        <li>
+          There is a student who is friends with every student (including themselves).
+        </li>
+
+        <li>
+          There is a student who has another student as a friend (possibly themselves).
+        </li>
+      </ol>
+    </p>
+  </solution>
+
+<!--
+
+        <task>
+          <statement>
+            <p>
+              <m>\forall x \forall y F(x,y)</m>.
+            </p>
+          </statement>
+
+          <answer>
+            <p>
+              Every student is friends with every student (including themselves!).
+            </p>
+          </answer>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <m>\forall x \exists y F(x,y)</m>.
+            </p>
+          </statement>
+
+          <answer>
+            <p>
+              Every student has another student as a friend (possibly themselves).
+            </p>
+          </answer>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <m>\exists x \forall y F(x,y)</m>.
+            </p>
+          </statement>
+
+          <answer>
+            <p>
+              There is a student who is friends with every student (including themselves).
+            </p>
+          </answer>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <m>\exists x \exists y F(x,y)</m>
+            </p>
+          </statement>
+
+          <answer>
+            <p>
+              There is a student who has another student as a friend (possibly themselves).
+            </p>
+          </answer>
+        </task> -->
+      </exercise>
+    </page>
+
+
+
+    <page>
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Write the predicate logic statement <m>\neg \forall x (P(x) \rightarrow Q(x))</m> in a way that does not involve the universal quantifier <m>\forall</m>, nor the conditional operator <m>\rightarrow</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Using De Morgan's Law and the conditional identity, we find that
+            <md>
+              <mrow>
+              \neg \forall x ( P(x) \rightarrow Q(x) ) \amp \equiv \exists x \neg ( P(x) \rightarrow Q(x) )
+            </mrow>
+            <mrow>
+            \amp \equiv \exists x \neg (\neg P(x) \vee Q(x))
+          </mrow>
+          <mrow>
+          \amp \equiv \exists x (\neg \neg P(x) \wedge \neg Q(x))
+        </mrow>
+        <mrow>
+        \amp \equiv \exists x (P(x) \wedge \neg Q(x))
+      </mrow>
+    </md>
+  </p>
+</solution>
+</exercise>
+
+
+
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Explain why <m>\forall x \exists x P(x,x)</m> is not a valid statement in predicate logic.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      The statement is not valid because the variable <m>x</m> is bound in two different ways, and so the use of <m>x</m> is ambiguous.
+    </p>
+  </solution>
+</exercise>
+
+
+
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Explain why <m>\neg \exists 3 P(3,x)</m> is not a valid statement.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      The symbol <m>3</m> is a constant, and one can only apply quantifiers in predicate logic to variables.
+    </p>
+  </solution>
+</exercise>
+
+
+
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      In the following problems, determine the truth value of each statement. Assume the domain is the set of all integers.
+    </p>
+
+    <p>
+      <ol marker="(a)">
+        <li>
+          <m>\forall n \exists m (n^2 \lt m)</m>.
+        </li>
+        <li>
+          <m>\exists m \forall n (n^2 \lt m)</m>.
+        </li>
+        <li>
+          <m>\exists n \forall m (nm = m)</m>.
+        </li>
+        <li>
+          <m>\forall n \exists m (nm = m)</m>.
+        </li>
+        <li>
+          <m>\exists n \exists m (n^2 + m^2 = 25)</m>.
+        </li>
+      </ol>
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>
+            This statement is true. The statement says that for any <m>n</m> we choose, there is an integer bigger than <m>n^2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            This statement is false. The statement says that there is an integer bigger than the square of any other integer.
+          </p>
+        </li>
+        <li>
+          <p>
+            This statement is true. The statement says that there is an integer <m>n</m> such that <m>nm = m</m> for all integers <m>m</m>; the integer <m>n = 1</m> has this property.
+          </p>
+        </li>
+        <li>
+          <p>
+            The statement says that for any integer <m>n</m>, we can find an integer <m>m</m> such that <m>nm = m</m>. Regardless of the choice of <m>n</m>, setting <m>m = 0</m> satisfies the equation <m>nm = m</m>, and so the statement is true.
+          </p>
+        </li>
+        <li>
+          <p>
+            This statement says that there are two numbers <m>n</m> and <m>m</m> such that <m>n^2 + m^2 = 25</m>. In geometry, the statement says that there is a triangle with integer length sides and a hypotenuse of length <m>5</m>. This is true, as one can choose, out of several options, <m>n = 3</m> and <m>m = 4</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+
+
+<!--
+        <task>
+          <statement>
+            <p>
+              <m>\forall n \exists m (n^2 \lt m)</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              This statement is true. The statement says that for any <m>n</m> we choose, there is an integer bigger than <m>n^2</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <m>\exists m \forall n (n^2 \lt m)</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              This statement is false. The statement says that there is an integer bigger than the square of any other integer.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <m>\exists n \forall m (nm = m)</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              This statement is true. The statement says that there is an integer <m>n</m> such that <m>nm = m</m> for all integers <m>m</m>; the integer <m>n = 1</m> has this property.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <m>\forall n \exists m (nm = m)</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The statement says that for any integer <m>n</m>, we can find an integer <m>m</m> such that <m>nm = m</m>. Regardless of the choice of <m>n</m>, setting <m>m = 0</m> satisfies the equation <m>nm = m</m>, and so the statement is true.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <m>\exists n \exists m (n^2 + m^2 = 25)</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              This statement says that there are two numbers <m>n</m> and <m>m</m> such that <m>n^2 + m^2 = 25</m>. In geometry, the statement says that there is a triangle with integer length sides and a hypotenuse of length <m>5</m>. This is true, as one can choose, out of several options, <m>n = 3</m> and <m>m = 4</m>.
+            </p>
+          </solution>
+        </task> -->
+      </exercise>
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Determine the truth value of the statement <m>\forall x (x \neq 0 \rightarrow \exists y (x \cdot y = 1))</m> over the following domains:
+          </p>
+
+          <p>
+            <ol marker="(a)">
+              <li>
+                The integers.
+              </li>
+              <li>
+                The rational numbers.
+              </li>
+              <li>
+                The real numbers.
+              </li>
+            </ol>
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+            <p>
+              The statement is false. A counterexample to the statement is provided by <m>x = 2</m>, since <m>x \neq 2</m>, but there is no integer <m>y</m> such that <m>xy = 1</m>.
+            </p>
+              </li>
+              <li>
+            <p>
+              The statement is true. For any non-zero <m>x</m>, if <m>y = 1/x</m>, then <m>y \neq 0</m> and <m>xy = 1</m>.
+            </p>
+              </li>
+              <li>
+            <p>
+              The statement is true, for exactly the same reason as when the statement is interpreted over the domain of rational numbers.
+            </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+<!--
+        <task>
+          <statement>
+            <p>
+              The integers.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The statement is false. A counterexample to the statement is provided by <m>x = 2</m>, since <m>x \neq 2</m>, but there is no integer <m>y</m> such that <m>xy = 1</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              The rational numbers.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The statement is true. For any non-zero <m>x</m>, if <m>y = 1/x</m>, then <m>y \neq 0</m> and <m>xy = 1</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              The real numbers.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The statement is true, for exactly the same reason as when the statement is interpreted over the domain of rational numbers.
+            </p>
+          </solution>
+        </task>-->
+      </exercise>
+    </page>
+
+
+
+    <page>
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            The following two problems detail statements in predicate logic about functions. We have not discussed functions in class yet, but you should have an intuitive familiarity with them from a calculus or high school math class sufficient to try these problems right now.
+          </p>
+
+          <p>
+            <ol marker="(a)">
+              <li>
+            <p>
+              For a function <m>f</m>, consider the statement <m>\exists y \forall x (f(x) = y)</m> over the domain of real numbers. What functions <m>f</m> will make this statement true?
+            </p>
+              </li>
+              <li>
+            <p>
+              For a function <m>f</m>, consider the statement <m>\forall x \exists y (f(x) = y)</m> over the domain of real numbers as in TODO. What functions <m>f</m> will make the statement  true?
+            </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+            <p>
+              The statement says that there exists a real number <m>y</m> such that <m>f(x) = y</m> for all real numbers <m>x</m>. This means precisely that <m>f</m> is a <em>constant</em> function, with constant value set to whatever that value of <m>y</m> is.
+            </p>
+              </li>
+              <li>
+            <p>
+              This statement says that for every real number <m>x</m> there is some real number <m>y</m> such that <m>f(x) = y</m>. This is true of all real-valued functions <m>f</m> whose domain is the set of all real numbers.
+            </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+
+<!--
+        <task>
+          <statement>
+            <p>
+              For a function <m>f</m>, consider the statement <m>\exists y \forall x (f(x) = y)</m> over the domain of real numbers. What functions <m>f</m> will make this statement true?
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The statement says that there exists a real number <m>y</m> such that <m>f(x) = y</m> for all real numbers <m>x</m>. This means precisely that <m>f</m> is a <em>constant</em> function, with constant value set to whatever that value of <m>y</m> is.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              For a function <m>f</m>, consider the statement <m>\forall x \exists y (f(x) = y)</m> over the domain of real numbers as in TODO. What functions <m>f</m> will make the statement  true?
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              This statement says that for every real number <m>x</m> there is some real number <m>y</m> such that <m>f(x) = y</m>. This is true of all real-valued functions <m>f</m> whose domain is the set of all real numbers.
+            </p>
+          </solution>
+        </task>-->
+      </exercise>
+
+
+
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Give an example of a domain under which the statement <m>\exists x (x^3 = 2)</m> is true, and another example of a domain under which the statement is false.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            There are many choices of a domain under which the sentence is false. As an example, if our domain is the set of all integers, then this statement is false, since there exists no integer <m>n</m> such that <m>n^3 = 2</m>. This can be seen more precisely by noting that no integer <m>n \in \{ -1, 0, 1 \}</m> satisfies the equation, and any other integer <m>n</m> has <m>|n^3| > 2</m>.
+          </p>
+
+          <p>
+            If the statement is interpreted over the domain of all real numbers, then the sentence will be true; the number <m>x = \sqrt[3]{2}</m> has this property.
+          </p>
+        </solution>
+      </exercise>
+
+
+
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Consider the statement <m>\forall y \exists x (y \lt x)</m>.
+          </p>
+          <p>
+            <ol marker="(a)">
+              <li>
+                Is the statement true when it's domain is <m>\R</m>.
+              </li>
+              <li>
+            <p>
+              Is the statement true when it's domain is <m>[0,1]</m>.
+            </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                            <p>
+              The statement is true. For any real number <m>y</m> the number <m>x = y + 1</m> satisfies the equation.
+            </p>
+              </li>
+              <li>
+            <p>
+              The statement is false. If <m>y = 1</m> then there is no number <m>x</m> in the unit interval with <m>y \lt x</m>.
+            </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+<!--
+        <task>
+          <statement>
+            <p>
+              Is the statement true when it's domain is the set of real numbers.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The statement is true. For any real number <m>y</m> the number <m>x = y + 1</m> satisfies the equation.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              Is the statement true when it's domain is the unit interval <m>[0,1]</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The statement is false. If <m>y = 1</m> then there is no number <m>x</m> in the unit interval with <m>y \lt x</m>.
+            </p>
+          </solution>
+        </task>-->
+      </exercise>
+
+
+
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Consider the statement <m>\exists y \forall x (x \leq y)</m>.
+          </p>
+
+          <p>
+            <ol marker="(a)">
+              <li>
+                Is the statement true when it's domain is the set of real numbers.
+              </li>
+              <li>
+                Is the statement true when it's domain is the unit interval <m>[0,1]</m>.
+              </li>
+            </ol>
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+            <p>
+              The statement is not true. For any real number <m>y</m>, the number <m>x = y + 1</m> will not satisfy <m>x \leq y</m>.
+            </p>
+              </li>
+              <li>
+            <p>
+              The statement is true. The number <m>y = 1</m> has the property that <m>x \leq y</m> for all numbers <m>x</m> in the unit interval.
+            </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+<!--
+        <task>
+          <statement>
+            <p>
+              Is the statement true when it's domain is the set of real numbers.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The statement is not true. For any real number <m>y</m>, the number <m>x = y + 1</m> will not satisfy <m>x \leq y</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              Is the statement true when it's domain is the unit interval <m>[0,1]</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The statement is true. The number <m>y = 1</m> has the property that <m>x \leq y</m> for all numbers <m>x</m> in the unit interval.
+            </p>
+          </solution>
+        </task>-->
+      </exercise>
+    </page>
+
+
+
+    <page>
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Use De Morgan's Law to rewrite <m>\neg \forall y \exists x (y \lt x)</m>. What does this reveal about the results of TODO and TODO.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            We write
+            <me>\neg \forall y \exists x (y \lt x) \equiv \exists y \forall x \neg (y \lt x) \equiv \exists y \forall x y \geq x</me>.
+            Thus the statement in TODO is precisely the negation of the statement in TODO, which explains why under any interpretation, the truth values of the two statements are always the opposite of one another.
+          </p>
+        </solution>
+      </exercise>
+
+
+
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Let <m>P(x)</m> be the predicate <q><m>x</m> failed Math 240</q>, where the domain is the set of all Math 240 students. Using the predicate <m>P(x)</m>, how would you write the statement <q>Exactly <em>two</em> students failed Math 240</q>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            One choice is the statement
+            <me>
+            \exists x \exists y (x \neq y \wedge P(x) \wedge P(y) \wedge \forall z (P(z) \rightarrow z = x \vee z = y))
+          </me>.
+          The statement says that there are two elements <m>x</m> and <m>y</m> from the domain of Math 240 students, who (i) are not the same person (<m>x \neq y</m>), (ii) both failed the course (<m>P(x)</m> and <m>P(y)</m>), and () any other person <m>z</m> who failed the course must be either <m>x</m> or <m>y</m> (<m>\forall z (P(z) \rightarrow z = x \vee z = y)</m>).
+        </p>
+
+        <p>
+          The statement
+          <me>\exists x \exists y (x \neq y \wedge P(x) \wedge P(y))</me>
+          says that <em>at least two</em> students failed the course, but possibly more. The statement
+          <me>\exists x \exists y \forall z (P(z) \rightarrow z = x \vee z = y)</me> says that <em>at most two</em> students failed the course, but possibly fewer.
+        </p>
+      </solution>
+    </exercise>
+
+
+
+
+    <exercise workspace="0.3in">
+      <statement>
+        <p>
+          Use a truth table to show that the following is a valid argument:
+
+          <dl>
+            <li>
+              <title></title>
+              <p>
+                <m>p \rightarrow q</m>
+              </p>
+            </li>
+
+            <li>
+              <title></title>
+              <p>
+                <m>r \rightarrow q</m>
+              </p>
+            </li>
+
+            <li>
+              <title></title>
+              <p>
+                <m>p \vee r</m>
+              </p>
+            </li>
+
+            <li>
+              <title><m>\therefore</m></title>
+              <p>
+                <m>q</m>
+              </p>
+            </li>
+          </dl>
+        </p>
+      </statement>
+    </exercise>
+
+
+
+
+    <exercise workspace="0.3in">
+      <statement>
+        <p>
+          In a Sudoku puzzle, a completed <m>9 \times 9</m> grid has the digits <m>1</m> through <m>9</m> exactly once in each row or column. Let <m>R(x,y,z)</m> be the predicate <q>The digit <m>x</m> is in row <m>y</m> and column <m>z</m></q>. In a completed Sudoku grid, which of the following are true?
+        </p>
+
+        <p>
+          <ol marker="(a)">
+            <li>
+              <m>\forall x \exists y R(1,x,y)</m>.
+            </li>
+            <li>
+              <m>\exists x \forall y R(1,x,y)</m>.
+            </li>
+            <li>
+              <m>\forall x \exists y R(3,y,x)</m>.
+            </li>
+            <li>
+              <m>\exists x \exists y R(5,x,y)</m>.
+            </li>
+            <li>
+              <m>\neg \forall x \neg \forall y R(7,x,y)</m>.
+            </li>
+            <li>
+              <m>\forall x \forall y \forall z ( (y \neq z) \wedge R(3,x,y) \rightarrow \neg R(3,x,z) )</m>.
+            </li>
+          </ol>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          <ol marker="(a)">
+            <li>
+          <p>
+            This is true. The statement says that the digit <m>1</m> occurs at least once in every row of the puzzle.
+          </p>
+            </li>
+            <li>
+          <p>
+            This is false. The statement says that there exists a row of the puzzle containing only the digit <m>1</m>, which is not true.
+          </p>
+            </li>
+            <li>
+          <p>
+            This is true. The statement says that the number 3 occurs at least once in every column of the puzzle.
+          </p>
+            </li>
+            <li>
+          <p>
+            This is true. The statement says that the digit <m>5</m> occurs in at least one box of the puzzle.
+          </p>
+            </li>
+            <li>
+                        <p>
+            This statement is false. To see why it is helpful to use De Morgan's Law to simplify the statement, writing
+            <me>\neg \forall x \neg \forall y R(7,x,y) \equiv \exists x \forall y R(7,x,y)</me>.
+            In other words, the statement says that there is a row containing only the digit <m>7</m>, which is false.
+          </p>
+            </li>
+            <li>
+          <p>
+            This is true. The statement says that the digit <m>3</m> occurs at most once in every row.
+          </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+<!--
+      <task>
+        <statement>
+          <p>
+            <m>\forall x \exists y R(1,x,y)</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            This is true. The statement says that the digit <m>1</m> occurs at least once in every row of the puzzle.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>\exists x \forall y R(1,x,y)</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            This is false. The statement says that there exists a row of the puzzle containing only the digit <m>1</m>, which is not true.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>\forall x \exists y R(3,y,x)</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            This is true. The statement says that the number 3 occurs at least once in every column of the puzzle.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>\exists x \exists y R(5,x,y)</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            This is true. The statement says that the digit <m>5</m> occurs in at least one box of the puzzle.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>\neg \forall x \neg \forall y R(7,x,y)</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            This statement is false. To see why it is helpful to use De Morgan's Law to simplify the statement, writing
+            <me>\neg \forall x \neg \forall y R(7,x,y) \equiv \exists x \forall y R(7,x,y)</me>.
+            In other words, the statement says that there is a row containing only the digit <m>7</m>, which is false.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>\forall x \forall y \forall z ( (y \neq z) \wedge R(3,x,y) \rightarrow \neg R(3,x,z) )</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            This is true. The statement says that the digit <m>3</m> occurs at most once in every row.
+          </p>
+        </solution>
+      </task>-->
+    </exercise>
+  </page>
+</worksheet>
+</chapter>

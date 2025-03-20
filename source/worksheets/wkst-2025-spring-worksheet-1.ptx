@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-2025-worksheet-1">
+  <title>Worksheet One</title>
+
+  <introduction>
+    <p>
+      These exercises were given out in week one of the course: January 20th-24th, 2025. They address questions about logic, and the basic properties of integers, covered in the following sections of the book:
+
+      <ul>
+        <li>
+          Section 1.1: Propositions and logical operations.
+        </li>
+
+        <li>
+          Section 1.2: Evaluating compound propositions.
+        </li>
+
+        <li>
+          Section 9.1: The division algorithm.
+        </li>
+
+        <li>
+          Section 9.2: Modular arithmetic.
+        </li>
+
+        <li>
+          Section 9.3: Prime factorizations.
+        </li>
+
+        <li>
+          Section 9.5: Greatest common divisor and Euclid's algorithm.
+        </li>
+      </ul>
+    </p>
+  </introduction>
+
+  <worksheet xml:id="wkst-2025-worksheet-1" margin="0.7in">
+    <title>Worksheet One</title>
+
+    <introduction>
+      <p>
+        These exercises address logic and the basic properties of integers.
+      </p>
+    </introduction>
+
+    <page>
+      <sidebyside margins="0% 0%" width="45%">
+        <exercise workspace="0.6in">
+          <statement>
+            <p>
+              Compute <m>7 \mydiv 2</m> and <m>7 \mymod 2</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              <m>7 \mydiv 2 = 3</m> and <m>7 \mymod 2 = 1</m> because <m>7 = 3 \cdot 2 + 1</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise workspace="0.6in">
+          <statement>
+            <p>
+              Compute <m>123 \mydiv 11</m> and <m>123 \mymod 11</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              <m>123 \mydiv 11 = 11</m> and <m>123 \mymod 11 = 2</m> because <m>123 = 11 \cdot 11 + 2</m>.
+            </p>
+          </solution>
+        </exercise>
+      </sidebyside>
+
+      <sidebyside margins="0% 0%" width="45%">
+        <exercise workspace="0.6in">
+          <statement>
+            <p>
+              Compute <m>-8 \mydiv 3</m> and <m>-8 \mymod 3</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              <m>-8 \mydiv 3 = -3</m> and <m>-8 \mymod 3 = 1</m> because <m>-8 = -3 \cdot 3 + 1</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise workspace="0.6in">
+          <statement>
+            <p>
+              Evaluate <m>(4 \cdot 6) \mymod 7</m> and <m>(12 + 13) \mymod 11</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              <me>(4 \cdot 6) \mymod 7 = 24 \mymod 7 = 3</me>
+              and
+              <me>(12 + 13) \mymod 11 = 25 \mymod 11 = 3</me>.
+            </p>
+          </solution>
+        </exercise>
+      </sidebyside>
+
+      <sidebyside margins="0% 0%" width="45%">
+        <exercise workspace="0.6in">
+          <statement>
+            <p>
+              How are two integers <m>n</m> and <m>d</m> related if <m>n \mymod d = 0</m>?
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The equation <m>n \mymod d = 0</m> means that <m>n = kd + 0</m> for some integer <m>k</m>, which is precisely the same statement as saying that <m>n \divides d</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise workspace="0.6in">
+          <statement>
+            <p>
+              Which integer  <m>n</m> satisfies <m>n \mydiv 4 = 2</m> and <m>n \mymod 4 = 3</m>?
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The information above tells us that <m>n = 2 \cdot 4 + 3 = 11</m>.
+            </p>
+          </solution>
+        </exercise>
+      </sidebyside>
+
+      <sidebyside margins="0% 0%" width="45%">
+        <exercise workspace="0.6in">
+          <statement>
+            <p>
+              Find <m>\text{gcd}(12,28)</m> and <m>\text{lcm}(12,28)</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The divisors of 12 can be listed as <m>1,2,3,4,6,12</m> and the divisors of 28 can be listed as <m>1,2,4,7,14,28</m>. Comparing the two lists, we see that the greatest common divisor is 4, so <m>\text{gcd}(12,28) = 4</m>. Similarily, we can write the multiples of 12 as <m>12,24,36,48,60,72,84,96,\dots</m>, and the multiples of 28 as <m>28,56,84,\dots</m>, and we see that 84 is the smallest number common to both lists, so that <m>\text{lcm}(12,28) = 84</m>.
+            </p>
+            <p>
+              Alternatively, we can use prime factorizations to find the two values. Write
+              <me>12 = 2^2 \cdot 3</me>
+              and
+              <me>28 = 2^2 \cdot 7</me>.
+              The greatest common divisor is obtained by finding the intersection of the prime factors, and the least common multiple is obtained by finding the union of the prime factors, i.e. so that <m>\text{gcd}(12,28) = 2^2</m> and <m>\text{lcm}(12,28) = 2^2 \cdot 3 \cdot 7 = 84</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise workspace="0.6in">
+          <statement>
+            <p>
+              Does 7 divide 0?
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              Yes, because <m>0 = 0 \cdot 7</m>.
+            </p>
+          </solution>
+        </exercise>
+      </sidebyside>
+
+      <exercise workspace="1in">
+        <statement>
+          <p>
+            <!--<aside component="web-only">
+              <p>
+                This is one of your first chances to write a justification for the truth of a logical statement. We will go into much more detail writing fully justified proofs of statements later on in the course. For now, give an intuitively valid justification.
+              </p>
+            </aside>-->
+            Suppose three numbers <m>a</m>, <m>b</m>, and <m>c</m> satisfy <m>a \divides b</m> and <m>b \divides c</m>. Explain<fn component="print-only">This is one of your first chances to write a justification for the truth of a logical statement. We will go into much more detail writing fully justified proofs of statements later on in the course. For now, give an intuitively valid justification.</fn> why <m>a \divides c</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Since <m>a \divides b</m>, there is some <m>r</m> with <m>b = r \cdot a</m>. Since <m>b \divides c</m> there is some <m>s</m> with <m>c = s \cdot b</m>. So altogether we have <m>c = s \cdot b = (s \cdot r) \cdot a</m>, and so <m>a \divides c</m>.
+          </p>
+        </solution>
+      </exercise>
+    </page>
+
+    <page>
+
+      <sidebyside margins="0% 0%" width="45%">
+        <exercise workspace="0.95in">
+          <statement>
+            <p>
+              Can you find a number <m>n</m> so that <m>(3 + n) \mymod 8</m> will be equal to 0? Can you find more than one?
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              Some guesswork shows that <m>n = 5</m> works, since <m>3 + 5 = 8</m> and <m>8 \mymod 8 = 0</m>. Alternatively, <m>n = 13</m> or <m>n = -3</m> works. More generally, <em>any</em> number <m>n</m> with <m>n \mymod 8 = 5</m> will have this property.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise workspace="0.95in">
+          <statement>
+            <p>
+              Can you find a number <m>n</m> so that <m>(2 \cdot n) \mymod 7</m> will be equal to 1? Can you find more than one?
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              Taking <m>n = 4</m> works since then <m>2 \cdot 4 = 8</m> and <m>8 \mymod 7 = 1</m>. Alternatively, <m>n = 11</m> or <m>n = -3</m> would work. More generally, <em>any</em> number <m>n</m> with <m>n \mymod 7 = 4</m> has this property.
+            </p>
+          </solution>
+        </exercise>
+      </sidebyside>
+
+      <exercise workspace="0.5in">
+        <statement>
+          <p>
+            State two propositions, where one proposition is a statement about mathematical objects, and the other proposition about real world objects.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            There are many choices here. One choice is <q><m>2 \cdot 3 = 7</m></q>, and <q>The sky is blue</q>. Note that propositions <em>do not have to be true</em>!
+          </p>
+        </solution>
+      </exercise>
+
+      <sidebyside margins="0% 0%" width="45%">
+        <exercise workspace="0.7in">
+          <statement>
+            <p>
+              What is the truth value of the proposition <q>12 is a prime number</q>?
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              This proposition is false, because 12 <em>is not</em> a prime number, i.e. we can write <m>12 = 3 \cdot 4</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise workspace="0.7in">
+          <statement>
+            <p>
+              What is the truth value of the proposition <q>It is snowing outside</q>?
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              This answer depends on the weather when you answered the question. If it was snowing today, the proposition is True, and if it was not snowing today, the proposition is False.
+            </p>
+          </solution>
+        </exercise>
+      </sidebyside>
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            What is the truth value of the proposition <q>7 is a prime number and there are 120 days in a year</q>?
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            This statement is false. Although it is true that 7 is a prime, it is false that there are 120 days in a year, and both propositions need to be true in order for the proposition <q>7 is a prime number and there are 120 days in a year</q> to be true.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise workspace="0.7in">
+        <statement>
+          <p>
+            Suppose <m>p</m> is a true proposition, and <m>q</m> is a proposition with an unknown truth value. Is the truth value of <m>p \wedge q</m> determined by this information? What about <m>p \vee q</m>?
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            We cannot determine the value of <m>p \wedge q</m>. If <m>q</m> were true, then <m>p \wedge q</m> would be true. But if <m>q</m> was false, then <m>p \wedge q</m> would be false. So we need to know the truth value of the proposition <m>q</m> in order to determine the truth value of <m>p \wedge q</m>.
+          </p>
+
+          <p>
+            On the other hand, we <em>can</em> say that <m>p \vee q</m> is true. Regardless of the truth value of <m>q</m>, since <m>p</m> is true, <m>p \vee q</m> is always true.
+          </p>
+        </solution>
+      </exercise>
+    </page>
+
+    <page>
+      <exercise>
+        <introduction>
+          <p>
+            Suppose <m>p</m>, <m>q</m>, and <m>r</m> are propositions, where <m>p</m> and <m>q</m> are true while <m>r</m> is false. Find the truth values of the following propositions:
+          </p>
+        </introduction>
+
+        <!--<sidebyside width="45%">-->
+        <task xml:id="task-neg-p" workspace="0.84in">
+          <statement>
+            <p>
+              <m>\neg p</m>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              Since <m>p</m> is true, <m>\neg p</m> is false.
+            </p>
+          </solution>
+        </task>
+
+        <task workspace="0.84in">
+          <statement>
+            <p>
+              <m>p \wedge q</m>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              Since both <m>p</m> and <m>q</m> is true, <m>p \wedge q</m> is true.
+            </p>
+          </solution>
+        </task>
+        <!-- </sidebyside> -->
+
+        <!-- <sidebyside width="45%"> -->
+        <task workspace="0.84in">
+          <statement>
+            <p>
+              <m>p \vee r</m>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              Since <m>p</m> is true, <m>p \vee r</m> is true (the fact that <m>r</m> is false has no bearing on the answer).
+            </p>
+          </solution>
+        </task>
+
+        <task workspace="0.84in">
+          <statement>
+            <p>
+              <m>\neg p \vee r</m>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              In <xref ref="task-neg-p"/> we showed <m>\neg p</m> is false, and since <m>r</m> is also false, it follows that <m>\neg p \vee r</m> is false since neither <m>\neg p</m> nor <m>r</m> is true.
+            </p>
+          </solution>
+        </task>
+        <!-- </sidebyside> -->
+
+        <task workspace="0.84in">
+          <statement>
+            <p>
+              <m>p \wedge (q \vee r)</m>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              <m>q \vee r</m> is true since <m>q</m> is true. Therefore <m>p \wedge (q \vee r)</m> is true because both <m>p</m> and <m>q \vee r</m> are true.
+            </p>
+          </solution>
+        </task>
+      </exercise>
+    </page>
+  </worksheet>
+</chapter>

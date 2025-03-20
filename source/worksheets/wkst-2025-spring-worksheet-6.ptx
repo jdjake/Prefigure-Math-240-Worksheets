@@ -1,0 +1,2089 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-2025-worksheet-6">
+  <title>Worksheet Six</title>
+
+  <introduction>
+    <p>
+      The questions in this worksheet were given out in the fifth week of the course, the week of February 24th-28th, 2025. They review content tested by the first midterm of the course, addressing questions about:
+
+      <ul>
+        <li>
+          Chapter 1: Logic.
+        </li>
+
+        <li>
+          Chapter 2: Proofs.
+        </li>
+
+        <li>
+          Chapter 3: Sets.
+        </li>
+
+        <li>
+          Chapter 4: Functions.
+        </li>
+      </ul>
+    </p>
+  </introduction>
+
+  <worksheet xml:id="wkst-2025-worksheet-6" margin="0.7in">
+    <title>Worksheet Six</title>
+
+    <introduction>
+      <p>
+        These exercises address the content of the first midterm, including questions about logic, proofs, sets, and functions.
+      </p>
+    </introduction>
+
+    <page>
+      <exercise workspace="0.6in">
+        <statement>
+          <p>
+            Consider the function <m>f: \R \to \Z</m> defined by <m>f(x) = \lfloor x + 1/2 \rfloor</m>. Compute the following.
+          </p>
+          <p>
+            <ol cols="3" marker="(a)">
+              <li>
+                <m>f(2.2)</m>
+              </li>
+              <li>
+                <m>f(2.9)</m>
+              </li>
+              <li>
+                <m>f(2.5)</m>
+              </li>
+              <li>
+                <m>f(2)</m>
+              </li>
+              <li>
+                <m>f(3)</m>
+              </li>
+              <li>
+                <m>f(\lfloor -2.2 \rfloor)</m>
+              </li>
+              <li>
+                <m>f(-2)</m>
+              </li>
+              <li>
+                <m>f(-3)</m>
+              </li>
+              <li>
+                <m>f(\lceil -3.3 \rceil)</m>
+              </li>
+            </ol>
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  <m>f(2.2) = \lfloor 2.7 \rfloor = 2</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>f(2.9) = \lfloor 3.4 \rfloor = 3</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>f(2.5) = \lfloor 3 \rfloor = 3</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>f(2) = \lfloor 2.5 \rfloor = 2</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>f(3) = \lfloor 3.5 \rfloor = 3</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>f(\lfloor -2.2 \rfloor) = \lfloor \lfloor -2.2 \rfloor + .5 \rfloor = \lfloor -3 + .5 \rfloor = \lfloor -2.5 \rfloor = -3</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>f(-2) = \lfloor -2 + .5 \rfloor = \lfloor -1.5 \rfloor = -2</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>f(-3) = \lfloor -3 + .5 \rfloor = \lfloor -2.5 \rfloor = -3</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>f( \lceil -3.3 \rceil) = \lfloor \lceil -3.3 \rceil + .5 \rfloor = \lfloor -3 + .5 \rfloor = \lfloor -2.5 \rfloor = -3</m>.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+
+        <!--        <sbsgroup width="40%"> -->
+
+        <!--          <sidebyside> -->
+
+<!--
+
+            <task>
+              <statement>
+                <p>
+                  <m>f(2.2)</m>
+                </p>
+              </statement>
+
+              <solution>
+                <p>
+                  <m>f(2.2) = \lfloor 2.7 \rfloor = 2</m>.
+                </p>
+              </solution>
+            </task>
+
+            <task>
+              <statement>
+                <p>
+                  <m>f(2.9)</m>
+                </p>
+              </statement>
+
+              <solution>
+                <p>
+                  <m>f(2.9) = \lfloor 3.4 \rfloor = 3</m>.
+                </p>
+              </solution>
+            </task>
+
+            <task>
+              <statement>
+                <p>
+                  <m>f(2.5)</m>
+                </p>
+              </statement>
+
+              <solution>
+                <p>
+                  <m>f(2.5) = \lfloor 3 \rfloor = 3</m>.
+                </p>
+              </solution>
+            </task>
+
+            <task>
+              <statement>
+                <p>
+                  <m>f(2)</m>
+                </p>
+              </statement>
+
+              <solution>
+                <p>
+                  <m>f(2) = \lfloor 2.5 \rfloor = 2</m>.
+                </p>
+              </solution>
+            </task>
+
+            <task>
+              <statement>
+                <p>
+                  <m>f(3)</m>
+                </p>
+              </statement>
+
+              <solution>
+                <p>
+                  <m>f(3) = \lfloor 3.5 \rfloor = 3</m>.
+                </p>
+              </solution>
+            </task>
+
+            <task>
+              <statement>
+                <p>
+                  <m>f(\lfloor -2.2 \rfloor)</m>
+                </p>
+              </statement>
+
+              <solution>
+                <p>
+                  <m>f(\lfloor -2.2 \rfloor) = \lfloor \lfloor -2.2 \rfloor + .5 \rfloor = \lfloor -3 + .5 \rfloor = \lfloor -2.5 \rfloor = -3</m>.
+                </p>
+              </solution>
+            </task>
+
+            <task>
+              <statement>
+                <p>
+                  <m>f(-2)</m>
+                </p>
+              </statement>
+
+              <solution>
+                <p>
+                  <m>f(-2) = \lfloor -2 + .5 \rfloor = \lfloor -1.5 \rfloor = -2</m>.
+                </p>
+              </solution>
+            </task>
+
+            <task>
+              <statement>
+                <p>
+                  <m>f(-3)</m>
+                </p>
+              </statement>
+
+              <solution>
+                <p>
+                  <m>f(-3) = \lfloor -3 + .5 \rfloor = \lfloor -2.5 \rfloor = -3</m>.
+                </p>
+              </solution>
+            </task>
+
+            <task workspace="2in">
+              <statement>
+                <p>
+                  <m>f( \lceil -3.3 \rceil)</m>
+                </p>
+              </statement>
+
+              <solution>
+                <p>
+                  <m>f( \lceil -3.3 \rceil) = \lfloor \lceil -3.3 \rceil + .5 \rfloor = \lfloor -3 + .5 \rfloor = \lfloor -2.5 \rfloor = -3</m>.
+                </p>
+              </solution>
+            </task>
+          -->
+        </exercise>
+
+        <exercise workspace="0.3in">
+          <statement>
+            <p>
+              Suppose <m>A = \{ 0,1,2,3,4\}</m>, <m>B = \{ 2,3,4,5 \}</m>, and <m>f = \{ (0,3), (1,3), (2,4), (3,2), (4,2) \}</m>. State the domain and range of <m>f</m>. Find <m>f(2)</m> and <m>f(1)</m>.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The domain of <m>f</m> is <m>A</m> and the range of <m>f</m> is the set <m>\{ 2,3,4 \}</m>. From the definition of <m>f</m>, we see that <m>f(1) = 3</m> since <m>(1,3) \in f</m>, and <m>f(2) = 4</m> since <m>(2,4) \in f</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise workspace="0.3in">
+          <statement>
+            <p>
+              Show that the function <m>f: \R \setminus \{ 0 \} \to \R</m> defined by <m>f(x) = 1/x + 1</m> is injective but not surjective. How should the co-domain be modified to turn this function into a bijection?
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              First we show that <m>f</m> is injective using the contrapositive, that is, proving that for any <m>a,b</m> in the domain of <m>f</m>, if <m>f(a) = f(b)</m> then <m>a = b</m>. Let <m>a,b \in \R \setminus \{ 0 \}</m> be arbitrary and assume <m>f(a) = f(b)</m>. Then we get that <m>1/a + 1 = 1/b + 1</m>. Subtracting <m>1</m> from both sides and cross multiplying yields that <m>a = b</m>. Hence <m>f</m> is injective.
+            </p>
+
+            <p>
+              We prove that <m>f</m> is not surjective using the law of contradiction. So suppose <m>f</m> is surjective. Since <m>1</m> is in the co-domain of <m>f</m>, there exists <m>x_0 \in \R</m> so that <m>f(x_0) = 1</m>. Then <m>1/x_0 + 1 = 1</m>. Hence <m>1/x_0 = 0</m>, which does not hold for any real number <m>x_0</m>. By contradiction, we conclude that <m>f</m> is not surjective.
+            </p>
+
+            <p>
+              If we modify the co-domain of <m>f</m> to be <m>\R \setminus \{ 0 \}</m> rather than <m>\R</m>, then the function will become a bijection.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise workspace="0.3in">
+          <statement>
+            <p>
+              Consider the function <m>h: \Z \times \Z \to \Q</m> defined by
+              <me>h(m,n) = \frac{m}{|n| + 1} </me>.
+              Determine whether this function is injective and whether the function is surjective.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The function <m>h</m> is not injective. For any <m>m \neq 0</m> and <m>n \neq 0</m>,
+              <me>h(m,n) = \frac{m}{|n|+1} = \frac{m}{|-n| + 1} = h(m,-n)</me>
+              but <m>(m,n) \neq (m,-n)</m> since <m>n \neq -n</m>. Thus, in particular, <m>h(1,1) = h(1,-1)</m>, yet <m>(1,1) \neq (1,-1)</m>.
+            </p>
+
+            <p>
+              However, the function <m>h</m> is surjective. Let <m>b \in \Q</m> be an arbitrary element of the co-domain of <m>h</m>. Then we can write <m>b = p/q</m> for some <m>p,q \in \Z</m>, with <m>q > 0</m>. Then <m>(p,q-1) \in \Z \times \Z</m>, and is thus an element of the domain of <m>h</m>. And
+              <me>h(p,q-1) = \frac{p}{|q-1| + 1} = \frac{p}{q-1+1} = \frac{p}{q} = b</me>.
+              Thus <m>b</m> is in the range of <m>h</m>, completing the proof.
+            </p>
+          </solution>
+        </exercise>
+      </page>
+
+      <page>
+
+
+
+
+        <exercise workspace="0.3in">
+          <statement>
+            <p>
+              Consider the mapping <m>f: \R \to \Q</m> defined by
+              <me>f(x) = \begin{cases} 1/q: \amp x = p/q \in \Q, \\ 0: \amp x \not \in \Q. \end{cases}</me>.
+              Is <m>f</m> well-defined by this equation? If so, prove it. If not, explain why and give a counterexample.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              This map is not well-defined. Let <m>x = .5</m>. Then we can write <m>x = 1/2</m> and <m>x = 2/4</m>. The former equation implies that <m>f(x) = 1/2</m>, whereas the latter implies <m>f(x) = 1/4</m>. The output of a function can only be a single value, which contradicts the fact that <m>1/2 \neq 1/4</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise workspace="0.6in">
+          <statement>
+            <p>
+              Prove or disprove each statement.
+            </p>
+
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    For any real number <m>x</m>, <m>\lfloor \lceil x \rceil \rfloor = \lceil x \rceil</m>.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    For any real numbers <m>x</m> and <m>y</m>, <m>\lceil x \rceil \lceil y \rceil = \lceil xy \rceil</m>.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    Determine whether the map <m>f: \Z \times \Z \to \Z \times \Z</m> defined by <m>f(x) = ( \lceil x/5 \rceil, 5y - 2 )</m> is one-to-one, onto, neither, or both.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    Determine whether the map <m>f: \Z^+ \times \Z^+ \to \Z^+</m> defined by <m>f(x,y) = 2^x + y</m> is one-to-one, onto, neither, or both.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              <ol marker="(a)">
+                <li>
+                  <p>
+                    This statement is true. The ceiling of a real number is an integer, and the floor of an integer will always be the integer itself.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    This statement is false. Let <m>x = 2.6</m> and <m>y = 3.2</m>. Then <m>\lceil x \rceil = 3</m> and <m>\lceil y \rceil = 4</m>, but
+                    <me>\lceil xy \rceil = \lceil 8.32 \rceil = 9, </me>
+                    which is not the same value as
+                    <me>
+                    \lceil x \rceil \lceil y \rceil = \lceil 2.6 \rceil \lceil 3.2 \rceil = 3 \cdot 4 = 12.
+                  </me>
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Neither. There is no <m>(x,y) \in \Z \times \Z</m> such that <m>f(x,y) = (0,0)</m>, so the function is not onto. And <m>f(1,2) = f(2,2)</m>, but clearly <m>(1,2) \neq (2,2)</m>, so <m>f</m> is not one-to-one.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Neither. There is no <m>(x,y)</m> so that <m>f(x,y) = 1</m>, so <m>f</m> is not surjective. Also <m>f(2,2) = f(1,4)</m> but <m>(2,2) \neq (1,4)</m>, so <m>f</m> is not injective.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+
+<!--
+          <task>
+            <statement>
+              <p>
+                For any real number <m>x</m>, <m>\lfloor \lceil x \rceil \rfloor = \lceil x \rceil</m>.
+              </p>
+            </statement>
+
+            <solution>
+              <p>
+                This statement is true. The ceiling of a real number is an integer, and the floor of an integer will always be the integer itself.
+              </p>
+            </solution>
+          </task>
+
+          <task>
+            <statement>
+              <p>
+                For any real numbers <m>x</m> and <m>y</m>, <m>\lceil x \rceil \lceil y \rceil = \lceil xy \rceil</m>.
+              </p>
+            </statement>
+
+            <solution>
+              <p>
+                This statement is false. Let <m>x = 2.6</m> and <m>y = 3.2</m>. Then <m>\lceil x \rceil = 3</m> and <m>\lceil y \rceil = 4</m>, but
+                <me>\lceil xy \rceil = \lceil 8.32 \rceil = 9, </me>
+                which is not the same value as
+                <me>
+                \lceil x \rceil \lceil y \rceil = \lceil 2.6 \rceil \lceil 3.2 \rceil = 3 \cdot 4 = 12.
+              </me>
+            </p>
+          </solution>
+        </task>
+      -->
+    </exercise>
+
+    <exercise workspace="0.6in">
+      <statement>
+        <p>
+          Determine whether the map <m>f: \Z \times \Z \to \Z \times \Z</m> defined by <m>f(x) = ( \lceil x/5 \rceil, 5y - 2 )</m> is one-to-one, onto, neither, or both.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Neither. There is no <m>(x,y) \in \Z \times \Z</m> such that <m>f(x,y) = (0,0)</m>, so the function is not onto. And <m>f(1,2) = f(2,2)</m>, but clearly <m>(1,2) \neq (2,2)</m>, so <m>f</m> is not one-to-one.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise workspace="0.6in">
+      <statement>
+        <p>
+          Determine whether the map <m>f: \Z^+ \times \Z^+ \to \Z^+</m> defined by <m>f(x,y) = 2^x + y</m> is one-to-one, onto, neither, or both.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Neither. There is no <m>(x,y)</m> so that <m>f(x,y) = 1</m>, so <m>f</m> is not surjective. Also <m>f(2,2) = f(1,4)</m> but <m>(2,2) \neq (1,4)</m>, so <m>f</m> is not injective.
+        </p>
+      </solution>
+    </exercise>
+  </page>
+
+  <page>
+    <exercise workspace="0.3in">
+      <statement>
+        <p>
+          Each diagram below defines a function <m>f</m>. Indicate whether <m>f^{-1}</m> is well-defined. If <m>f^{-1}</m> is well-defined, give an arrow diagram for the function <m>f^{-1}</m>, and otherwise explain why not.
+        </p>
+
+        <p>
+          <ol cols="3" marker="(a)">
+            <li>
+              <p>
+                <figure xml:id="fig-ex-6-arrow-diagram-a">
+                  <image width="80%" xml:id="fig-ex-6-arrow-diagram-a-tikz">
+                    <shortdescription>
+                      An arrow diagram describing a function.
+                    </shortdescription>
+                    <description>
+                      <p>
+                        An arrow diagram describing the function <m>f</m>. On the left hand side of the diagram are five points, labelled <m>a</m> through <m>e</m>. On the right hand side of the diagram are four points, labelled <m>w</m> through <m>z</m>. There is an arrow from <m>a</m> to <m>y</m>, from <m>b</m> to <m>w</m>, from <m>c</m> to <m>x</m>, from <m>d</m> to <m>w</m>, and from <m>e</m> to <m>z</m>.
+                      </p>
+                    </description>
+                    <latex-image>
+                    \begin{tikzpicture}
+                    \node (a) at (0,4) {$a$};
+                    \node (b) at (0,3) {$b$};
+                    \node (c) at (0,2) {$c$};
+                    \node (d) at (0,1) {$d$};
+                    \node (e) at (0,0) {$e$};
+
+                    \node (w) at (3,4) {$w$};
+                    \node (x) at (3,3) {$x$};
+                    \node (y) at (3,2) {$y$};
+                    \node (z) at (3,1) {$z$};
+
+                    \draw[red,->] (a) -- (w);
+                    \draw[red,->] (b) -- (x);
+                    \draw[red,->] (c) -- (y);
+                    \draw[red,->] (d) -- (y);
+                    \draw[red,->] (e) -- (z);
+                    \end{tikzpicture}
+                  </latex-image>
+                </image>
+              </figure>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <figure xml:id="fig-ex-6-arrow-diagram-b">
+                <image width="80%" xml:id="fig-ex-6-arrow-diagram-b-tikz">
+                  <shortdescription>
+                    An arrow diagram describing a function.
+                  </shortdescription>
+                  <description>
+                    <p>
+                      An arrow diagram describing the function <m>f</m>. On the left hand side of the diagram are five points, labelled <m>a</m> through <m>e</m>. On the right hand side of the diagram are five points, labelled <m>v</m> through <m>z</m>. There is an arrow from <m>a</m> to <m>y</m>, from <m>b</m> to <m>v</m>, from <m>c</m> to <m>z</m>, from <m>d</m> to <m>w</m>, and from <m>e</m> to <m>x</m>.
+                    </p>
+                  </description>
+                  <latex-image>
+                  \begin{tikzpicture}
+                  \node (a) at (0,4) {$a$};
+                  \node (b) at (0,3) {$b$};
+                  \node (c) at (0,2) {$c$};
+                  \node (d) at (0,1) {$d$};
+                  \node (e) at (0,0) {$e$};
+
+                  \node (v) at (3,4) {$v$};
+                  \node (w) at (3,3) {$w$};
+                  \node (x) at (3,2) {$x$};
+                  \node (y) at (3,1) {$y$};
+                  \node (z) at (3,0) {$z$};
+
+                  \draw[red,->] (a) -- (z);
+                  \draw[red,->] (b) -- (v);
+                  \draw[red,->] (c) -- (z);
+                  \draw[red,->] (d) -- (w);
+                  \draw[red,->] (e) -- (x);
+                  \end{tikzpicture}
+                </latex-image>
+              </image>
+            </figure>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <figure xml:id="fig-ex-6-arrow-diagram-c">
+              <image width="80%" xml:id="fig-ex-6-arrow-diagram-c-tikz">
+                <shortdescription>
+                  An arrow diagram describing a function.
+                </shortdescription>
+                <description>
+                  <p>
+                    An arrow diagram describing <m>f</m>. On the left hand side of the diagram are five points, labelled <m>a</m> through <m>e</m>. On the right hand side of the diagram are six points, labelled <m>u</m> through <m>z</m>. There is an arrow from <m>a</m> to <m>x</m>, from <m>b</m> to <m>u</m>, from <m>c</m> to <m>v</m>, from <m>d</m> to <m>z</m>, and from <m>e</m> to <m>w</m>.
+                  </p>
+                </description>
+                <latex-image>
+                \begin{tikzpicture}
+                \node (a) at (0,4) {$a$};
+                \node (b) at (0,3) {$b$};
+                \node (c) at (0,2) {$c$};
+                \node (d) at (0,1) {$d$};
+                \node (e) at (0,0) {$e$};
+
+                \node (u) at (3,4) {$u$};
+                \node (v) at (3,3.2) {$v$};
+                \node (w) at (3,2.4) {$w$};
+                \node (x) at (3,1.6) {$x$};
+                \node (y) at (3,0.8) {$y$};
+                \node (z) at (3,0) {$z$};
+
+                \draw[red,->] (a) -- (x);
+                \draw[red,->] (b) -- (u);
+                \draw[red,->] (c) -- (v);
+                \draw[red,->] (d) -- (z);
+                \draw[red,->] (e) -- (w);
+                \end{tikzpicture}
+              </latex-image>
+            </image>
+          </figure>
+        </p>
+      </li>
+    </ol>
+  </p>
+</statement>
+
+<solution>
+  <p>
+    <ol marker="(a)">
+      <li>
+       <p>
+        The inverse of <m>f</m> is not well-defined, because <m>f</m> is not a one-to-one function: <m>f(b)</m> and <m>f(d)</m> are both equal to <m>w</m>, yet <m>b \neq d</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        The function <m>f</m> is bijective, and we give an arrow diagram for <m>f^{-1}</m> below:
+        <figure xml:id="fig-ex-6-arrow-diagram-b-solution">
+          <image width="20%" xml:id="fig-ex-6-arrow-diagram-b-solution-tikz">
+            <shortdescription>
+              An arrow diagram describing a function.
+            </shortdescription>
+            <description>
+              <p>
+                An arrow diagram describing <m>f^{-1}</m>. On the left hand side of the diagram are five points, labelled <m>v</m> through <m>z</m>. On the right hand side of the diagram are five points, labelled <m>a</m> through <m>e</m>. There is an arrow from <m>v</m> to <m>b</m>, from <m>w</m> to <m>d</m>, from <m>x</m> to <m>e</m>, from <m>y</m> to <m>a</m>, and from <m>z</m> to <m>c</m>.
+              </p>
+            </description>
+            <latex-image>
+            \begin{tikzpicture}
+            \node (a) at (3,4) {$a$};
+            \node (b) at (3,3) {$b$};
+            \node (c) at (3,2) {$c$};
+            \node (d) at (3,1) {$d$};
+            \node (e) at (3,0) {$e$};
+
+            \node (v) at (0,4) {$v$};
+            \node (w) at (0,3) {$w$};
+            \node (x) at (0,2) {$x$};
+            \node (y) at (0,1) {$y$};
+            \node (z) at (0,0) {$z$};
+
+            \draw[red,->] (z) -- (a);
+            \draw[red,->] (v) -- (b);
+            \draw[red,->] (z) -- (c);
+            \draw[red,->] (w) -- (d);
+            \draw[red,->] (x) -- (e);
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+    </p>
+  </li>
+
+  <li>
+    <p>
+      The inverse <m>f^{-1}</m> of <m>f</m> is not well-defined, because <m>f</m> is not onto: <m>y</m> is not in the range of <m>f</m>.
+    </p>
+  </li>
+</ol>
+</p>
+</solution>
+
+<!--
+      <task>
+        <statement>
+          <sidebyside widths="20% 30%">
+            <p>
+              <figure xml:id="fig-ex-6-arrow-diagram-a">
+                <image width="20%" xml:id="fig-ex-6-arrow-diagram-a-tikz">
+                  <shortdescription>
+                    An arrow diagram describing a function.
+                  </shortdescription>
+                  <description>
+                    <p>
+                      An arrow diagram describing the function <m>f</m>. On the left hand side of the diagram are five points, labelled <m>a</m> through <m>e</m>. On the right hand side of the diagram are four points, labelled <m>w</m> through <m>z</m>. There is an arrow from <m>a</m> to <m>y</m>, from <m>b</m> to <m>w</m>, from <m>c</m> to <m>x</m>, from <m>d</m> to <m>w</m>, and from <m>e</m> to <m>z</m>.
+                    </p>
+                  </description>
+                  <latex-image>
+                  \begin{tikzpicture}
+                  \node (a) at (0,4) {$a$};
+                  \node (b) at (0,3) {$b$};
+                  \node (c) at (0,2) {$c$};
+                  \node (d) at (0,1) {$d$};
+                  \node (e) at (0,0) {$e$};
+
+                  \node (w) at (3,4) {$w$};
+                  \node (x) at (3,3) {$x$};
+                  \node (y) at (3,2) {$y$};
+                  \node (z) at (3,1) {$z$};
+
+                  \draw[red,->] (a)  (w);
+                  \draw[red,->] (b)  (x);
+                  \draw[red,->] (c)  (y);
+                  \draw[red,->] (d)  (y);
+                  \draw[red,->] (e)  (z);
+                  \end{tikzpicture}
+                </latex-image>
+              </image>
+            </figure>
+          </p>
+          <p>
+          </p>
+        </sidebyside>
+      </statement>
+
+      <solution>
+        <p>
+          The inverse of <m>f</m> is not well-defined, because <m>f</m> is not a one-to-one function: <m>f(b)</m> and <m>f(d)</m> are both equal to <m>w</m>, yet <m>b \neq d</m>.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <sidebyside widths="20% 30%">
+          <p>
+            <figure xml:id="fig-ex-6-arrow-diagram-b">
+              <image width="20%" xml:id="fig-ex-6-arrow-diagram-b-tikz">
+                <shortdescription>
+                  An arrow diagram describing a function.
+                </shortdescription>
+                <description>
+                  <p>
+                    An arrow diagram describing the function <m>f</m>. On the left hand side of the diagram are five points, labelled <m>a</m> through <m>e</m>. On the right hand side of the diagram are five points, labelled <m>v</m> through <m>z</m>. There is an arrow from <m>a</m> to <m>y</m>, from <m>b</m> to <m>v</m>, from <m>c</m> to <m>z</m>, from <m>d</m> to <m>w</m>, and from <m>e</m> to <m>x</m>.
+                  </p>
+                </description>
+                <latex-image>
+                \begin{tikzpicture}
+                \node (a) at (0,4) {$a$};
+                \node (b) at (0,3) {$b$};
+                \node (c) at (0,2) {$c$};
+                \node (d) at (0,1) {$d$};
+                \node (e) at (0,0) {$e$};
+
+                \node (v) at (3,4) {$v$};
+                \node (w) at (3,3) {$w$};
+                \node (x) at (3,2) {$x$};
+                \node (y) at (3,1) {$y$};
+                \node (z) at (3,0) {$z$};
+
+                \draw[red,->] (a)  (z);
+                \draw[red,->] (b)  (v);
+                \draw[red,->] (c)  (z);
+                \draw[red,->] (d)  (w);
+                \draw[red,->] (e)  (x);
+                \end{tikzpicture}
+              </latex-image>
+            </image>
+          </figure>
+        </p>
+        <p>
+        </p>
+      </sidebyside>
+    </statement>
+
+    <solution>
+      <p>
+        The function <m>f</m> is bijective, and we give an arrow diagram for <m>f^{-1}</m> below:
+        <figure xml:id="fig-ex-6-arrow-diagram-b-solution">
+          <image width="20%" xml:id="fig-ex-6-arrow-diagram-b-solution-tikz">
+            <shortdescription>
+              An arrow diagram describing a function.
+            </shortdescription>
+            <description>
+              <p>
+                An arrow diagram describing <m>f^{-1}</m>. On the left hand side of the diagram are five points, labelled <m>v</m> through <m>z</m>. On the right hand side of the diagram are five points, labelled <m>a</m> through <m>e</m>. There is an arrow from <m>v</m> to <m>b</m>, from <m>w</m> to <m>d</m>, from <m>x</m> to <m>e</m>, from <m>y</m> to <m>a</m>, and from <m>z</m> to <m>c</m>.
+              </p>
+            </description>
+            <latex-image>
+            \begin{tikzpicture}
+            \node (a) at (3,4) {$a$};
+            \node (b) at (3,3) {$b$};
+            \node (c) at (3,2) {$c$};
+            \node (d) at (3,1) {$d$};
+            \node (e) at (3,0) {$e$};
+
+            \node (v) at (0,4) {$v$};
+            \node (w) at (0,3) {$w$};
+            \node (x) at (0,2) {$x$};
+            \node (y) at (0,1) {$y$};
+            \node (z) at (0,0) {$z$};
+
+            \draw[red,->] (z)  (a);
+            \draw[red,->] (v)  (b);
+            \draw[red,->] (z)  (c);
+            \draw[red,->] (w)  (d);
+            \draw[red,->] (x)  (e);
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+    </p>
+  </solution>
+</task>
+
+<task>
+  <statement>
+    <sidebyside widths="20% 30%">
+      <p>
+        <figure xml:id="fig-ex-6-arrow-diagram-c">
+          <image width="20%" xml:id="fig-ex-6-arrow-diagram-c-tikz">
+            <shortdescription>
+              An arrow diagram describing a function.
+            </shortdescription>
+            <description>
+              <p>
+                An arrow diagram describing <m>f</m>. On the left hand side of the diagram are five points, labelled <m>a</m> through <m>e</m>. On the right hand side of the diagram are six points, labelled <m>u</m> through <m>z</m>. There is an arrow from <m>a</m> to <m>x</m>, from <m>b</m> to <m>u</m>, from <m>c</m> to <m>v</m>, from <m>d</m> to <m>z</m>, and from <m>e</m> to <m>w</m>.
+              </p>
+            </description>
+            <latex-image>
+            \begin{tikzpicture}
+            \node (a) at (0,4) {$a$};
+            \node (b) at (0,3) {$b$};
+            \node (c) at (0,2) {$c$};
+            \node (d) at (0,1) {$d$};
+            \node (e) at (0,0) {$e$};
+
+            \node (u) at (3,4.5) {$u$};
+            \node (v) at (3,3.5) {$v$};
+            \node (w) at (3,2.5) {$w$};
+            \node (x) at (3,1.5) {$x$};
+            \node (y) at (3,0.5) {$y$};
+            \node (z) at (3,-0.5) {$z$};
+
+            \draw[red,->] (a)  (x);
+            \draw[red,->] (b)  (u);
+            \draw[red,->] (c)  (v);
+            \draw[red,->] (d)  (z);
+            \draw[red,->] (e)  (w);
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+    </p>
+    <p>
+    </p>
+  </sidebyside>
+</statement>
+
+<solution>
+  <p>
+    The inverse <m>f^{-1}</m> of <m>f</m> is not well-defined, because <m>f</m> is not onto: <m>y</m> is not in the range of <m>f</m>.
+  </p>
+</solution>
+</task> -->
+</exercise>
+
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      The two arrow diagrams below define two functions <m>f: X \to A</m> and <m>g: A \to S</m> respectively.
+    </p>
+    <p>
+      <sidebyside widths="20% 20%">
+        <figure xml:id="fig-ex-7-arrow-diagram-f">
+          <image width="20%" xml:id="fig-ex-7-arrow-diagram-f-tikz">
+            <shortdescription>
+              An arrow diagram describing a function.
+            </shortdescription>
+            <description>
+              <p>
+                An arrow diagram describing a function <m>f</m>. On the left hand side of the diagram are five points, labelled <m>v</m> through <m>z</m>. On the right hand side of the diagram are six points, labelled <m>a</m> through <m>e</m>. There is an arrow from <m>v</m> to <m>b</m>, from <m>w</m> to <m>d</m>, from <m>x</m> to <m>e</m>, from <m>y</m> to <m>a</m>, and from <m>z</m> to <m>b</m>.
+              </p>
+            </description>
+            <latex-image>
+            \begin{tikzpicture}
+            \node (v) at (3,4) {$v$};
+            \node (w) at (3,3) {$w$};
+            \node (x) at (3,2) {$x$};
+            \node (y) at (3,1) {$y$};
+            \node (z) at (3,0) {$z$};
+
+            \node (a) at (0,4) {$a$};
+            \node (b) at (0,3) {$b$};
+            \node (c) at (0,2) {$c$};
+            \node (d) at (0,1) {$d$};
+            \node (e) at (0,0) {$e$};
+
+            \draw[red,->] (v) -- (b);
+            \draw[red,->] (w) -- (d);
+            \draw[red,->] (x) -- (e);
+            \draw[red,->] (y) -- (a);
+            \draw[red,->] (z) -- (b);
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+
+      <figure xml:id="fig-ex-7-arrow-diagram-g">
+        <image width="20%" xml:id="fig-ex-7-arrow-diagram-g-tikz">
+          <shortdescription>
+            An arrow diagram describing a function.
+          </shortdescription>
+          <description>
+            <p>
+              An arrow diagram describing a function <m>g</m>. On the left hand side of the diagram are five points, labelled <m>a</m> through <m>e</m>. On the right hand side of the diagram are six points, labelled <m>1</m> through <m>5</m>. There is an arrow from <m>a</m> to <m>3</m>, from <m>b</m> to <m>4</m>, from <m>c</m> to <m>5</m>, from <m>d</m> to <m>1</m>, and from <m>e</m> to <m>4</m>.
+            </p>
+          </description>
+          <latex-image>
+          \begin{tikzpicture}
+          \node (a) at (0,4) {$a$};
+          \node (b) at (0,3) {$b$};
+          \node (c) at (0,2) {$c$};
+          \node (d) at (0,1) {$d$};
+          \node (e) at (0,0) {$e$};
+
+          \node (one) at (3,4) {$1$};
+          \node (two) at (3,3) {$2$};
+          \node (three) at (3,2) {$3$};
+          \node (four) at (3,1) {$4$};
+          \node (five) at (3,0) {$5$};
+
+          \draw[green,->] (a) -- (three);
+          \draw[green,->] (b) -- (four);
+          \draw[green,->] (c) -- (five);
+          \draw[green,->] (d) -- (one);
+          \draw[green,->] (e) -- (four);
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+  </sidebyside>
+</p>
+
+<p>
+  <ol marker="(a)">
+    <li>
+      <p>
+        What is the domain of <m>g \circ f</m>?
+      </p>
+    </li>
+
+    <li>
+      <p>
+        What is the co-domain of <m>g \circ f</m>?
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Draw the arrow diagram for <m>g \circ f</m>.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        What is the range of <m>g \circ f</m>?
+      </p>
+    </li>
+  </ol>
+</p>
+</statement>
+
+<solution>
+  <p>
+    <ol marker="(a)">
+      <li>
+        <p>
+          The composition is well-defined. The co-domain of <m>I_X</m> is equal to the domain of <m>f</m>, and <m>f \circ I_X = f</m>.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          The composition is not well-defined. The co-domain of <m>I_Y</m> is the set <m>Y</m>, which is not equal to or a subset of <m>X</m>, the domain of <m>f</m>.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          The composition is not well-defined. The co-domain of <m>f</m> is the set <m>Y</m>, which is not equal to or a subset of <m>X</m>, the domain of <m>I_X</m>.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          The composition is well-defined. The codomain of <m>f</m> is the set <m>Y</m>, which is equal to the domain of <m>I_Y</m>. We have that <m>I_Y \circ f = f</m>.
+        </p>
+      </li>
+    </ol>
+  </p>
+</solution>
+
+<!--
+<task>
+  <statement>
+    <p>
+      What is the domain of <m>g \circ f</m>?
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      The domain of <m>g \circ f</m> is the set <m>X</m>, which is the set <m>\{ v,w,x,y,z \}</m>.
+    </p>
+  </solution>
+</task>
+
+<task>
+  <statement>
+    <p>
+      What is the co-domain of <m>g \circ f</m>?
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      The co-domain of <m>g \circ f</m> is equal to <m>S</m>, which is the set <m>\{ 1,2,3,4,5 \}</m>.
+    </p>
+  </solution>
+</task>
+
+<task>
+  <statement>
+    <p>
+      Draw the arrow diagram for <m>g \circ f</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      An arrow diagram for <m>g \circ f</m> is given in the figure below:
+
+      <figure xml:id="fig-ex-7-arrow-diagram-gof">
+        <image width="20%" xml:id="fig-ex-7-arrow-diagram-gof-tikz">
+          <shortdescription>
+            An arrow diagram describing a function.
+          </shortdescription>
+          <description>
+            <p>
+              An arrow diagram describing a function <m>g \circ f</m>. On the left hand side of the diagram are five points, labelled <m>v</m> through <m>z</m>. On the right hand side of the diagram are six points, labelled <m>1</m> through <m>5</m>. There is an arrow from <m>v</m> to <m>4</m>, from <m>w</m> to <m>1</m>, from <m>x</m> to <m>4</m>, from <m>y</m> to <m>3</m>, and from <m>z</m> to <m>4</m>.
+            </p>
+          </description>
+          <latex-image>
+          \begin{tikzpicture}
+          \node (v) at (0,4) {$v$};
+          \node (w) at (0,3) {$w$};
+          \node (x) at (0,2) {$x$};
+          \node (y) at (0,1) {$y$};
+          \node (z) at (0,0) {$z$};
+
+          \node (one) at (3,4) {$1$};
+          \node (two) at (3,3) {$2$};
+          \node (three) at (3,2) {$3$};
+          \node (four) at (3,1) {$4$};
+          \node (five) at (3,0) {$5$};
+
+          \draw[blue,->] (v) (four);
+          \draw[blue,->] (w) (one);
+          \draw[blue,->] (x) (four);
+          \draw[blue,->] (y) (three);
+          \draw[blue,->] (z) (four);
+
+          \node[blue] (gof) at (1.5,-1) {$g \circ f$};
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+    </figure>
+  </p>
+</solution>
+</task>
+
+<task>
+  <statement>
+    <p>
+      What is the range of <m>g \circ f</m>?
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      The range of <m>g \circ f</m> is the set <m>\{ 1,3,4 \}</m>.
+    </p>
+  </solution>
+</task>
+-->
+</exercise>
+</page>
+
+
+
+<page>
+  <exercise workspace="0.6in">
+    <statement>
+      <p>
+        Let <m>f</m> be a function with domain <m>X</m> and co-domain <m>Y</m>, where <m>X \cap Y = \emptyset</m>. For each of the following functions, indicate whether the function is well-defined. If the answer is well-defined, indicate how the function relates to <m>f</m>.
+      </p>
+
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              <m>f \circ I_X</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>f \circ I_Y</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>I_X \circ f</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>I_Y \circ f</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              The composition is well-defined. The co-domain of <m>I_X</m> is equal to the domain of <m>f</m>, and <m>f \circ I_X = f</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The composition is not well-defined. The co-domain of <m>I_Y</m> is the set <m>Y</m>, which is not equal to or a subset of <m>X</m>, the domain of <m>f</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The composition is not well-defined. The co-domain of <m>f</m> is the set <m>Y</m>, which is not equal to or a subset of <m>X</m>, the domain of <m>I_X</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The composition is well-defined. The codomain of <m>f</m> is the set <m>Y</m>, which is equal to the domain of <m>I_Y</m>. We have that <m>I_Y \circ f = f</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+
+<!--
+  <task>
+    <statement>
+      <p>
+        <m>f \circ I_X</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The composition is well-defined. The co-domain of <m>I_X</m> is equal to the domain of <m>f</m>, and <m>f \circ I_X = f</m>.
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        <m>f \circ I_Y</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The composition is not well-defined. The co-domain of <m>I_Y</m> is the set <m>Y</m>, which is not equal to or a subset of <m>X</m>, the domain of <m>f</m>.
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        <m>I_X \circ f</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The composition is not well-defined. The co-domain of <m>f</m> is the set <m>Y</m>, which is not equal to or a subset of <m>X</m>, the domain of <m>I_X</m>.
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        <m>I_Y \circ f</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The composition is well-defined. The codomain of <m>f</m> is the set <m>Y</m>, which is equal to the domain of <m>I_Y</m>. We have that <m>I_Y \circ f = f</m>.
+      </p>
+    </solution>
+  </task>
+
+-->
+</exercise>
+
+<exercise workspace="0.6in">
+  <statement>
+    <p>
+      Prove that the sets <m>A = \{ n \in \Z: 0 \leq n \leq 5 \}</m> and <m>B = \{ n \in \Z : -5 \leq n \leq 0 \}</m> have the same cardinality.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      We can easily enumerate <m>A = \{ 0,1,2,3,4,5 \}</m> and <m>B = \{ -5,-4,-3,-2,-1,0 \}</m>, and thus we see immediately by counting that <m>|A| = 6</m> and <m>|B| = 6</m>.
+    </p>
+
+    <p>
+      Alternatively, we can explicitly find a bijection <m>f: A \to B</m>, whose existence is a statement equivalent to the statement that <m>A</m> and <m>B</m> have the same cardinality. We define <m>f(n) = -n</m> for <m>n \in A</m>. Then <m>f</m> is injective, which we prove directly. If <m>m,n \in A</m> and <m>m \neq n</m>, then <m>-m \neq -n</m>, which states precisely that <m>f(m) \neq f(n)</m>. Furthermore, <m>f</m> is surjective, which we also prove directly: if <m>n \in B</m>, then <m>-5 \leq n \leq 0</m>, which means that <m>0 \leq -n \leq 5</m>, and so <m>-n \in A</m>; we see that <m>f(-n) = -(-n) = n</m>, so that <m>n</m> is in the range of <m>f</m>. Since <m>f</m> is both injective and surjective, <m>f</m> is bijective and we conclude that <m>|A| = |B|</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise workspace="0.6in">
+  <statement>
+    <p>
+      Consider the function <m>f: (0,\infty) \to (0,1)</m> defined by
+      <me>f(x) = \frac{x}{x+1}</me>.
+      Show that this function is a bijection.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Let <m>a,b \in (0,\infty)</m> and that <m>f(a) = f(b)</m>. Then
+      <me>\frac{a}{a + 1} = \frac{b}{b+1}</me>.
+      If we cross multiply, we conclude that <m>a(b+1) = b(a+1)</m>, or equivalently,
+      <me>ab + a = ab + b</me>.
+      Subtracting <m>ab</m> from both sides, we conclude that <m>a = b</m>. Thus <m>f</m> is injective.
+    </p>
+
+    <p>
+      Now let <m>y \in (0,1)</m> be arbitrary. Let <m>x = y / (1 - y)</m>. Since <m>0 \lt y \lt 1</m>, <m>0 \lt 1 - y \lt 1</m>, and so <m>x</m> is a well-defined positive number. We calculate that
+      <me>f(x) = \frac{x}{x+1} = \frac{\frac{y}{1-y}}{\frac{y}{1 - y} + 1} = \frac{y}{y + (1 - y)} = y</me>.
+      Thus <m>y</m> is in the range of <m>f</m>, and since <m>y</m> was arbitrary, <m>f</m> is surjective.
+    </p>
+
+    <p>
+      Since <m>f</m> is both injective and surjective, <m>f</m> is bijective.
+    </p>
+  </solution>
+</exercise>
+
+
+
+
+<exercise workspace="0.6in">
+  <statement>
+    <p>
+      Prove that <m>|(0,\infty)| = |(0,1)|</m>, i.e. find a bijection between these two sets.
+    </p>
+  </statement>
+
+  <hint>
+    <p>
+      You already did!
+    </p>
+  </hint>
+
+  <solution>
+    <p>
+      Consider the map <m>f: (0,\infty) \to (0,1)</m> given in the last problem. Since this map is a bijection, this means that the cardinality of its domain and co-domian are equal. Thus <m>|(0,\infty)| = |(0,1)|</m>.
+    </p>
+  </solution>
+</exercise>
+</page>
+
+
+<page>
+  <exercise>
+    <introduction>
+      <p>
+        For each of the given implication statements, write the converse, contrapositive, and inverse of that statement. You <em>do not</em> need to prove any of the statements.
+      </p>
+    </introduction>
+
+    <task>
+      <statement>
+        <p>
+          <dl>
+            <li>
+              <title>
+                <p>
+                  Statement:
+                </p>
+              </title>
+
+              Nobody likes you when you're <m>23</m>.
+            </li>
+
+            <li>
+              <title>
+                <p>
+                  Converse:
+                </p>
+              </title>
+
+              <var width="50"></var>
+            </li>
+
+            <li>
+              <title>
+                <p>
+                  Contrapositive:
+                </p>
+              </title>
+
+              <var width="50"></var>
+            </li>
+
+            <li>
+              <title>
+                <p>
+                  Inverse:
+                </p>
+              </title>
+
+              <var width="50"></var>
+            </li>
+          </dl>
+        </p>
+      </statement>
+
+      <setup>
+        <var>
+          <condition string="If nobody likes you, then you're 23.">
+            <feedback>
+              <p>
+                Correct!
+              </p>
+            </feedback>
+          </condition>
+        </var>
+
+        <var>
+          <condition string="If somebody likes you, then you're not 23.">
+            <feedback>
+              <p>
+                Correct!
+              </p>
+            </feedback>
+          </condition>
+        </var>
+
+        <var>
+          <condition string="If you're 23, then sombody likes you.">
+            <feedback>
+              <p>
+                Correct!
+              </p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <dl>
+            <li>
+              <title>
+                <p>
+                  Statement:
+                </p>
+              </title>
+
+              If <m>xy</m> is not divisible by <m>3</m>, then both <m>x</m> and <m>y</m> are not divisible by <m>3</m>.
+            </li>
+
+            <li>
+              <title>
+                <p>
+                  Converse:
+                </p>
+              </title>
+
+              <var width="50"></var>
+            </li>
+
+            <li>
+              <title>
+                <p>
+                  Contrapositive:
+                </p>
+              </title>
+
+              <var width="50"></var>
+            </li>
+
+            <li>
+              <title>
+                <p>
+                  Inverse:
+                </p>
+              </title>
+
+              <var width="50"></var>
+            </li>
+          </dl>
+        </p>
+      </statement>
+
+      <setup>
+        <var>
+          <condition string="If both x and y are not divisible by 3, then xy is not divisible by 3.">
+            <feedback>
+              <p>
+                Correct!
+              </p>
+            </feedback>
+          </condition>
+        </var>
+
+        <var>
+          <condition string="If one of x or y is not divisible by 3, then xy is divisible by 3.">
+            <feedback>
+              <p>
+                Correct!
+              </p>
+            </feedback>
+          </condition>
+        </var>
+
+        <var>
+          <condition string="If xy is divisible by 3, then one of x or y is divisible by 3.">
+            <feedback>
+              <p>
+                Correct!
+              </p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
+    </task>
+  </exercise>
+
+  <exercise workspace="0.6in">
+    <statement>
+      <p>
+        Negate the following sentences.
+      </p>
+
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              If <m>p</m> is prime, then <m>\sqrt{p}</m> is not a rational number.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              For every positive number <m>\varepsilon</m>, there is a positive number <m>\delta</m> such that <m>|x - a| \lt \delta</m> implies that <m>|f(x) - f(a)| \lt \varepsilon</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Whenever I have to choose between two evils, I choose the one I haven't tried yet. (Mae West).
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              This statement is of the form <m>r \rightarrow \neg s</m>, where <m>r</m> denotes the statement <q><m>p</m> is prime</q>, and <m>s</m> denotes the statement <q><m>\sqrt{p}</m> is a rational number</q>. We calculate that
+              <me>\neg ( r \rightarrow \neg s ) \equiv \neg ( r \vee \neg (\neg s) ) \equiv \neg r \wedge \neg \neg \neg s = r \wedge \neg s</me>.
+              Thus the negation of the statement <q>If <m>p</m> is prime, then <m>\sqrt{p}</m> is not a rational number</q> is the statement <q><m>p</m> is prime and <m>\sqrt{p}</m> is not a rational number</q>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Symbolically, we can write this statement as
+              <me>\forall \varepsilon > 0 \exists \delta > 0 ( |x - a| \lt \delta \rightarrow |f(x) - f(a)| \lt \varepsilon )</me>.
+              Negating this statement using De Morgan's Laws, and recalling that the negation of a statement of the form <m>p \rightarrow q</m> is the statement <m>p \wedge \neg q</m>, we find the negation is
+              <me>\exists \varepsilon > 0 \forall \delta > 0 ( |x - a| \lt \delta \wedge |f(x) - f(a) \geq \varepsilon )</me>.
+              As an English sentence, we can write this statement as <q>There exists <m>\varepsilon > 0</m> for all <m>\delta > 0</m> so that <m>| x - a| \lt \delta</m> and <m>|f(x) - f(a)| \geq \varepsilon</m></q>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Sometimes, when I have to choose between two evils, I choose the one I have tried.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+
+    <!--
+
+    <task>
+      <statement>
+        <p>
+          If <m>p</m> is prime, then <m>\sqrt{p}</m> is not a rational number.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          This statement is of the form <m>r \rightarrow \neg s</m>, where <m>r</m> denotes the statement <q><m>p</m> is prime</q>, and <m>s</m> denotes the statement <q><m>\sqrt{p}</m> is a rational number</q>. We calculate that
+          <me>\neg ( r \rightarrow \neg s ) \equiv \neg ( r \vee \neg (\neg s) ) \equiv \neg r \wedge \neg \neg \neg s = r \wedge \neg s</me>.
+          Thus the negation of the statement <q>If <m>p</m> is prime, then <m>\sqrt{p}</m> is not a rational number</q> is the statement <q><m>p</m> is prime and <m>\sqrt{p}</m> is not a rational number</q>.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          For every positive number <m>\varepsilon</m>, there is a positive number <m>\delta</m> such that <m>|x - a| \lt \delta</m> implies that <m>|f(x) - f(a)| \lt \varepsilon</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Symbolically, we can write this statement as
+          <me>\forall \varepsilon > 0 \exists \delta > 0 ( |x - a| \lt \delta \rightarrow |f(x) - f(a)| \lt \varepsilon )</me>.
+          Negating this statement using De Morgan's Laws, and recalling that the negation of a statement of the form <m>p \rightarrow q</m> is the statement <m>p \wedge \neg q</m>, we find the negation is
+          <me>\exists \varepsilon > 0 \forall \delta > 0 ( |x - a| \lt \delta \wedge |f(x) - f(a) \geq \varepsilon )</me>.
+          As an English sentence, we can write this statement as <q>There exists <m>\varepsilon > 0</m> for all <m>\delta > 0</m> so that <m>| x - a| \lt \delta</m> and <m>|f(x) - f(a)| \geq \varepsilon</m></q>.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          Whenever I have to choose between two evils, I choose the one I haven't tried yet. (Mae West).
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Sometimes, when I have to choose between two evils, I choose the one I have tried.
+        </p>
+      </solution>
+    </task>
+  -->
+</exercise>
+</page>
+
+
+
+<page>
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        Consider the following predicates, with the domain the collection of all Math 240 TAs:
+      </p>
+
+      <p>
+        Let <m>F(x)</m> be the predicate <q><m>x</m> holds office hours before Midterm 1</q>, and let <m>G(x)</m> be the predicate <q><m>x</m> can answer my questions</q>. Give a valid English translation of the following statements. Also, negate these statements, and give a valid English translation of their negation.
+      </p>
+
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              <m>\forall x (F(x) \rightarrow G(x))</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>\exists x (G(x) \wedge F(x))</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>\forall x ( F(x) \leftrightarrow G(x) )</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <ol marker="(a)">
+          <li>
+           <p>
+            The statement can be written in English as <q>every Math 240 TA who holds office hours before Midterm 1 can answer my questions</q>.
+          </p>
+
+          <p>
+            The negation of the logical statement can be written as <m>\exists x (F(x) \wedge \neg G(x))</m>. In English, this statement says <q>There is a Math 240 TA who holds office hours before Midterm 1 but cannot answer my questions</q>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The statement can be written in English as <q>there is a Math 240 TA who can answer my questions and holds office hours before Midterm 1</q>.
+          </p>
+
+          <p>
+            The negation of the logical statement can be written as <m>\forall x (\neg G(x) \vee \neg F(x))</m>. In English, this statement says <q>every Math 240 TA who has office hours before Midterm 1 cannot answer my questions</q>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            This statement, in English, says <q>all Math 240 TAs who host office hours before Midterm 1 can answer my questions, and these are the only Math 240 TAs who can answer my questions</q>.
+          </p>
+
+          <p>
+            Recall that the negation of a statement of the form <m>p \leftrightarrow q</m> can be written as <m>(p \wedge \neg q) \vee (\neg p \wedge q)</m>. Thus the statement can be written as <m>\exists x ( (F(x) \wedge \neg G(x)) \vee (\neg F(x) \wedge G(x)) )</m>. In English, this statement says <q>either there is a Math 240 TA who holds office hours before Midterm 1 and cannot answer my questions, or these is a Math 240 TA who does not hold office horus before Midterm 1 and can answer my questions</q>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+
+<!--
+  <task>
+    <statement>
+      <p>
+        <m>\forall x (F(x) \rightarrow G(x))</m>
+      </p>
+    </statement>
+
+    <answer>
+      <p>
+        The statement can be written in English as <q>every Math 240 TA who holds office hours before Midterm 1 can answer my questions</q>.
+      </p>
+
+      <p>
+        The negation of the logical statement can be written as <m>\exists x (F(x) \wedge \neg G(x))</m>. In English, this statement says <q>There is a Math 240 TA who holds office hours before Midterm 1 but cannot answer my questions</q>.
+      </p>
+    </answer>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        <m>\exists x (G(x) \wedge F(x))</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The statement can be written in English as <q>there is a Math 240 TA who can answer my questions and holds office hours before Midterm 1</q>.
+      </p>
+
+      <p>
+        The negation of the logical statement can be written as <m>\forall x (\neg G(x) \vee \neg F(x))</m>. In English, this statement says <q>every Math 240 TA who has office hours before Midterm 1 cannot answer my questions</q>.
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        <m>\forall x ( F(x) \leftrightarrow G(x) )</m>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        This statement, in English, says <q>all Math 240 TAs who host office hours before Midterm 1 can answer my questions, and these are the only Math 240 TAs who can answer my questions</q>.
+      </p>
+
+      <p>
+        Recall that the negation of a statement of the form <m>p \leftrightarrow q</m> can be written as <m>(p \wedge \neg q) \vee (\neg p \wedge q)</m>. Thus the statement can be written as <m>\exists x ( (F(x) \wedge \neg G(x)) \vee (\neg F(x) \wedge G(x)) )</m>. In English, this statement says <q>either there is a Math 240 TA who holds office hours before Midterm 1 and cannot answer my questions, or these is a Math 240 TA who does not hold office horus before Midterm 1 and can answer my questions</q>.
+      </p>
+    </solution>
+  </task>
+-->
+</exercise>
+
+
+
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Which of the following is a valid English translation of the compound proposition <m>\neg p \vee q \rightarrow r \wedge \neg s</m> if
+      <ul>
+        <li>
+          <m>p</m> is the proposition <q>I drink coffee in the morning</q>.
+        </li>
+
+        <li>
+          <m>q</m> is the proposition <q>I don't get enough sleep</q>.
+        </li>
+
+        <li>
+          <m>r</m> is the proposition <q>I am grouchy</q>.
+        </li>
+
+        <li>
+          <m>s</m> is the proposition <q>I want to work</q>.
+        </li>
+      </ul>
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      If I do not drink coffee in the morning or I don't get enough sleep, then I am grouchy and I don't want to work.
+    </p>
+  </solution>
+</exercise>
+
+
+
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Show that the sentences <m>p \wedge q \rightarrow r</m> and <m>p \wedge \neg r \rightarrow \neg q</m> are logically equivalent in two ways, the first way using truth tables, and the second way using the laws of propositional logic.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      A truth table listing all truth values of <m>p \wedge q \rightarrow r</m> and <m>p \wedge \neg r \rightarrow \neg q</m> is given below:
+    </p>
+
+    <table>
+      <title>A filled in truth table For <m>p \wedge q \rightarrow r</m> and <m>p \wedge \neg r \rightarrow \neg q</m>, with additional columns for <m>p \wedge q</m> and <m>p \wedge \neg r</m> to aid in computations.</title>
+      <tabular halign="center">
+        <row header="yes" bottom="minor" >
+          <cell><m>p</m></cell>
+          <cell><m>q</m></cell>
+          <cell><m>r</m></cell>
+          <cell><m>p \wedge q</m></cell>
+          <cell><m>p \wedge \neg r</m></cell>
+          <cell><m>p \wedge q \rightarrow r</m></cell>
+          <cell><m>p \wedge \neg r \rightarrow \neg q</m></cell>
+        </row>
+        <row>
+          <cell>T</cell>
+          <cell>T</cell>
+          <cell>T</cell>
+          <cell>T</cell>
+          <cell>F</cell>
+          <cell>T</cell>
+          <cell>T</cell>
+        </row>
+        <row>
+          <cell>T</cell>
+          <cell>T</cell>
+          <cell>F</cell>
+          <cell>T</cell>
+          <cell>T</cell>
+          <cell>F</cell>
+          <cell>F</cell>
+        </row>
+        <row>
+          <cell>T</cell>
+          <cell>F</cell>
+          <cell>T</cell>
+          <cell>F</cell>
+          <cell>F</cell>
+          <cell>T</cell>
+          <cell>T</cell>
+        </row>
+        <row>
+          <cell>T</cell>
+          <cell>F</cell>
+          <cell>F</cell>
+          <cell>F</cell>
+          <cell>T</cell>
+          <cell>T</cell>
+          <cell>T</cell>
+        </row>
+        <row>
+          <cell>F</cell>
+          <cell>T</cell>
+          <cell>T</cell>
+          <cell>F</cell>
+          <cell>F</cell>
+          <cell>T</cell>
+          <cell>T</cell>
+        </row>
+        <row>
+          <cell>F</cell>
+          <cell>T</cell>
+          <cell>F</cell>
+          <cell>F</cell>
+          <cell>F</cell>
+          <cell>T</cell>
+          <cell>T</cell>
+        </row>
+        <row>
+          <cell>F</cell>
+          <cell>F</cell>
+          <cell>T</cell>
+          <cell>F</cell>
+          <cell>F</cell>
+          <cell>T</cell>
+          <cell>T</cell>
+        </row>
+        <row>
+          <cell>F</cell>
+          <cell>F</cell>
+          <cell>F</cell>
+          <cell>F</cell>
+          <cell>F</cell>
+          <cell>T</cell>
+          <cell>T</cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      Since the truth values of <m>(p \wedge q) \rightarrow r</m> and <m>(p \wedge \neg r) \rightarrow \neg q</m> are the same in each row of the truth table, it follows the two sentences are logically equivalent.
+    </p>
+
+    <p>
+      Using the laws of propositional logic, we see that
+      <md>
+        <mrow>
+        p \wedge \neg r \rightarrow \neg q \amp \equiv \neg (p \wedge \neg r) \vee \neg q
+      </mrow>
+      <mrow>
+      \amp \equiv \neg p \vee \neg \neg r \vee \neg q
+    </mrow>
+
+    <mrow>
+    \amp \equiv \neg p \vee r \vee \neg q
+  </mrow>
+
+  <mrow>
+  \amp \equiv (\neg p \vee \neg q) \vee r
+</mrow>
+
+<mrow>
+\amp \equiv \neg (p \wedge q) \vee r
+</mrow>
+
+<mrow>
+\amp \equiv p \wedge q \rightarrow r
+</mrow>
+</md>.
+Thus we see the two sentences are equivalent to one another.
+</p>
+</solution>
+</exercise>
+
+
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        Prove that the statement <m>(p \rightarrow q) \leftrightarrow (p \wedge \neg q \rightarrow \neg p)</m> is a tautology, using whichever methods suffice.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Let us first simplify the right hand side using the laws of propositional logic:
+        <md>
+          <mrow>
+          p \wedge \neg q \rightarrow \neg p \amp \equiv \neg (p \wedge \neg q) \vee \neg p
+        </mrow>
+        <mrow>
+        \amp \equiv \neg p \vee \neg \neg q \vee \neg p
+      </mrow>
+      <mrow>
+      \amp \equiv \neg p \vee q
+    </mrow>
+  </md>
+  But now we see the latter statement is equivalent to <m>p \rightarrow q</m>. Since a statement <m>r \leftrightarrow s</m> is a tautology if and only if <m>r \equiv s</m>, it follows that the statement <m>(p \rightarrow q) \leftrightarrow (p \wedge \neg q \rightarrow \neg p)</m> is a tautology.
+</p>
+</solution>
+</exercise>
+
+</page>
+
+
+<page>
+
+
+
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Let <m>a,b,x,y \in \Z</m> such that <m>ax + by = 1</m>. Prove that if there exists <m>c \in \Z</m> such that <m>a \divides c</m> and <m>b \divides c</m>, then <m>ab \divides c</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Suppose that <m>a \divides c</m> and <m>b \divides c</m>. Then there exists integers <m>j</m> and <m>k</m> so that <m>c = aj</m> and <m>c = bk</m>. By assumption, <m>ax + by = 1</m>, so multiplying by <m>c</m> on both sides and substituting the expressions for <m>c</m>, we conclude that
+      <me>c = c(ax + by) = cax + cby = (bk)ax + (aj)by = ab(kx + by)</me>.
+      If <m>l \coloneqq kx + by</m>, then <m>c = l(ab)</m>, and so <m>ab \divides c</m>.
+    </p>
+  </solution>
+</exercise>
+
+
+
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Rewrite the following sentence using symbolic logic: <q>Not every real number is the square of a real number</q>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      In symbolic logic, this sentence can be written as
+      <me>\neg (\forall x \in \R \exists y \in \R (y^2 = x)) \equiv \exists x \in \R \forall y \in \R (y^2 \neq x)</me>.
+    </p>
+  </solution>
+</exercise>
+
+
+
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Let <m>a,b \in \Z</m> with <m>b \neq 0</m>. Prove that if <m>a \divides b</m> then <m>|a| \leq |b|</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Since <m>a \divides b</m>, <m>b = ak</m> for some integer <m>k</m>. Thus <m>|b| = |ak| = |a| |k|</m>. Note that by assumption <m>|b| \neq 0</m>, so both <m>a</m> and <m>k</m> are also non-zero. Since <m>k \in \Z</m>, <m>|k| \geq 1</m>, hence <m>|b| = |a| |k| \geq |a|</m>.
+    </p>
+  </solution>
+</exercise>
+
+
+
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        For <m>a,b \in \Z^+</m>, and <m>b</m> be positive integers. Prove that if <m>a \divides b</m> and <m>b \divides a</m>, then <m>a = b</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        By the previous exercise, <m>|b| \leq |a|</m> and <m>|a| \leq |b|</m>, which is only possible if <m>|a| = |b|</m>. But since <m>a</m> and <m>b</m> are positive, <m>a = |a|</m> and <m>b = |b|</m>, so we conclude that <m>a = b</m>.
+      </p>
+
+      <p>
+        Here is another solution. Since <m>a \divides b</m> and <m>b \divides a</m>, there exists positive integers <m>j</m> and <m>k</m> so that <m>b = aj</m> and <m>a = bk</m>. Since <m>j</m> and <m>k</m> are positive, <m>j,k \geq 1</m>. Thus <m>b = aj \geq a</m> and <m>a = bk \geq b</m>. Hence <m>b \geq a</m> and <m>a \geq b</m>, so <m>a = b</m>.
+      </p>
+    </solution>
+  </exercise>
+
+
+
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        Find the mistake in the following proof:
+      </p>
+
+      <theorem>
+        <statement>
+          <p>
+            Let <m>a,b \in \Z</m> with <m>a \equiv 1 \pmod{3}</m> and <m>b \equiv 2 \pmod{3}</m>. Then <m>a + b \equiv 0 \pmod{3}</m>.
+          </p>
+        </statement>
+
+        <proof>
+          <p>
+            Since <m>a \equiv 1 \pmod{3}</m>, we have that <m>3 \divides a - 1</m>. Thus there exists <m>k \in \Z</m> such that <m>a - 1 = 3k</m>. Also, since <m>b \equiv 1 \pmod{3}</m>, we also have <m>3 \divides b - 2</m>, so we can write <m>b - 2 = 3k</m>. Thus
+            <me>a + b = (3k + 1) + (3k + 2) = 6k + 3 = 3(2k + 1)</me>. Therefore <m>a + b \equiv 0 \pmod{3}</m>.
+          </p>
+        </proof>
+      </theorem>
+    </statement>
+
+    <solution>
+      <p>
+        The mistake in the proof is that we performed existential instantiation twice, first to write <m>a - 1</m> as <m>3k</m> for some integer <m>k</m>, and the second to write <m>b - 2 = 3k</m> for some integer <m>k</m>, but we did not use a separate variable for each use of existential instantiation (note we can also conclude that <m>a -1 = b-2</m> from this incorrect use of instantiation, which is not always true for all choices of <m>a</m> and <m>b</m> satisfying the assumptions of the theorem). A correct use of the instantiation would be to write <m>b - 2 = 3j</m> for some integer <m>j</m>. Then we calculate that
+        <me>a + b = (3k + 1) + (3j + 2) = 3k + 3j + 3 = 3(k + j + 1) </me>.
+        Thus we can still correctly conclude that <m>a + b \equiv 0 \pmod{3}</m>.
+      </p>
+    </solution>
+  </exercise>
+</page>
+
+<page>
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        Consider the set <m>B = \{ (x,y) \in \Z \times \Z: x \equiv y \pmod{5} \}</m>. Show that <m>(8,23) \in B</m> but <m>(6,10) \not \in B</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        To show <m>(8,23) \in B</m> we must show that <m>8 \equiv 23 \pmod{5}</m>. But this holds because
+        <me>8 - 23 = -15  5(-3)</me>,
+        and so <m>5 \divides 8 - 23</m>. On the other hand, <m>(6,10) \not \in B</m> because it is not true that <m>6 \equiv 10 \pmod{5}</m>, i.e. it is not true that <m>5</m> divides <m>6 - 10 = -4 = 5(-1) + 1</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        Prove that <m>\{ x \in \Z : 2 \divides x \} \cap \{ x \in \Z: 9 \divides x \} \subsetneq \{ x \in \Z : 6 \divides x \}</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Let <m>A = \{ x \in \Z : 2 \divides x \}</m>, <m>B = \{ x \in \Z : 9 \divides x \}</m>, and let <m>C = \{ x \in \Z : 6 \divides x \}</m>. Then we must prove that <m>A \cap B \subsetneq C</m>. To prove this, we must show that <m>A \cap B \subset C</m>, and also that <m>A \cap B \neq C</m>.
+      </p>
+
+      <p>
+        To prove <m>A \cap B \subset C</m>, we must show that all <m>x_0 \in A \cap B</m> are elements of <m>C</m>. If <m>x_0 \in A \cap B</m>, then <m>x_0 \in A</m>, so that <m>2 \divides x_0</m>, and also <m>x_0 \in B</m>, so that <m>9 \divides x_0</m>. Since <m>2</m> and <m>9</m> are coprime, this implies that <m>2 \cdot 9 = 18 \divides x_0</m>, so we can write <m>x_0 = 18k</m> for some integer <m>k</m>. But then <m>x_0 = 6(3k)</m>, so that <m>6 \divides x_0</m>, and so <m>x_0 \in C</m>.
+      </p>
+
+      <p>
+        To prove that <m>A \cap B \neq C</m>, we must find an element of <m>C</m> not contained in <m>A \cap B</m>. Clearly <m>6 \in C</m> since <m>6 \divides 6</m>. But <m>6</m> is not an element of <m>B</m>, since <m>9 \not \divides 6</m>, and so <m>6 \not \in A \cap B</m>.
+      </p>
+    </solution>
+  </exercise>
+
+
+
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> be sets. Prove that if <m>\mathcal{P}(A) \subset \mathcal{P}(B)</m> then <m>A \subset B</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Since <m>A</m> is a subset of itself, <m>A \in \mathcal{P}(A)</m>. If <m>\mathcal{P}(A) \subset \mathcal{P}(B)</m>, then we conclude that <m>A \in \mathcal{P}(B)</m>. But by definition of <m>\mathcal{P}(B)</m>, this means precisely that <m>A</m> is a subset of <m>B</m>.
+      </p>
+    </solution>
+  </exercise>
+
+
+
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        Prove or disprove the following statement: If <m>A</m> and <m>B</m> are finite sets, then <m>|A \cup B| = |A| + |B|</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        This statement is false, and so we must disprove this statement by finding a counterexample. Let <m>A = \{ 0,1 \}</m> and <m>B = \{ 1,2 \}</m>. Then <m>|A| = 2</m> and <m>|B| = 2</m>, yet <m>A \cup B = \{ 0,1,2 \}</m>, and so <m>|A \cup B| = 3</m>. But <m>3 \neq 2 + 2</m>.
+      </p>
+    </solution>
+  </exercise>
+</page>
+
+</worksheet>
+</chapter>

@@ -1,0 +1,2085 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-2025-worksheet-2">
+  <title>Worksheet Two</title>
+
+  <introduction>
+    <p>
+      The questions in this worksheet were given out in the second week of the course, the week of January 27th-31st, 2025. They address questions about compound propositions, and conditional operators, covered in the following sections of the book:
+
+      <ul>
+        <li>
+          Section 1.2: Evaluating compound propositions.
+        </li>
+
+        <li>
+          Section 1.3: Conditional statements.
+        </li>
+      </ul>
+    </p>
+  </introduction>
+
+  <worksheet xml:id="wkst-2025-worksheet-2" margin="0.7in">
+    <title>Worksheet Two</title>
+
+    <introduction>
+      <p>
+        These exercises address compound propositions and conditional operators.
+      </p>
+    </introduction>
+
+    <page>
+      <exercise workspace="1.3in" category="essential">
+        <statement>
+          <p>
+            Express each statement below as a compound proposition in symbolic form. Clearly state the interpretation of the statements <m>p</m> and <m>q</m> stand for.
+          </p>
+
+          <p>
+            <ol cols="1" marker="(a)">
+              <li>
+                The number <m>8</m> is both even and a power of <m>2</m>.
+              </li>
+              <li>
+                The matrix <m>A</m> is not invertible.
+              </li>
+              <li>
+                The number <m>x</m> equals zero, but the number <m>y</m> does not.
+              </li>
+              <li>
+                There is an assignment scheduled for Wednesday or Friday.
+              </li>
+              <li>
+                <q>Human beings want to be good, but not too good, and not all the time</q> (George Orwell).
+              </li>
+            </ol>
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                We define the propositions <m>p</m> and <m>q</m> as <q>The number 8 is even</q> and <q>The number 8 is a power of 2</q> respectively. Then the given statement can be written symbolically as <m>p \wedge q</m>.
+              </li>
+
+              <li>
+                Let <m>p</m> be the proposition <q>The matrix <m>A</m> is invertible</q>. Then the given statement can be written symbolically as <m>\neg p</m>.
+              </li>
+
+              <li>
+                <p>
+                  Define the propositions <m>p</m> and <m>q</m> as
+                  <ul>
+                    <li>
+                      <p>
+                        <m>p</m>: The number <m>x</m> equals zero.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <m>q</m>: The number <m>y</m> equals zero.
+                      </p>
+                    </li>
+                  </ul>
+
+                  The statement is equivalent to <m>p \vee q</m>.
+                </p>
+              </li>
+
+              <li>
+                Let <m>p</m> be the proposition <q>There is an assignment scheduled for Wednesday</q>, and let <m>q</m> be the proposition <q>There is an assignment scheduled for Friday</q>. Then the statement is equivalent to <m>p \vee q</m>.
+              </li>
+
+              <li>
+                <p>
+                  Define the propositions <m>p</m>, <m>q</m>, and <m>r</m> as follows:
+                  <ul>
+                    <li>
+                      <m>p</m>: Human beings want to be good.
+                    </li>
+
+                    <li>
+                      <m>q</m>: Human beings want to be too good.
+                    </li>
+
+                    <li>
+                      <m>r</m>: Human beings want to be good all the time.
+                    </li>
+                  </ul>
+
+                  We can then express the given quotation in symbolic form as <m>p \wedge \neg q \wedge \neg r</m>.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+
+<!--
+
+        <task>
+          <statement>
+            <p>
+              The number 8 is both even and a power of 2.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              We define the propositions <m>p</m> and <m>q</m> as <q>The number 8 is even</q> and <q>The number 8 is a power of 2</q> respectively. Then the given statement can be written symbolically as <m>p \wedge q</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              The matrix <m>A</m> is not invertible.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              Let <m>p</m> be the proposition <q>The matrix <m>A</m> is invertible</q>. Then the given statement can be written symbolically as <m>\neg p</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              The number <m>x</m> equals zero, but the number <m>y</m> does not.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              Define the propositions <m>p</m> and <m>q</m> as
+              <ul>
+                <li>
+                  <p>
+                    <m>p</m>: The number <m>x</m> equals zero.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <m>q</m>: The number <m>y</m> equals zero.
+                  </p>
+                </li>
+              </ul>
+
+              The statement is equivalent to <m>p \vee q</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              There is an assignment scheduled for Wednesday or Friday.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              Let <m>p</m> be the proposition <q>There is an assignment scheduled for Wednesday</q>, and let <m>q</m> be the proposition <q>There is an assignment scheduled for Friday</q>. Then the statement is equivalent to <m>p \vee q</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <q>Human beings want to be good, but not too good, and not all the time</q> (George Orwell, <em>The Art of Donald McGill</em>).
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              Define the propositions <m>p</m>, <m>q</m>, and <m>r</m> as follows:
+              <ul>
+                <li>
+                  <m>p</m>: Human beings want to be good.
+                </li>
+
+                <li>
+                  <m>q</m>: Human beings want to be too good.
+                </li>
+
+                <li>
+                  <m>r</m>: Human beings want to be good all the time.
+                </li>
+              </ul>
+
+              We can then express the given quotation in symbolic form as <m>p \wedge \neg q \wedge \neg r</m>.
+            </p>
+          </solution>
+        </task> -->
+      </exercise>
+
+      <exercise workspace="1.3in" category="essential">
+        <statement>
+          <p>
+            Without changing their meanings, convert each of the following sentences into a sentence having the form <q>If <m>p</m>, then <m>q</m></q>.
+          </p>
+
+          <p>
+            <ol cols="1" marker="(a)">
+              <li>
+                A matrix is invertible provided its determinant is non-zero.
+              </li>
+              <li>
+                A function is rational if it is a polynomial.
+              </li>
+              <li>
+                An integer is divisible by 8 only if it is divisible by 4.
+              </li>
+              <li>
+                A series converges whenever it converges absolutely.
+              </li>
+              <li>
+                A function is integrable provided the function is continuous.
+              </li>
+            </ol>
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  There are multiple correct ways to rewrite this sentence. Here are a few examples:
+                  <ul>
+                    <li>
+                      <p>
+                        If its determinant is not zero, then a matrix is invertible.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        If a matrix has determinant that is not zero, then it is invertible.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        If a matrix has nonzero determinant, then it is invertible.
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        If a matrix has nonzero determinant, then the given matrix is invertible.
+                      </p>
+                    </li>
+                  </ul>
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  There are multiple correct ways to rewrite this sentence. One example is <q>If a function is a polynomial, then it is rational.</q>
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  If an integer is divisible by 4, then it is divisible by 8.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  If a series converges absolutely, then it converges.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  If a function is continuous, then it is integrable.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+
+<!--
+
+        <task>
+          <statement>
+            <p>
+              A matrix is invertible provided its determinant is non-zero
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              There are multiple correct ways to rewrite this sentence. Here are a few examples:
+              <ul>
+                <li>
+                  <p>
+                    If its determinant is not zero, then a matrix is invertible.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    If a matrix has determinant that is not zero, then it is invertible.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    If a matrix has nonzero determinant, then it is invertible.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    If a matrix has nonzero determinant, then the given matrix is invertible.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              A function is rational if it is a polynomial.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              There are multiple correct ways to rewrite this sentence. One example is <q>If a function is a polynomial, then it is rational.</q>
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              An integer is divisible by 8 only if it is divisible by 4.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              If an integer is divisible by 4, then it is divisible by 8.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              A series converges whenever it converges absolutely.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              If a series converges absolutely, then it converges.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              A function is integrable provided the function is continuous.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              If a function is continuous, then it is integrable.
+            </p>
+          </solution>
+        </task>
+      -->
+    </exercise>
+  </page>
+
+
+
+
+  <page>
+    <exercise workspace="1.1in" category="essential">
+      <statement>
+        <p>
+          If <m>p \wedge q \rightarrow r \vee s</m> is false, find the truth values of <m>p</m>, <m>q</m>, <m>r</m>, and <m>s</m>.
+        </p>
+      </statement>
+
+      <hint>
+        <p>
+          This can be done without a truth table.
+        </p>
+      </hint>
+
+      <solution>
+        <p>
+          An implication statement can only be false if the antecedent is true, and the consequent is false. Thus if <m>p \wedge q \rightarrow r \vee s</m> is false, then <m>p \wedge q</m> must be true, and <m>r \vee s</m> must be false. Since <m>p \wedge q</m> is true, both <m>p</m> and <m>q</m> must be true. If <m>r \vee s</m> is false, then both <m>r</m> and <m>s</m> must be false. Thus <m>p</m> is true, <m>q</m> is true, <m>r</m> is false, and <m>s</m> is false.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise workspace="0.5in">
+      <statement>
+        <p>
+          Use truth tables to validate the following logical equivalences.
+        </p>
+
+        <p>
+          <ol marker="(a)">
+            <li>
+              <m>p \wedge (q \vee r) \equiv (p \wedge q) \vee (p \wedge r)</m>.
+            </li>
+            <li>
+              <m>p \rightarrow q \equiv \neg p \vee q</m>.
+            </li>
+            <li>
+              <m>\neg (p \vee q \vee r) \equiv \neg p \wedge \neg q \wedge \neg r</m>.
+            </li>
+            <li>
+              <m> \neg p \leftrightarrow q \equiv (p \rightarrow \neg q) \wedge (\neg q \rightarrow p) </m>.
+            </li>
+          </ol>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                In the table below, we see that the truth values of <m>p \wedge (q \vee r)</m> and <m>(p \wedge q) \vee (p \wedge r)</m> are always equal, regardless of the truth values of <m>p</m>, <m>q</m>, and <m>r</m>, which proves the two statements are truth functionally equivalent. Extra columns are given for the expressions <m>q \vee r</m>, <m>p \wedge q</m>, and <m>p \wedge r</m>, in order to aid in computing the truth values of the two compound propositions:
+              </p>
+              <table>
+                <title>A truth table showing the equivalence between <m>p \wedge (q \vee r)</m> and <m>(p \wedge q) \vee (p \wedge r)</m>.</title>
+                <tabular halign="center">
+                  <row header="yes" bottom="minor" >
+                    <cell><m>p</m></cell>
+                    <cell><m>q</m></cell>
+                    <cell><m>r</m></cell>
+                    <cell><m>q \vee r</m></cell>
+                    <cell><m>p \wedge q</m></cell>
+                    <cell><m>p \wedge r</m></cell>
+                    <cell><m>p \wedge (q \vee r)</m></cell>
+                    <cell><m>(p \wedge q) \vee (p \wedge r)</m></cell>
+                  </row>
+                  <row>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                  </row>
+                  <row>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                  </row>
+                  <row>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                  </row>
+                  <row>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                  <row>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                  <row>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                  <row>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                  <row>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                </tabular>
+              </table>
+            </li>
+
+            <li>
+              <p>
+                In the table below, we see that the truth values of <m>p \rightarrow q</m> and <m>\neg p \vee q</m> are always equal, regardless of the truth values of <m>p</m> and <m>q</m>, which proves the two statements are truth functionally equivalent.
+              </p>
+              <table>
+                <title>A truth table showing the equivalence between <m>p \rightarrow q</m> and <m>\neg p \vee q</m>.</title>
+                <tabular halign="center">
+                  <row header="yes" bottom="minor" >
+                    <cell><m>p</m></cell>
+                    <cell><m>q</m></cell>
+                    <cell><m>p \rightarrow q</m></cell>
+                    <cell><m>\neg p \vee q</m></cell>
+                  </row>
+                  <row>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                  </row>
+                  <row>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                  <row>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                  </row>
+                  <row>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                  </row>
+                </tabular>
+              </table>
+            </li>
+
+            <li>
+              <p>
+                In the table below, we see that the truth values of <m>\neg (p \vee q \vee r)</m> and <m>\neg p \wedge \neg q \wedge \neg r</m> are always equal, regardless of the truth values of <m>p</m>, <m>q</m>, and <m>r</m>, which proves the two statements are truth functionally equivalent.
+              </p>
+              <table>
+                <title>A truth table showing the equivalence between <m>p \wedge (q \vee r)</m> and <m>(p \wedge q) \vee (p \wedge r)</m>.</title>
+                <tabular halign="center">
+                  <row header="yes" bottom="minor" >
+                    <cell><m>p</m></cell>
+                    <cell><m>q</m></cell>
+                    <cell><m>r</m></cell>
+                    <cell><m>\neg (p \vee q \vee r)</m></cell>
+                    <cell><m>\neg p \wedge \neg q \wedge \neg r</m></cell>
+                  </row>
+                  <row>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                  <row>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                  <row>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                  <row>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                  <row>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                  <row>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                  <row>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                  <row>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                  </row>
+                </tabular>
+              </table>
+            </li>
+
+            <li>
+              <p>
+                In the table below, we see that the truth values of <m>\neg p \leftrightarrow q</m> and <m>(p \rightarrow \neg q) \wedge (\neg q \rightarrow p)</m> are always equal, regardless of the truth values of <m>p</m> and <m>q</m>, which proves the two statements are truth functionally equivalent. The two columns for <m>p \rightarrow \neg q</m> and <m>\neg q \rightarrow p</m> are included to aid in computations of the compound propositions <m>\neg p \leftrightarrow q</m> and <m>(p \rightarrow \neg q) \wedge (\neg q \rightarrow p)</m>.
+              </p>
+              <table>
+                <title>A truth table showing the equivalence between <m>p \rightarrow q</m> and <m>\neg p \vee q</m>.</title>
+                <tabular halign="center">
+                  <row header="yes" bottom="minor" >
+                    <cell><m>p</m></cell>
+                    <cell><m>q</m></cell>
+                    <cell><m>p \rightarrow \neg q</m></cell>
+                    <cell><m>\neg q \rightarrow p</m></cell>
+                    <cell><m>\neg p \leftrightarrow q</m></cell>
+                    <cell><m>(p \rightarrow q) \wedge (\neg q \rightarrow p)</m></cell>
+                  </row>
+                  <row>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                  <row>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                  </row>
+                  <row>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                    <cell>T</cell>
+                  </row>
+                  <row>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>T</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                    <cell>F</cell>
+                  </row>
+                </tabular>
+              </table>
+            </li>
+          </ol>
+        </p>
+      </solution>
+
+<!--
+
+      <task category="essential">
+        <statement>
+          <p>
+            <m>p \wedge (q \vee r) \equiv (p \wedge q) \vee (p \wedge r)</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            In the table below, we see that the truth values of <m>p \wedge (q \vee r)</m> and <m>(p \wedge q) \vee (p \wedge r)</m> are always equal, regardless of the truth values of <m>p</m>, <m>q</m>, and <m>r</m>, which proves the two statements are truth functionally equivalent. Extra columns are given for the expressions <m>q \vee r</m>, <m>p \wedge q</m>, and <m>p \wedge r</m>, in order to aid in computing the truth values of the two compound propositions:
+          </p>
+          <table>
+            <title>A truth table showing the equivalence between <m>p \wedge (q \vee r)</m> and <m>(p \wedge q) \vee (p \wedge r)</m>.</title>
+            <tabular halign="center">
+              <row header="yes" bottom="minor" >
+                <cell><m>p</m></cell>
+                <cell><m>q</m></cell>
+                <cell><m>r</m></cell>
+                <cell><m>q \vee r</m></cell>
+                <cell><m>p \wedge q</m></cell>
+                <cell><m>p \wedge r</m></cell>
+                <cell><m>p \wedge (q \vee r)</m></cell>
+                <cell><m>(p \wedge q) \vee (p \wedge r)</m></cell>
+              </row>
+              <row>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+              </row>
+              <row>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+              </row>
+              <row>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+              </row>
+              <row>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+              <row>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+              <row>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+              <row>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+              <row>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+            </tabular>
+          </table>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>p \rightarrow q \equiv \neg p \vee q</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            In the table below, we see that the truth values of <m>p \rightarrow q</m> and <m>\neg p \vee q</m> are always equal, regardless of the truth values of <m>p</m> and <m>q</m>, which proves the two statements are truth functionally equivalent.
+          </p>
+          <table>
+            <title>A truth table showing the equivalence between <m>p \rightarrow q</m> and <m>\neg p \vee q</m>.</title>
+            <tabular halign="center">
+              <row header="yes" bottom="minor" >
+                <cell><m>p</m></cell>
+                <cell><m>q</m></cell>
+                <cell><m>p \rightarrow q</m></cell>
+                <cell><m>\neg p \vee q</m></cell>
+              </row>
+              <row>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+              </row>
+              <row>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+              <row>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+              </row>
+              <row>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+              </row>
+            </tabular>
+          </table>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m>\neg (p \vee q \vee r) \equiv \neg p \wedge \neg q \wedge \neg r</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            In the table below, we see that the truth values of <m>\neg (p \vee q \vee r)</m> and <m>\neg p \wedge \neg q \wedge \neg r</m> are always equal, regardless of the truth values of <m>p</m>, <m>q</m>, and <m>r</m>, which proves the two statements are truth functionally equivalent.
+          </p>
+          <table>
+            <title>A truth table showing the equivalence between <m>p \wedge (q \vee r)</m> and <m>(p \wedge q) \vee (p \wedge r)</m>.</title>
+            <tabular halign="center">
+              <row header="yes" bottom="minor" >
+                <cell><m>p</m></cell>
+                <cell><m>q</m></cell>
+                <cell><m>r</m></cell>
+                <cell><m>\neg (p \vee q \vee r)</m></cell>
+                <cell><m>\neg p \wedge \neg q \wedge \neg r</m></cell>
+              </row>
+              <row>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+              <row>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+              <row>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+              <row>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+              <row>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+              <row>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+              <row>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+              <row>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+              </row>
+            </tabular>
+          </table>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            <m> \neg p \leftrightarrow q \equiv (p \rightarrow \neg q) \wedge (\neg q \rightarrow p) </m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            In the table below, we see that the truth values of <m>\neg p \leftrightarrow q</m> and <m>(p \rightarrow \neg q) \wedge (\neg q \rightarrow p)</m> are always equal, regardless of the truth values of <m>p</m> and <m>q</m>, which proves the two statements are truth functionally equivalent. The two columns for <m>p \rightarrow \neg q</m> and <m>\neg q \rightarrow p</m> are included to aid in computations of the compound propositions <m>\neg p \leftrightarrow q</m> and <m>(p \rightarrow \neg q) \wedge (\neg q \rightarrow p)</m>.
+          </p>
+          <table>
+            <title>A truth table showing the equivalence between <m>p \rightarrow q</m> and <m>\neg p \vee q</m>.</title>
+            <tabular halign="center">
+              <row header="yes" bottom="minor" >
+                <cell><m>p</m></cell>
+                <cell><m>q</m></cell>
+                <cell><m>p \rightarrow \neg q</m></cell>
+                <cell><m>\neg q \rightarrow p</m></cell>
+                <cell><m>\neg p \leftrightarrow q</m></cell>
+                <cell><m>(p \rightarrow q) \wedge (\neg q \rightarrow p)</m></cell>
+              </row>
+              <row>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+              <row>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+              </row>
+              <row>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+                <cell>T</cell>
+              </row>
+              <row>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>T</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+                <cell>F</cell>
+              </row>
+            </tabular>
+          </table>
+        </solution>
+      </task> -->
+    </exercise>
+
+    <exercise workspace="0.5in">
+      <statement>
+        <p>
+          Recall De Morgan’s laws: the logical equivalences
+        </p>
+        <p>
+          <sidebyside width="45%">
+            <p>
+              <me>\neg (p \vee q) \equiv \neg p \wedge \neg q</me>
+            </p>
+            <p>
+              <me>\neg (p \wedge q) \equiv \neg p \vee \neg q</me>.
+            </p>
+          </sidebyside>
+        </p>
+        <p>
+          Consider the following propositional variables:
+          <ul>
+            <li>
+              <m>p</m>: The applicant has written permission from his parents.
+            </li>
+            <li>
+              <m>e</m>: The applicant is at least 18 years old.
+            </li>
+            <li>
+              <m>s</m>: The applicant is at least 16 years old.
+            </li>
+          </ul>
+
+          Translate each sentence below into a symbolic expression. Then negate the expression, apply De Morgan’s law to the resulting expression, and translate back into English.
+
+          <ol marker="(a)">
+            <li>
+              The applicant has written permission from his parents and is at least 16 years old.
+            </li>
+            <li>
+              The applicant has written permission from his parents or is at least 18 years old.
+            </li>
+          </ol>
+        </p>
+      </statement>
+
+      <solution>
+        <ol marker="(a)">
+          <li>
+            <p>
+              <dl>
+                <li>
+                  <title>Logical Expression:</title>
+                  <p>
+                    <m>p \wedge s</m>
+                  </p>
+                </li>
+
+                <li>
+                  <title>Negation:</title>
+                  <p>
+                    <m>\neg (p \wedge s)</m>
+                  </p>
+                </li>
+
+                <li>
+                  <title>Application of De Morgan's Law:</title>
+                  <p>
+                    <m>\neg p \vee \neg s</m>
+                  </p>
+                </li>
+
+                <li>
+                  <title>Translation back into English:</title>
+                  <p>
+                    The applicant does not have written permission from his parents, or is not at least 16 years old.
+                  </p>
+                </li>
+              </dl>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <dl>
+                <li>
+                  <title>Logical Expression:</title>
+                  <p>
+                    <m>p \vee e</m>
+                  </p>
+                </li>
+
+                <li>
+                  <title>Negation:</title>
+                  <p>
+                    <m>\neg (p \vee e)</m>
+                  </p>
+                </li>
+
+                <li>
+                  <title>Application of De Morgan's Law:</title>
+                  <p>
+                    <m>\neg p \vee \neg e</m>
+                  </p>
+                </li>
+
+                <li>
+                  <title>Translation back into English:</title>
+                  <p>
+                    The applicant does not have written permission from his parents and is not at least 18 years old.
+                  </p>
+                </li>
+              </dl>
+            </p>
+          </li>
+
+
+        </ol>
+      </solution>
+
+      <!--
+
+      <task category="essential">
+        <statement>
+          <p>
+            The applicant has written permission from his parents and is at least 16 years old.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            <dl>
+              <li>
+                <title>Logical Expression:</title>
+                <p>
+                  <m>p \wedge s</m>
+                </p>
+              </li>
+
+              <li>
+                <title>Negation:</title>
+                <p>
+                  <m>\neg (p \wedge s)</m>
+                </p>
+              </li>
+
+              <li>
+                <title>Application of De Morgan's Law:</title>
+                <p>
+                  <m>\neg p \vee \neg s</m>
+                </p>
+              </li>
+
+              <li>
+                <title>Translation back into English:</title>
+                <p>
+                  The applicant does not have written permission from his parents, or is not at least 16 years old.
+                </p>
+              </li>
+            </dl>
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            The applicant has written permission from his parents or is at least 18 years old.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            <dl>
+              <li>
+                <title>Logical Expression:</title>
+                <p>
+                  <m>p \vee e</m>
+                </p>
+              </li>
+
+              <li>
+                <title>Negation:</title>
+                <p>
+                  <m>\neg (p \vee e)</m>
+                </p>
+              </li>
+
+              <li>
+                <title>Application of De Morgan's Law:</title>
+                <p>
+                  <m>\neg p \vee \neg e</m>
+                </p>
+              </li>
+
+              <li>
+                <title>Translation back into English:</title>
+                <p>
+                  The applicant does not have written permission from his parents and is not at least 18 years old.
+                </p>
+              </li>
+            </dl>
+          </p>
+        </solution>
+      </task> -->
+    </exercise>
+  </page>
+
+  <page>
+    <exercise workspace="0.5in" category="essential">
+      <statement>
+        <p>
+          Write the converse, contrapositive, and inverse of each implication statement below. <!-- You do <em>not</em> need to prove any of the statements. -->
+        </p>
+
+        <p>
+          <ol cols="1" marker="(a)">
+            <li>
+              If <m>5 \nmod xy</m>, then <m>5 \nmod x</m> and <m>5 \nmod y</m>.
+            </li>
+            <li>
+              If <m>y^3 + yx^2 \leq x^3 + xy^2</m>, then <m>y \leq x</m>.
+            </li>
+            <li>
+              If <m>7x + 9</m> is even, then <m>x</m> is odd.
+            </li>
+          </ol>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          <ol marker="(a)">
+            <li>
+              <p>
+                <dl>
+                  <li>
+                    <title>Converse:</title>
+
+                    <p>
+                      If <m>5 \nmod x</m> and <m>5 \nmod y</m>, then <m>5 \nmod xy</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <title>Contrapositive:</title>
+
+                    <p>
+                      If <m>5 \divides x</m> or <m>5 \divides y</m>, then <m>5 \divides xy</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <title>Inverse:</title>
+
+                    <p>
+                      If <m>5 \divides xy</m> then <m>5 \divides x</m> or <m>5 \divides y</m>.
+                    </p>
+                  </li>
+                </dl>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <dl>
+                  <li>
+                    <title>Converse:</title>
+                    <p>
+                      If <m>y \leq x</m> then <m>y^3 + yx^2 \leq x^3 + xy^2</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <title>Contrapositive:</title>
+                    <p>
+                      If <m>y \gt x</m> then <m>y^3 + yx^2 > x^3 + xy^2</m>.
+                    </p>
+                  </li>
+
+                  <li>
+                    <title>Inverse:</title>
+                    <p>
+                      If <m>y^3 + yx^2 > x^3 + xy^2</m> then <m>y \gt x</m>.
+                    </p>
+                  </li>
+                </dl>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <dl>
+                  <li>
+                    <title>Converse:</title>
+
+                    <p>
+                      If <m>x</m> is odd, then <m>7x + 9</m> is even.
+                    </p>
+                  </li>
+
+                  <li>
+                    <title>Contrapositive:</title>
+
+                    <p>
+                      If <m>x</m>is even, then <m>7x + 9</m> is odd.
+                    </p>
+                  </li>
+
+                  <li>
+                    <title>Inverse:</title>
+
+                    <p>
+                      If <m>7x + 9</m> is odd, then <m>x</m> is even.
+                    </p>
+                  </li>
+                </dl>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+
+      <!--
+
+      <task>
+        <statement>
+          <p>If <m>5 \nmod xy</m>, then <m>5 \nmod x</m> and <m>5 \nmod y</m>.</p>
+        </statement>
+
+        <solution>
+          <p>
+            <dl>
+              <li>
+                <title>Converse:</title>
+
+                <p>
+                  If <m>5 \nmod x</m> and <m>5 \nmod y</m>, then <m>5 \nmod xy</m>.
+                </p>
+              </li>
+
+              <li>
+                <title>Contrapositive:</title>
+
+                <p>
+                  If <m>5 \divides x</m> or <m>5 \divides y</m>, then <m>5 \divides xy</m>.
+                </p>
+              </li>
+
+              <li>
+                <title>Inverse:</title>
+
+                <p>
+                  If <m>5 \divides xy</m> then <m>5 \divides x</m> or <m>5 \divides y</m>.
+                </p>
+              </li>
+            </dl>
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            If <m>y^3 + yx^2 \leq x^3 + xy^2</m>, then <m>y \leq x</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            <dl>
+              <li>
+                <title>Converse:</title>
+                <p>
+                  If <m>y \leq x</m> then <m>y^3 + yx^2 \leq x^3 + xy^2</m>.
+                </p>
+              </li>
+
+              <li>
+                <title>Contrapositive:</title>
+                <p>
+                  If <m>y \gt x</m> then <m>y^3 + yx^2 > x^3 + xy^2</m>.
+                </p>
+              </li>
+
+              <li>
+                <title>Inverse:</title>
+                <p>
+                  If <m>y^3 + yx^2 > x^3 + xy^2</m> then <m>y \gt x</m>.
+                </p>
+              </li>
+            </dl>
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            If <m>7x + 9</m> is even, then <m>x</m> is odd.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            <dl>
+              <li>
+                <title>Converse:</title>
+
+                <p>
+                  If <m>x</m> is odd, then <m>7x + 9</m> is even.
+                </p>
+              </li>
+
+              <li>
+                <title>Contrapositive:</title>
+
+                <p>
+                  If <m>x</m>is even, then <m>7x + 9</m> is odd.
+                </p>
+              </li>
+
+              <li>
+                <title>Inverse:</title>
+
+                <p>
+                  If <m>7x + 9</m> is odd, then <m>x</m> is even.
+                </p>
+              </li>
+            </dl>
+          </p>
+        </solution>
+      </task> -->
+    </exercise>
+
+    <exercise workspace="0.25in">
+      <statement>
+        <p>
+          Define the following propositions
+
+          <ul>
+            <li>
+              <p>
+                <m>j</m>: Sally got the job.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>l</m>: Sally was late for her interview.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>r</m>: Sally updated her resume.
+              </p>
+            </li>
+          </ul>
+
+          Find logical expressions best expressing each pair of sentences below, then prove or disprove that the two expressions are logically equivalent.
+        </p>
+
+        <p>
+          <ol marker="(a)">
+            <li>
+              <ul>
+                <li>
+                  <p>
+                    If Sally did not get the job, then she was late for her interview or did not update her resume.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    If Sally updated her resume and did not get the job, then she was late for her interview.
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+             <ul>
+              <li>
+                <p>
+                  If Sally did not get the job, then she was late for her interview or did not update her resume.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  If Sally updated her resume and did not get the job, then she was late for her interview.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+
+            <ul>
+              <li>
+                <p>
+                  If Sally did not get the job, then she was late for her interview or did not update her resume.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  If Sally updated her resume and was not late for her interview, then she got the job.
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>
+                <p>
+                  If Sally updated her resume or she was not late for her interview, then she got the job.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  If Sally got the job, then she updated her resume and was not late for her interview.
+                </p>
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              The first statement is best expressed as <m>\neg j \rightarrow l \vee \neg r</m>, and the second is best expressed as <m>r \wedge \neg j \rightarrow l</m>. To see the two statements are logically equivalent, we will show the two statements are both false in exactly one scenario: when <m>j</m> is false, <m>l</m> is false, and <m>r</m> is true.
+
+              <ul>
+                <li>
+                  <p>
+                    The statement <m>\neg j \rightarrow l \vee \neg r</m> is false when <m>\neg j</m> is true and <m>l \vee \neg r</m> is false. This only happens when <m>j</m> is false, <m>l</m> is false, and <m>r</m> is true.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    The statement <m>r \wedge \neg j \rightarrow l</m> is false when <m>r \wedge \neg j</m> is true and <m>l</m> is false. This also only happens when <m>j</m> is false, <m>l</m> is false, and <m>r</m> is true.
+                  </p>
+                </li>
+              </ul>
+
+              Since <m>\neg j \rightarrow l \vee \neg r</m> and <m>r \wedge \neg j \rightarrow l</m> are both false in exactly the same circumstances, they are also both true in exactly the same circumstances, and thus truth functionally equivalent.
+            </p>
+
+            <p>
+              Alternatively, one can show that the two statements are truth functionally equivalent by constructing a truth table, which shows the truth values of the two statements agree in all circumstances.
+            </p>
+
+            <table>
+              <title>A truth table showing the equivalence between <m>\neg j \rightarrow l \vee \neg r</m> and <m>r \wedge \neg j \rightarrow l</m>.</title>
+              <tabular halign="center">
+
+                <row header="yes" bottom="minor" >
+                  <cell><m>j</m></cell>
+                  <cell><m>l</m></cell>
+                  <cell><m>r</m></cell>
+                  <cell><m>l \vee \neg r</m></cell>
+                  <cell><m>r \wedge \neg j</m></cell>
+                  <cell><m>\neg j \rightarrow l \vee \neg r</m></cell>
+                  <cell><m>r \wedge \neg j \rightarrow l</m></cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+              </tabular>
+            </table>
+
+            <p>
+              Note that, as expected from the reasoning above, the only row where both statements evaluate to false occur when <m>j</m> is false, <m>l</m> is false, and <m>r</m> is true.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The first statement is equivalent to <m>\neg j \rightarrow l \vee \neg r</m>, and the second is equivalent to <m>r \wedge \neg l \rightarrow j</m>. One way to see this is noting that the statements are contrapositives of one another, and any conditional statement is equivalent to it's contrapositive.
+            </p>
+
+            <p>
+              Alternatively, one can show that the two statements are truth functionally equivalent by constructing a truth table, which shows the truth values of the two statements agree in all circumstances.
+            </p>
+
+            <table>
+              <title>A truth table showing the equivalence between <m>\neg j \rightarrow l \vee \neg r</m> and <m>r \wedge \neg l \rightarrow j</m>.</title>
+              <tabular halign="center">
+
+                <row header="yes" bottom="minor" >
+                  <cell><m>j</m></cell>
+                  <cell><m>l</m></cell>
+                  <cell><m>r</m></cell>
+                  <cell><m>l \vee \neg r</m></cell>
+                  <cell><m>r \wedge \neg l</m></cell>
+                  <cell><m>\neg j \rightarrow l \vee \neg r</m></cell>
+                  <cell><m>r \wedge \neg l \rightarrow j</m></cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+              </tabular>
+            </table>
+          </li>
+
+          <li>
+            <p>
+              The first statement is equivalent to <m>j \rightarrow \neg l</m>, and the second is equivalent to <m>\neg j \rightarrow l</m>. Note that the second statement is the inverse of the other statement. It is rarely the case that a conditional statement is equivalent to it's inverse, and indeed these two statements are not equivalent. We can see this by noting that when <m>j</m> and <m>l</m> are both true, then the first statement is false, whereas the second statement is true.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The first statement is best expressed as <m>r \vee \neg l \rightarrow j</m>, and the second statement is best expressed as <m>j \rightarrow r \wedge \neg l</m>. The statements are <em>not</em> logically equivalent. If <m>j</m>, <m>l</m>, and <m>r</m> are all true, then the first statement is true but the second statement is false.
+            </p>
+          </li>
+
+        </ol>
+      </p>
+    </solution>
+
+      <!--
+
+      <task category="essential">
+        <statement>
+          <p>
+            <q>If Sally didn't get the job, she was late for her interview or didn't update her resume.</q>
+          </p>
+
+          <p>
+            <q>
+              If Sally updated her resume and didn't get the job, she was late for her interview.
+            </q>
+          </p>
+          </statement>
+
+          <solution>
+            <p>
+              The first statement is best expressed as <m>\neg j \rightarrow l \vee \neg r</m>, and the second is best expressed as <m>r \wedge \neg j \rightarrow l</m>. To see the two statements are logically equivalent, we will show the two statements are both false in exactly one scenario: when <m>j</m> is false, <m>l</m> is false, and <m>r</m> is true.
+
+              <ul>
+                <li>
+                  <p>
+                    The statement <m>\neg j \rightarrow l \vee \neg r</m> is false when <m>\neg j</m> is true and <m>l \vee \neg r</m> is false. This only happens when <m>j</m> is false, <m>l</m> is false, and <m>r</m> is true.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    The statement <m>r \wedge \neg j \rightarrow l</m> is false when <m>r \wedge \neg j</m> is true and <m>l</m> is false. This also only happens when <m>j</m> is false, <m>l</m> is false, and <m>r</m> is true.
+                  </p>
+                </li>
+              </ul>
+
+              Since <m>\neg j \rightarrow l \vee \neg r</m> and <m>r \wedge \neg j \rightarrow l</m> are both false in exactly the same circumstances, they are also both true in exactly the same circumstances, and thus truth functionally equivalent.
+            </p>
+
+            <p>
+              Alternatively, one can show that the two statements are truth functionally equivalent by constructing a truth table, which shows the truth values of the two statements agree in all circumstances.
+            </p>
+
+            <table>
+              <title>A truth table showing the equivalence between <m>\neg j \rightarrow l \vee \neg r</m> and <m>r \wedge \neg j \rightarrow l</m>.</title>
+              <tabular halign="center">
+
+                <row header="yes" bottom="minor" >
+                  <cell><m>j</m></cell>
+                  <cell><m>l</m></cell>
+                  <cell><m>r</m></cell>
+                  <cell><m>l \vee \neg r</m></cell>
+                  <cell><m>r \wedge \neg j</m></cell>
+                  <cell><m>\neg j \rightarrow l \vee \neg r</m></cell>
+                  <cell><m>r \wedge \neg j \rightarrow l</m></cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+              </tabular>
+            </table>
+
+            <p>
+              Note that, as expected from the reasoning above, the only row where both statements evaluate to false occur when <m>j</m> is false, <m>l</m> is false, and <m>r</m> is true.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <q>If Sally didn't get the job, she was late for her interview or didn't update her resume.</q>
+            </p>
+
+            <p>
+              <q>
+                If Sally updated her resume and didn't get the job, she was late for her interview.
+              </q>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The first statement is equivalent to <m>\neg j \rightarrow l \vee \neg r</m>, and the second is equivalent to <m>r \wedge \neg l \rightarrow j</m>. One way to see this is noting that the statements are contrapositives of one another, and any conditional statement is equivalent to it's contrapositive.
+            </p>
+
+            <p>
+              Alternatively, one can show that the two statements are truth functionally equivalent by constructing a truth table, which shows the truth values of the two statements agree in all circumstances.
+            </p>
+
+            <table>
+              <title>A truth table showing the equivalence between <m>\neg j \rightarrow l \vee \neg r</m> and <m>r \wedge \neg l \rightarrow j</m>.</title>
+              <tabular halign="center">
+
+                <row header="yes" bottom="minor" >
+                  <cell><m>j</m></cell>
+                  <cell><m>l</m></cell>
+                  <cell><m>r</m></cell>
+                  <cell><m>l \vee \neg r</m></cell>
+                  <cell><m>r \wedge \neg l</m></cell>
+                  <cell><m>\neg j \rightarrow l \vee \neg r</m></cell>
+                  <cell><m>r \wedge \neg l \rightarrow j</m></cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                </row>
+                <row>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>F</cell>
+                  <cell>T</cell>
+                  <cell>T</cell>
+                </row>
+              </tabular>
+            </table>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <q>
+                If Sally didn't get the job, she was late for her interview or didn't update her resume.
+              </q>
+            </p>
+
+            <p>
+              <q>
+                If Sally updated her resume and was not late for her interview, she got the job.
+              </q>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              The first statement is equivalent to <m>j \rightarrow \neg l</m>, and the second is equivalent to <m>\neg j \rightarrow l</m>. Note that the second statement is the inverse of the other statement. It is rarely the case that a conditional statement is equivalent to it's inverse, and indeed these two statements are not equivalent. We can see this by noting that when <m>j</m> and <m>l</m> are both true, then the first statement is false, whereas the second statement is true.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <q>
+                If Sally updated her resume or she was not late for her interview, then she got the job.
+              </q>
+            </p>
+
+            <p>
+              <q>
+                If Sally got the job, then she updated her resume and was not late for her interview.
+              </q>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The first statement is best expressed as <m>r \vee \neg l \rightarrow j</m>, and the second statement is best expressed as <m>j \rightarrow r \wedge \neg l</m>. The statements are <em>not</em> logically equivalent. If <m>j</m>, <m>l</m>, and <m>r</m> are all true, then the first statement is true but the second statement is false.
+            </p>
+          </solution>
+        </task> -->
+      </exercise>
+    </page>
+  </worksheet>
+</chapter>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- we first include a file which contains the docinfo element: -->
+  <xi:include href="./docinfo.ptx" />
+
+  <book xml:id="math-240-worksheets">
+    <title>Discussion Worksheets</title>
+
+    <!-- Include frontmatter -->
+    <xi:include href="./frontmatter.ptx" />
+
+    <!-- Include worksheets chapter -->
+      <xi:include href="worksheets/wkst-2025-spring-worksheet-1.ptx" />
+      <xi:include href="worksheets/wkst-2025-spring-worksheet-2.ptx" />
+      <xi:include href="worksheets/wkst-2025-spring-worksheet-3.ptx" />
+      <xi:include href="worksheets/wkst-2025-spring-worksheet-4.ptx" />
+      <xi:include href="worksheets/wkst-2025-spring-worksheet-5.ptx" />
+      <xi:include href="worksheets/wkst-2025-spring-worksheet-6.ptx" />
+      <xi:include href="worksheets/wkst-2025-spring-worksheet-7.ptx" />
+      <xi:include href="worksheets/wkst-2025-spring-worksheet-8.ptx" />
+      <xi:include href="worksheets/wkst-2025-spring-worksheet-9.ptx" />
+
+    <!-- Include backmatter -->
+    <xi:include href="./backmatter.ptx" />
+
+  </book>
+</pretext>

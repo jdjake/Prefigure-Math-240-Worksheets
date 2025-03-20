@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-2025-worksheet-8">
+  <title>Worksheet Eight</title>
+
+  <introduction>
+    <p>
+      The questions in this worksheet were given out in the eight week of the course, the week of March 10th-14th, 2025. They address questions about:
+
+      <ul>
+        <li>
+          Chapter 8: Induction and Recursion.
+        </li>
+      </ul>
+    </p>
+  </introduction>
+
+  <worksheet xml:id="wkst-2025-worksheet-8" margin="0.7in">
+    <title>Worksheet Eight</title>
+
+    <introduction>
+      <p>
+        These exercises address questions testing knowledge of induction. Each questions gives a statement. Prove that statement using methods of induction.
+      </p>
+    </introduction>
+
+    <page>
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            For every positive integer <m>n</m>,
+            <me>1^2 + 2^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}</me>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Let <m>P(n)</m> be the predicate that the identity
+            <me>\sum_{j = 1}^n j^2 = \frac{n(n+1)(2n+1)}{6} </me>
+            holds for a particular value of <m>n</m>. The problem asks us to prove <m>\forall n \geq 1 P(n)</m>, and we prove this statement by induction. Thus we must prove the <em>base case</em> of the induction, that <m>P(1)</m> is true, and also the <em>inductive case</em> of the induction, that <m>P(n)</m> implies <m>P(n+1)</m> for all integers <m>n \geq 1</m>.
+          </p>
+
+          <p>
+            Let's start with the base case. The statement <m>P(1)</m> says that the equation
+            <me> \sum_{j = 1}^1 j^2 = \frac{1(1 + 1)(2 \cdot 1 + 1)}{6} </me>
+            holds. The left hand side of this equation is equal to <m>1^2 = 1</m>. The right hand side is equal to
+            <me> \frac{1(2)(3)}{6} = 1 </me>.
+            Thus both sides of the equation are equal to <m>1</m>, verifying that <m>P(1)</m> is true.
+          </p>
+
+          <p>
+            Now we move onto the inductive case of the proof. For some integer <m>n \geq 1</m>, assume <m>P(n)</m> is true. Thus the equation
+            <me> \sum_{j = 1}^n j^2 = \frac{n(n+1)(2n + 1)}{6} </me>
+            is true. Our goal is to show that <m>P(n+1)</m> is true, i.e. that
+            <md>
+              <mrow> \sum_{j = 1}^{n+1} j^2 \amp= \frac{(n+1)((n+1) + 1)(2(n+1) + 1)}{6}
+            </mrow>
+            <mrow>
+            \amp= \frac{(n+1)(n+2)(2n + 3)}{6}
+          </mrow>
+        </md>.
+            By the induction hypothesis, we calculate that
+            <md>
+              <mrow>
+              \sum_{j = 1}^{n+1} j^2 \amp = \left( \sum_{j = 1}^n j^2 \right) + (n+1)^2
+            </mrow>
+            <mrow>
+            \amp = \frac{n(n+1)(2n+1)}{6} + (n+1)^2
+          </mrow>
+          <mrow>
+          \amp = \left( \frac{n+1}{6} \right) ( n(2n+1) + 6(n+1) )
+        </mrow>
+        <mrow>
+        \amp = \left( \frac{n+1}{6} \right) ( 2n^2 + 7n + 6 )
+      </mrow>
+      <mrow>
+      \amp = \left( \frac{n+1}{6} \right) (n+2)(2n + 3)
+    </mrow>
+    <mrow>
+    \amp = \frac{(n+1)(n+2)(2n+3)}{6}
+  </mrow>
+</md>.
+This calculation verifies that <m>P(n+1)</m> is true. Thus we have proved that <m>P(n)</m> implies <m>P(n+1)</m>.
+</p>
+
+<p>
+  Since we have verified both the base case and the inductive case of the induction, we have completed the proof by induction that <m>P(n)</m> is true for all <m>n \geq 1</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      For every positive integer <m>n</m>,
+      <me>1 + 3 + 5 + \cdots + (2n-1) = \sum_{j = 1}^n (2j - 1) = n^2</me>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Let <m>P(n)</m> be the predicate <m>\sum_{j = 1}^n (2j-1) = n^2</m>. We prove <m>P(n)</m> is true for all positive integers by induction.
+    </p>
+    <p>
+      For the base case, we must prove <m>P(1)</m> is true. When <m>n = 1</m>, the left hand side of the identity is equal to <m>(2\cdot1-1) = 1</m>. The right hand side is equal to <m>1^2 = 1</m>, and so the base case <m>P(1)</m> is true.
+    </p>
+    <p>
+      For the inductive case, assume <m>P(n)</m> is true. Our goal is to show that <m>P(n+1)</m> is true, i.e. that
+      <me> \sum_{j = 1}^{n+1} (2j-1) = (n+1)^2 </me>.
+      We calculate that
+      <md>
+        <mrow>
+        \sum_{j = 1}^{n+1} (2j-1) \amp = \left( \sum_{j = 1}^n (2j-1) \right) + 2(n+1) - 1
+      </mrow>
+      <mrow>
+      \amp = n^2 + 2(n+1) - 1
+    </mrow>
+    <mrow>
+    \amp = n^2 + 2n + 1
+  </mrow>
+  <mrow>
+  \amp = (n+1)^2
+</mrow>
+</md>.
+Thus <m>P(n+1)</m> is true. We have thus verified the inductive case of the proof.
+</p>
+<p>
+  Since we have accounted for both the base case and the inductive case of the inductive proof, by induction, <m>P(n)</m> is true for all <m>n \geq 1</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      If <m>n \in \Z^+</m>, then
+      <me>1 \cdot 2 + 2 \cdot 3 + 3 \cdot 4 + 4 \cdot 5 + \cdots + n(n+1) = \frac{n(n+1)(n+2)}{3}</me>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Let <m>P(n)</m> be the predicate that
+      <me>\sum_{j = 1}^n j(j+1) = \frac{n(n+1)(n+2)}{3}</me>.
+      We verify that <m>P(n)</m> is true for all positive integers by induction.
+    </p>
+    <p>
+      Notice that for <m>n = 1</m>,
+      <me>\sum_{j = 1}^1 j(j+1) = 1(1+1) = 2</me>,
+      and
+      <me>\frac{1(1+1)(1+2)}{3} = \frac{1 \cdot2 \cdot 3}{3} = 2</me>.
+      Thus the base claim <m>P(1)</m> is true.
+    </p>
+    <p>
+      Now suppose that <m>P(n)</m> is true. By the inductive hypothesis,
+      <md>
+        <mrow>\sum_{j = 1}^{n+1} j(j+1) \amp = \sum_{j = 1}^n j(j+1) + (n+1)(n+2)</mrow>
+        <mrow>\amp = \frac{n(n+1)(n+2)}{3} + (n+1)(n+2)</mrow>
+        <mrow>\amp = (n+1)(n+2) (n/3 + 1)</mrow>
+        <mrow>\amp = \frac{(n+1)(n+2)(n+3)}{3}</mrow>
+      </md>.
+      Thus <m>P(n+1)</m> is true.
+    </p>
+    <p>
+      By induction, we conclude that the required identity holds for all <m>n \geq 1</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      If <m>a \in \Z</m>, then <m>5 \divides 2^n a</m> implies <m>5 \divides a</m> for any <m>n \in \N</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Fix <m>a \in \Z</m>. Let <m>P(n)</m> be the predicate <q><m>5 \divides 2^n a \rightarrow 5 \divides a</m></q>. When <m>n = 0</m>, the predicate says that if <m>5 \divides a</m>, then <m>5 \divides a</m>, which holds trivially. Hence the base claim <m>P(0)</m> holds. Now assume <m>P(n)</m> is true for some <m>n</m>. We give a direct proof that <m>P(n+1)</m> is true. Assume that <m>5 \divides 2^{n+1} a</m>. Thus <m>2^{n+1} a = 5j</m> for some integer <m>j</m>. The left hand side is even, which implies the right hand side is even. Since <m>5</m> is odd, this is only possible if <m>j</m> is even. Thus we can write <m>j = 2j'</m> for some integer <m>j'</m>. Then we find that <m>2^{n+1} a = 2 \cdot 5 j'</m>. Dividing both sides of this equation by <m>2</m>, we conclude that <m>2^n a = 5j'</m>. Thus <m>5 \divides 2^n a</m>. By our inductive hypothesis, this implies that <m>5 \divides a</m>. We have thus proved that <m>P(n)</m> implies <m>P(n+1)</m>. By induction, we conclude the result holds for all <m>n \geq 0</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      If <m>n</m> is a non-negative integer, then <m>5 \divides n^5 - n</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Let <m>P(n)</m> be the predicate <m>5 \divides n^5 - n</m>. When <m>n = 0</m>, the statement reads that <m>5 \divides 0</m>, which is true, since <m>0 = 5 \cdot 0</m>. Thus <m>P(0)</m> is true. Now assume that <m>P(n)</m> is true. This means that <m>5 \divides n^5 - n</m>, so that we can write <m>n^5 - n = 5j</m> for some integer <m>j</m>. Proving <m>P(n+1)</m> requires proving that <m>5 \divides (n+1)^5 - (n+1)</m>. But
+      <md>
+        <mrow>
+        (n+1)^5 - (n+1) \amp = (n^5 + 5n^4 + 10n^3 + 10n^2 + 5n + 1) - (n+1)
+      </mrow>
+      <mrow>
+        \amp = (n^5 - n) + 5(n^4 + 2n^3 + 2n^2 + n)
+      </mrow>
+      <mrow>
+        \amp = 5j + 5(n^4 + 2n^3 + 2n^2 + n)
+      </mrow>
+      <mrow>
+        \amp = 5(j + n^4 + 2n^3 + 2n^2 + n)
+      </mrow>
+    </md>.
+    We have written <m>(n+1)^5 - (n+1)</m> explicitly as an integer multiple of <m>5</m>, and thus <m>5 \divides (n+1)^5 - (n+1)</m>, so that <m>P(n+1)</m> is true. By induction, we conclude that the statement we were required to prove is true for all <m>n \geq 0</m>.
+  </p>
+</solution>
+</exercise>
+</page>
+
+<page>
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        For any positive integer <m>n</m>, <m>6 \divides 7^n - 1</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Let <m>P(n)</m> be the predicate
+        <me>\sum_{j=1}^n j^2 = \frac{n(n+1)(2n+1)}{6}</me>.
+      </p>
+      <p>
+        For the base case, consider <m>n=1</m>. Notice that <m>\sum_{j=1}^1 j^2 = 1</m>, and
+        <me>\frac{1(1+1)(2(1)+1)}{6} = \frac{2\cdot 3}{6} = 1</me>.
+        So <m>P(1)</m> is true.
+      </p>
+      <p>
+        For some integer <m>k \geq 1</m>, assume that <m>P(k)</m> is true. That is, assume that for some <m>k\geq 1</m>,
+        <me>\sum_{j=1}^k j^2 = \frac{k(k+1)(2k+1)}{6}</me>.
+        Consider <m>P(k+1)</m>. Then, by the induction hypothesis,
+        <md>
+          <mrow> \sum_{j=1}^{k+1} j^2 \amp = \left(\sum_{j=1}^{k} j^2 \right)  + (k+1)^2 </mrow>
+          <mrow> \amp = \frac{k(k+1)(2k+1)}{6} + (k+1)^2 </mrow>
+          <mrow> \amp = \frac{(k+1)}{6} \left( k(2k+1) + 6(k+1) \right) </mrow>
+          <mrow> \amp = \frac{(k+1)}{6}  \left( 2k^2 + 7k + 6 \right) </mrow>
+          <mrow> \amp = \frac{(k+1)}{6} \left( (2k+3)(k+2) \right) </mrow>
+          <mrow> \amp = \frac{(k+1)(k+2)(2k+3)}{6} </mrow>
+          <mrow> \amp = \frac{(k+1)((k+1)+1) (2(k+1)+1)}{6}. </mrow>
+        </md>
+        Therefore, <m>P(k+1)</m> is true. Hence by induction, <m>P(n)</m> is true for all <m>n \geq 1</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        For any positive integer <m>n</m>, <m>3</m> divides <m>n^3 - 4n + 6</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Let <m>P(n)</m> be the predicate <m>3 \divides (n^3 - 4n + 6)</m>. When <m>n=1</m>, we have <m>1 - 4 + 6 = -3 + 6 = 3</m>, which <m>3</m> clearly divides. So, the base case <m>P(1)</m> is true. Suppose for some positive integer <m>k</m>, <m>P(k)</m> is true, which means <m>3 \divides (k^3 - 4k + 6)</m>. So, there exists an integer <m>j</m> so that <m>k^3 - 4k +6 = 3j</m>. Consider <m>P(k+1)</m>. By the inductive hypothesis, we have
+        <md>
+          <mrow> (k+1)^3 -4(k+1)+6 \amp = k^3 + 3k^2 + 3k + 1 - 4k - 4 + 6 </mrow>
+          <mrow> \amp = (k^3 - 4k + 6) + 3k^2 + 3k - 3 </mrow>
+          <mrow> \amp = 3j + 3k^2 + 3k - 3 </mrow>
+          <mrow> \amp = 3(j+k^2 + k - 1). </mrow>
+        </md>
+        Since <m>j,k \in \Z</m>, we see that <m>j+k^2+k-1 \in \Z</m> as well. Hence, <m>3 \divides ((k+1)-4(k+1)+6)</m>, and we conclude that <m>P(k+1)</m> is true. Therefore, by induction, the theorem holds for all positive integers <m>n</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        For each <m>n \in \Z^+</m>, the inequality <m>2^n \leq 2^{n+1} - 2^{n-1} - 1</m> holds.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Let <m>P(n)</m> be the predicate <m>2^n \leq 2^{n+1}-2^{n-1} -1</m>. If <m>n=1</m>, then the left hand side of the inequality is <m>2^1 = 2</m>, and the right hand side is <m>2^2 - 2^0 - 1 = 4 - 1 - 1 = 2</m>, and since <m>2 \leq 2</m>, the base claim <m>P(1)</m> holds.
+      </p>
+
+      <p>
+        Fix <m>k \in \Z^+</m>, and suppose <m>P(k)</m> holds. Thus
+        <me>2^k \leq 2{k+1}-2^{k-1} - 1</me>. Consider <m>P(k+1)</m>. By our inductive hypothesis, we have
+        <md>
+          <mrow> 2^{k+1} \amp = 2^k \cdot 2 </mrow>
+          <mrow> \amp \leq (2^{k+1} - 2^{k-1} -1) \cdot 2 </mrow>
+          <mrow> \amp = 2^{k+2} - 2^{k} - 2 </mrow>
+          <mrow> \amp \leq 2^{k+2} - 2^k - 1 </mrow>
+          <mrow> \amp = 2^{(k+1)+1} - 2^{(k+1)-1} - 1. </mrow> 
+        </md>
+        Hence, <m>P(k+1)</m> is true. By induction, the inequality holds for each <m>n \in \Z^+</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        <em>Bernoulli's Inequality</em>: If <m>n \in \Z^+</m>, then <m>(1 + x)^n \geq 1 + nx</m> for all <m>x \in \R</m> with <m>x > 1</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Fix <m>x > -1</m>. Let <m>P(n)</m> be the predicate <m>(1+x)^n \ge 1+nx</m>. When <m>n=1</m>,
+        <me>(1+x)^1 = 1+x \ge 1+1\cdot x</me>,
+        so the base case <m>P(1)</m> clearly holds.
+      </p>
+
+      <p>
+        Now fix <m>k \in \Z^+</m> and <m>x > -1</m>, and suppose <m>P(k)</m> holds, i.e. that
+        <me>(1+x)^k \ge 1+kx</me>.
+        Consider <m>P(k+1)</m>. By the inductive hypothesis, since <m>1+x  > 0</m> and <m>1+kx \ge 0</m> for <m>k \in \Z^+</m>, we find that
+        <md>
+          <mrow> (1+x)^{k+1} \amp = (1+x)(1+x)^k </mrow>
+          <mrow> \amp \ge (1+x) (1+kx) </mrow>
+          <mrow> \amp = 1+kx + x + kx^2 </mrow>
+          <mrow> \amp = 1+(k+1)x + kx^2 </mrow>
+          <mrow> \amp \ge 1 + (k+1)x, </mrow>
+        </md>
+        where the last quality follows because <m>kx^2 \ge 0</m>. Thus <m>P(k)</m> implies <m>P(k+1)</m>. By induction, the inequality holds for all <m>n \in \Z^+</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        Define the sequence <m>\{ b_n \}_{n = 0}^\infty</m> by <m>b_0 = 1</m>, and <m>b_n = 2b_{n-1} + 1</m> for <m>n \geq 1</m>. Then for all <m>n \geq 0</m>, <m>b_n = 2^{n+1} - 1</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Let <m>P(n)</m> be the predicate <m>b_n = 2^{n+1}-1</m>. When <m>n=0</m>, we have that <m>2^{0+1}-1 = 2-1 = 1</m>, which agrees with <m>b_0=1</m>. So, the base case <m>P(0)</m> is true. Suppose there exists <m>k \ge 0</m> such that <m>P(k)</m> is true. This means that <m>b_k = 2^{k+1}-1</m>. For <m>P(k+1)</m>, we use the recursion and inductive hypothesis:
+        <md>
+          <mrow> b_{k+1} \amp = 2 b_k + 1 </mrow>
+          <mrow> \amp = 2 (2^{k+1} - 1) + 1 </mrow>
+          <mrow> \amp = 2^{k+1+1} - 2 + 1 </mrow>
+          <mrow> \amp = 2^{k+1+1} - 1, </mrow>
+        </md>
+        which implies <m>P(k+1)</m> is true. Thus, by induction, we conclude that the result holds for each <m>n \ge 0</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        If <m>n \in Z^+</m>, then
+        <me>\sum_{j = 1}^{2^n} \frac{1}{j} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{2^n} \geq 1 + n/2</me>.
+        Recalling the theory of infinite series, which you have likely learned from a calculus class, this statement could be a key part proving that the harmonic series diverges, i.e. that <m>\sum_{j = 1}^\infty 1/j = \infty</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Let <m>P(n)</m> be the predicate that <m>\sum_{j=1}^{2^n} \frac{1}{j} \ge 1 + \frac{n}{2}</m>. When <m>n=1</m>, we verify that
+        <me>\sum_{j=1}^{2} = \frac{1}{j} = 1 + \frac{1}{2} \ge 1 + \frac{1}{2}</me>.
+        Thus <m>P(1)</m> is true. Hence, the base case <m>P(1)</m> holds. Now suppose that <m>P(k)</m> is true for some <m>k \in \Z^+</m>, so that
+        <me>\sum_{j=1}^{2^k} \frac{1}{j} = 1 + \frac{k}{2}</me>.
+        Consider <m>P(k+1)</m>. Note that by the inductive hypothesis,
+        <md>
+          <mrow> \sum_{j=1}^{2^{k+1}} \frac{1}{j}
+          \amp = \sum_{j=1}^{2^{k}} \frac{1}{j}  + \sum_{j=2^{k}+1}^{2^{k+1}} \frac{1}{j} </mrow>
+          <mrow> \amp \ge 1 + \frac{k}{2} + \sum_{j=2^{k}+1}^{2^{k+1}} \frac{1}{j}. \tag{<m>\dagger</m>} </mrow>
+        </md>
+        Before proceeding, notice that since <m>1/x</m> is decreasing for all positive <m>x</m>, then <m>1/j \ge 1/2^{k+1}</m> for all <m>j</m> in the interval <m>[2^k + 1,2^{k+1}]</m>. Since there are
+        <me>2^{k+1}-2^k - 1 + 1 = 2^k (2-1) = 2^k</me>
+        such choices for <m>j</m>, we find that
+        <me> \sum_{j=2^{k}+1}^{2^{k+1}} \frac{1}{j} \ge \frac{ 2^{k} }{2^{k+1}} = \frac{1}{2}. </me>
+        Substituting this estimate into the first calculation, we conclude that
+        <me> \sum_{j=1}^{2^{k+1}} \frac{1}{j}  \ge 1 + \frac{k}{2} + \frac{1}{2} = 1 + \frac{k+1}{2}, </me>
+        Thus <m>P(k)</m> implies <m>P(k+1)</m> for each <m>k \in \Z^+</m>. By induction, we conclude that the result is true for every <m>n \in \Z^+</m>.
+      </p>
+    </solution>
+  </exercise>
+</page>
+
+<page>
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        Recall the Fibonacci sequence <m>\{ F_n \}_{n = 0}^\infty</m>, defined by <m>F_0 = 0</m>, <m>F_1 = 1</m>, and <m>F_n = F_{n-1} + F_{n-2}</m> for <m>n \geq 2</m>. For every integer <m>n \geq 1</m>, <m>F_{n+1}^2 - F_{n+1} F_n - F_n^2 = (-1)^n</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Let <m>P(n)</m> be the predicate that
+        <me>F_{n+1}^2 - F_{n+1} F_n - F_n^2 = (-1)^n</me>.
+        By definition <m>F_0 = 0</m> and <m>F_1 = 1</m>. Thus when <m>n=1</m>,
+        <me>F_2 = F_1 + F_0 = 1 + 0 = 1</me>
+        and so
+        <me> F_2^2 - F_2F_1 - F_1^2 = 1^2 - 1 \cdot 1 - 1^2 = -1 = (-1)^1. </me>
+        Hence, the base case <m>P(1)</m> is true.
+      </p>
+      <p>
+        Now fix <m>k</m>, and suppose that <m>P(k)</m> is true, i.e. so that
+        <me>F_{k+1}^2 - F_{k+1} F_k - F_{k}^2 = (-1)^k</me>.
+        Consider <m>P(k+1)</m>. By our inductive hypothesis and the recurrence relation,
+        <md>
+          <mrow> F_{k+2}^2 - F_{k+2} F_{k+1} - F_{k+1}^2 \amp = (F_{k+1} + F_k)^2 - (F_{k+1} + F_k) F_{k+1} - F_{k+1}^2 </mrow>
+          <mrow> \amp = F_k^2 + 2F_k F_{k+1} - F_{k+1}^2 </mrow>
+          <mrow> \amp = - (F_{k+1}^2 - 2F_{k+1}F_k - F_k^2) </mrow>
+          <mrow> \amp = - (-1)^{k} </mrow>
+          <mrow> \amp = (-1)^{k+1} </mrow>
+        </md>.
+        Thus, <m>P(k+1)</m> is true. Therefore, by induction, the equation is true for every <m>n \ge 1</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        If <m>n \in \Z^+</m>, then <m>12 \divides n^4 - n^2</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Prove the result directly for <m>n \in \{ 1, \dots, 6 \}</m>, and then use strong induction to prove the statement for <m>n \geq 6</m>.
+      </p>
+    </hint>
+
+    <solution>
+      <p>
+        Let <m>P(n)</m> be the predicate that <m>12 \divides n^4 - n^2</m>. We verify that <m>P(1), \dots, P(6)</m> are all true, and then prove that for any <m>n \geq 1</m>, <m>P(n)</m> implies <m>P(n+6)</m>.
+      </p>
+
+      <p>
+        To verify <m>P(1), \dots, P(6)</m>, it suffices to verify that <m>n^4 - n^2</m> is divisible by <m>12</m> for all integers <m>1 \leq n \leq 6</m>. For <m>1 \leq n \leq 6</m>, we calculate that
+        <me>1^4 - 1^2 = 0 = 12 \cdot 0</me>,
+        <me>2^4 - 2^2 = 12 = 12 \cdot 1</me>,
+        <me>3^4 - 3^2 = 72 = 12 \cdot 6</me>,
+        <me>4^4 - 4^2 = 240 = 12 \cdot 20</me>,
+        <me>5^4 - 5^2 = 600 = 12 \cdot 50</me>,
+        and
+        <me>6^4 - 6^2 = 1260 = 12 \cdot 105</me>.
+        Thus we have directly verified that each integer is divisible by <m>12</m>.
+      </p>
+
+      <p>
+        Now we prove the inductive case. Consider <m>n \geq 7</m>, and suppose <m>P(n), \dots, P(n+5)</m> is true. Then
+        <md>
+          <mrow> (n+6)^4 - (n+6)^2 \amp = n^4 + 24n^3 + 215n^2 + 852n + 1260 </mrow>
+          <mrow> \amp = n^4 - n^2 + 12(2n^3 + 18n^2 + 71n + 105 ) </mrow>
+        </md>.
+        By induction, <m>n^4 - n^2</m> is divisible by <m>12</m>. Evidently, <m>12(2n^3 + 18n^2 + 71n + 105)</m> is divisible by <m>12</m>. Thus <m>(n+6)^4 - (n+6)^2</m>, as the sum of two numbers divisible by <m>12</m>, is also divisible by <m>12</m>. Thus <m>P(n)</m> is true.
+      </p>
+
+      <p>
+        Having verified the base case and the inductive case, we have completed the inductive proof.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        Suppose <m>A_1, \dots, A_n</m> are subsets of some universal set <m>U</m>, and <m>n \geq 2</m>. Then a generalization of De Morgan's Law for the intersection and union of sets, that
+        <me>
+        \overline{A_1 \cap \cdots \cap A_n} = \overline{A}_1 \cup \cdots \cup \overline{A}_n
+      </me>,
+      and that
+      <me>
+      \overline{A_1 \cup \cdots \cup A_n} = \overline{A}_1 \cap \cdots \cap \overline{A}_n
+    </me>.
+  </p>
+</statement>
+
+<solution>
+  <p>
+    Let us prove the first equation. The second equation is similar. Fix <m>A_1,\dots,A_n</m>. Let <m>P(n)</m> be the predicate that
+    <me>\overline{A_1 \cap \cdots \cap A_n} = \overline{A}_1 \cup \cdots \cup \overline{A}_n</me>.
+    The predicate <m>P(1)</m> reads that <m>\overline{A}_1 = \overline{A}_1</m>, which is evidently true. Now assume <m>P(n-1)</m> holds. Applying De Morgan's Law for two sets, and then using <m>P(n-1)</m> we find that
+    <md>
+      <mrow>
+      \overline{A_1 \cap \cdots \cap A_n} \amp = \overline{(A_1 \cap \cdots \cap A_{n-1}) \cap A_n}
+    </mrow>
+    <mrow>
+    \amp = \overline{A_1 \cap \cdots \cap A_{n-1}} \cup \overline{A}_n
+  </mrow>
+  <mrow>
+  \amp = (\overline{A}_1 \cup \cdots \cup \overline{A}_{n-1}) \cup \overline{A}_n
+  \amp = \overline{A}_1 \cup \cdots \cup \overline{A}_{n-1} \cup \overline{A}_n
+</mrow>
+</md>.
+Thus <m>P(n)</m> holds.
+</p>
+
+<p>
+  The second statement is proved in an analogous method, applying the version of De Morgan's Law given by <m>\overline{X \cup Y} = \overline{X} \cap \overline{Y}</m> at each step rather than the version <m>\overline{X \cap Y} = \overline{X} \cup \overline{Y}</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Define the sequence <m>\{ a_n \}_{n = 1}^\infty</m> by setting <m>a_1 = a_2 = a_3 = 1</m>, and then defining <m>a_n = a_{n-1} + a_{n-2} + a_{n-3}</m> for <m>n \geq 4</m>. Then for all <m>n \geq 1</m>, <m>a_n \lt 2^n</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Let <m>P(n)</m> be the predicate that the inequality <m>a_n \lt 2^n</m> holds. We verify that <m>P(1)</m>, <m>P(2)</m>, and <m>P(3)</m> are all true, and also that for <m>n \geq 4</m>, <m>P(n-3)</m>, <m>P(n-2)</m>, and <m>P(n-1)</m> imply <m>P(n)</m>.
+    </p>
+
+    <p>
+      The base case, proving that <m>P(1)</m>, <m>P(2)</m>, and <m>P(3)</m> are all true, is quite simple. Indeed, it suffices to verify that the inequalities <m>1 \lt 2</m>, <m>1 \lt 4</m>, and <m>1 \lt 8</m> all hold, and we see that such inequalities hold by inspection.
+    </p>
+
+    <p>
+      Now we verify the inductive case. Suppose that <m>P(n-3)</m>, <m>P(n-2)</m>, and <m>P(n-1)</m> all hold. Thus <m>a_{n-3} \lt 2^{n-3}</m>, <m>a_{n-2} \lt 2^{n-2}</m>, and <m>a_{n-1} \lt 2^{n-1}</m>. Using these inequalities, we check that
+      <md>
+        <mrow>
+        a_n \amp = a_{n-1} + a_{n-2} + a_{n-3}
+      </mrow>
+      <mrow>
+      \amp \lt 2^{n-1} + 2^{n-2} + 2^{n-3}
+    </mrow>
+    <mrow>
+    \amp = 2^{n-3} ( 4 + 2 + 1 )
+  </mrow>
+  <mrow>
+  \amp = 2^{n-3} \cdot 7
+</mrow>
+<mrow>
+\amp \lt 2^{n-3} \cdot 8
+</mrow>
+<mrow>
+\amp = 2^n
+</mrow>
+</md>.
+</p>
+</solution>
+</exercise>
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      For all <m>n \geq 0</m>, the Fibonacci sequence <m>\{ F_n \}_{n = 0}^\infty</m> satisfies the identity
+      <me>F_n = \frac{1}{\sqrt{5}} \left[ \left( \frac{1 + \sqrt{5}}{2} \right)^n - \left( \frac{1 - \sqrt{5}}{2} \right)^n \right]</me>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      We use strong induction to prove this statement. Let <m>P(n)</m> be the predicate, which states that the above identity holds for a given <m>n</m>. We will verify <m>P(0)</m> is true, <m>P(1)</m> is true, and for all <m>n \geq 2</m>, <m>P(n-2)</m> and <m>P(n-1)</m> imply that <m>P(n)</m> is true. For a strong induction, one may assume that <m>P(n)</m> follows from the assumption that <m>P(i)</m> is true for all <m>i \lt n</m>, so such an implication suffices to prove the claim.
+    </p>
+
+    <p>
+      To verify <m>P(0)</m> and <m>P(1)</m> are both true, it suffices to verify the equation is true directly when <m>n = 0</m> and when <m>n = 1</m>. For <m>n = 0</m>, the left hand side of the equation is <m>F_0 = 0</m>, whereas the right side of the equation is
+      <me> \frac{1}{\sqrt{5}} \left( \frac{1 + \sqrt{5}}{2} \right)^0 - \left( \frac{1 - \sqrt{5}}{2} \right)^0 = \frac{1 - 1}{\sqrt{5}} = 0 </me>.
+      When <m>n = 1</m>, the left hand side of the equation is <m>F_1 = 1</m>, whereas the right hand side of the equation is
+      <md>
+        <mrow>
+        \frac{1}{\sqrt{5}} \left( \frac{1 + \sqrt{5}}{2} \right)^1 - \left( \frac{1 - \sqrt{5}}{2} \right)^1 \amp= \frac{1}{\sqrt{5}} \left( 1/2 + \sqrt{5}/2 - 1/2 - \sqrt{5}/2 \right)
+      </mrow>
+      <mrow>
+      \amp= \frac{\sqrt{5}}{\sqrt{5}} = 1
+    </mrow>
+  </md>.
+  Thus we see that <m>P(0)</m> and <m>P(1)</m> is true.
+</p>
+
+<p>
+  Now we verify that for <m>n \geq 2</m>, <m>P(n-2)</m> and <m>P(n-1)</m> imply <m>P(n)</m>. To verify <m>P(n)</m>, we use the recursive formula for <m>F_n</m> to write <m>F_n = F_{n-1} + F_{n-2}</m>, which allows us to use <m>P(n-1)</m> and <m>P(n-2)</m>. Indeed, we calculate that
+  <md>
+    <mrow>
+    F_n \amp = F_{n-1} + F_{n-2}
+  </mrow>
+  <mrow>
+  \amp = \frac{1}{\sqrt{5}} \left[ \left( \frac{1 + \sqrt{5}}{2} \right)^{n-2} - \left( \frac{1 - \sqrt{5}}{2} \right)^{n-2} \right]
+</mrow>
+<mrow>
+\amp \quad + \frac{1}{\sqrt{5}} \left[ \left( \frac{1 + \sqrt{5}}{2} \right)^{n-1} - \left( \frac{1 - \sqrt{5}}{2} \right)^{n-1} \right]
+</mrow>
+<mrow>
+\amp = \frac{1}{\sqrt{5}} \left[  \left( \frac{1 + \sqrt{5}}{2} \right)^{n-2} + \left( \frac{1 + \sqrt{5}}{2} \right)^{n-1} \right]
+</mrow>
+<mrow>
+\amp \quad - \frac{1}{\sqrt{5}} \left[ \left( \frac{1 - \sqrt{5}}{2} \right)^{n-2} + \left( \frac{1 - \sqrt{5}}{2} \right)^{n-1} \right]
+</mrow>
+</md>.
+We note that
+<me> \left( \frac{1 + \sqrt{5}}{2} \right)^2 = \frac{1 + 2 \sqrt{5} + 5}{4} = \frac{3 + \sqrt{5}}{2} </me>.
+Factoring, we thus see that
+<md>
+  <mrow>
+  \left( \frac{1 + \sqrt{5}}{2} \right)^{n-2} + \left( \frac{1 + \sqrt{5}}{2} \right)^{n-1} \amp = \left( \frac{1 + \sqrt{5}}{2} \right)^{n-2} \left( 1 + \frac{1 + \sqrt{5}}{2} \right)
+</mrow>
+<mrow>
+\amp = \left( \frac{1 + \sqrt{5}}{2} \right)^{n-2} \left( \frac{3 + \sqrt{5}}{2} \right)
+</mrow>
+<mrow>
+\amp = \left( \frac{1 + \sqrt{5}}{2} \right)^{n-2} \left( \frac{1 + \sqrt{5}}{2} \right)^2
+</mrow>
+<mrow>
+\amp = \left( \frac{1 + \sqrt{5}}{2} \right)^n
+</mrow>
+</md>.
+Note also that
+<me> \left( \frac{1 - \sqrt{5}}{2} \right)^2 = \frac{1 - 2 \sqrt{5} + 5}{4} = \frac{3 - \sqrt{5}}{2} </me>.
+Factoring, we also see that
+<md>
+  <mrow>
+  \left( \frac{1 - \sqrt{5}}{2} \right)^{n-2} + \left( \frac{1 - \sqrt{5}}{2} \right)^{n-1} \amp = \left( \frac{1 - \sqrt{5}}{2} \right)^{n-2} ( 1 + \frac{1 - \sqrt{5}}{2} )
+</mrow>
+<mrow>
+\amp = \left( \frac{1 - \sqrt{5}}{2} \right)^{n-2} \left( \frac{3 - \sqrt{5}}{2} \right)
+</mrow>
+<mrow>
+\amp = \left( \frac{1 - \sqrt{5}}{2} \right)^{n-2} \left( \frac{1 - \sqrt{5}}{2} \right)^2
+</mrow>
+<mrow>
+\amp = \left( \frac{1 - \sqrt{5}}{2} \right)^n
+</mrow>
+</md>.
+Plugging these two calculations into the first calculation, we thus see that
+<md>
+  <mrow>
+  F_n \amp = \frac{1}{\sqrt{5}} \left( \frac{1 + \sqrt{5}}{2} \right)^n + \frac{1}{\sqrt{5}} \left( \frac{1 - \sqrt{5}}{2} \right)^n
+</mrow>
+<mrow>
+\amp = \frac{1}{\sqrt{5}} \left[ \left( \frac{1 + \sqrt{5}}{2} \right)^n + \left( \frac{1 - \sqrt{5}}{2} \right)^n \right]
+</mrow>
+</md>,
+which completes the proof of the inductive claim.
+</p>
+</solution>
+</exercise>
+</page>
+</worksheet>
+</chapter>

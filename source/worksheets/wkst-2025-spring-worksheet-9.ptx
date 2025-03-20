@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-2025-worksheet-9">
+  <title>Worksheet Nine</title>
+
+  <introduction>
+    <p>
+      The questions in this worksheet were given out in the ninth week of the course, the week of March 17th-21st, 2025. They address questions about:
+
+      <ul>
+        <li>
+          Section 8.5: More inductive proofs.
+        </li>
+
+        <li>
+          Section 8.6: Strong induction and well-ordering.
+        </li>
+
+        <li>
+          Section 8.7: Loop invariants.
+        </li>
+
+        <li>
+          Section 8.8: Recursive definition.
+        </li>
+
+        <li>
+          Section 8.9: Structural induction.
+        </li>
+
+        <li>
+          Section 8.10: Recursive algorithms.
+        </li>
+
+        <li>
+          Section 8.11: Inductive and recursive algorithms.
+        </li>
+      </ul>
+    </p>
+  </introduction>
+
+  <worksheet xml:id="wkst-2025-worksheet-9" margin="0.7in">
+    <title>Worksheet Nine</title>
+
+    <introduction>
+      <p>
+        The questions in this worksheet were given out in the ninth week of the course, the week of March 17th-21st, 2025. They address questions about induction, strong induction, structural induction, recursive definitions, and proofs of algorithmic correctness, both for recursive algorithms and for algorithms involving loops.
+      </p>
+    </introduction>
+
+    <page>
+      <exercise>
+        <introduction>
+          <p>
+            Suppose a grocery store sells soda cans in packs of <m>6</m> and <m>8</m>.
+          </p>
+        </introduction>
+
+        <task>
+          <statement>
+            <p>
+              Prove that if <m>n</m> is odd or if <m>n\in\{2,4,10\}</m> it is not possible to buy exactly <m>n</m> many soda cans.
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              Suppose we buy <m>k</m> six-packs of soda cans, and <m>l</m> eight-packs of soda cans, to buy a total of <m>n</m> soda cans. Then <m>n = 6k + 8l</m>.  We will prove that <m>n</m> must be even, and <m>n \not \in \{ 2, 4, 10 \}</m>, which proves the contrapositive of the required result.
+            </p>
+
+            <p>
+              Since <m>n = 2(3k + 4l)</m>, and <m>3k + 4l</m> is an integer, <m>n</m> must be even.
+            </p>
+
+            <p>
+              We prove that <m>n \not \in \{ 2,4, 10 \}</m> by cases, depending on whether <m>k \geq 2</m> or <m>l \geq 2</m>, or whether <m>k \leq 1</m> and <m>l \leq 1</m>. If <m>k \geq 2</m> or <m>l \geq 2</m>, then
+              <me>6k + 8l \geq 6 \max(k,l) \geq 12</me>,
+              so <m>n \not \in \{ 2, 4, 10 \}</m>. On the other hand, if <m>k \leq 1</m> and <m>l \leq 1</m>, then
+              <me>(k,l) \in \{ (0,0), (0,1), (1,0), (1,1) \}</me>,
+              and in each of these four cases, one can verify that <m>6k + 8l</m> does not equal either <m>2</m>, <m>4</m>, or <m>10</m>. Thus <m>n \not \in \{ 2, 4, 10 \}</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              Prove that for any even number <m>n \geq 12</m> it is possible to buy exactly <m>n</m> many cans.
+            </p>
+          </statement>
+
+          <hint>
+            <p>
+              Treat <m>n \in \{ 12,14, 16 \}</m> separately from the case <m>n > 16</m>.
+            </p>
+          </hint>
+
+          <solution>
+            <p>
+              Let <m>P(n)</m> be the statement <q>If <m>n</m> is even, then is possible to buy exactly <m>n</m> many cans</q>. Since <m>12 = 6 + 6</m>, <m>14 = 6 + 8</m>, and <m>16 = 8 + 8</m>, we know that <m>P(12)</m>, <m>P(14)</m>, and <m>P(16)</m> are all true. To show <m>P(n)</m> is true for all <m>n \geq 12</m>, we employ strong induction. The base case of the argument, proving that <m>P(12)</m> is true, has already been established, as have the cases <m>P(14)</m> and <m>P(16)</m>and so it suffices to establish the inductive case for <m>n \gt 16</m>.
+            </p>
+
+            <p>
+              Suppose that <m>n \gt 16</m> and that <m>P(k)</m> is true for all <m>12 \leq k \lt n</m>. If <m>n</m> is odd, then <m>P(n)</m> is vacously true. If <m>n</m> is even and <m>n \geq 18</m>, then by assumption, <m>P(n-6)</m> is true, and since <m>n - 6</m> is even, it thus follows that we can write <m>n - 6 = 6k + 8l</m> for some natural numbers <m>k</m> and <m>l</m>. But then <m>n = 6(k+1) + 8l</m>, i.e. to buy <m>n</m> cans, we first buy <m>n - 6</m> cans in some manner, and then buy an additional six pack of soda.
+            </p>
+
+            <p>
+              By strong induction, <m>P(n)</m> is true for all <m>n \geq 12</m>. That is, for any even number <m>n</m> with <m>n\geq 12</m> it is possible to buy exactly <m>n</m> many cans of soda.
+            </p>
+          </solution>
+        </task>
+      </exercise>
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Consider the function <m>g:\N \to \R</m> recursively defined by the following rules:
+                  <dl>
+        <li>
+          <title>Basis Rule</title>
+
+          <p>
+            <m>g(0) = 2</m>
+          </p>
+        </li>
+
+        <li>
+          <title>Recursive Rule</title>
+
+          <p>
+           For <m>n \geq 1</m>, <m>g(n) = g(n-1)^2 - 1</m>.
+         </p>
+       </li>
+     </dl>
+     Compute <m>g(3)</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            By definition, <m>g(0) = 2</m>. We then calculate that
+            <me>
+            g(1)=g(0)^2-1=2^2-1=4-1=3
+          </me>,
+          that
+          <me>
+          g(2)=g(1)^2-1=3^2-1=9-1=8,
+        </me>
+        and finally, that
+        <me>
+        g(3)=g(2)^2-1=8^2-1=64-1=63
+      </me>.
+    </p>
+  </solution>
+</exercise>
+<exercise>
+  <introduction>
+    <p>
+      Consider the set <m>S</m>, the subset of the set <m>\R^\gt</m> of positive real numbers, recursively defined by the following rules:
+      <dl>
+        <li>
+          <title>Basis Rule</title>
+
+          <p>
+            <m>1 \in S</m>
+          </p>
+        </li>
+
+        <li>
+          <title>Recursive Rule</title>
+
+          <p>
+           If <m>x,y\in S</m>, then <m>x+y\in S</m> and <m>\frac{1}{x}\in S</m>.
+         </p>
+       </li>
+     </dl>
+   </p>
+ </introduction>
+
+ <task>
+  <statement>
+    <p>
+      Prove that every element <m>x\in S</m> is a positive rational number.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      We proceed by a structural induction. First we prove the base case of the induction: The basis element <m>1\in S</m> is a rational number, because <m>1=1/1</m> and <m>1\in\Z</m>.
+    </p>
+
+    <p>
+      For the inductive step, suppose that <m>x,y \in S</m> and that <m>x</m> and <m>y</m> are both positive rational numbers. Then, we can write <m>x=a/b</m> and <m>y=c/d</m> for natural numbers <m>a,b,c,d</m> with <m>b,d\not=0</m> (and also with <m>a,c\not=0</m> since <m>x</m> and <m>y</m> are positive). But then
+      <me>x+y=\frac{ad+bc}{bd}</me> is a rational number since the numerator and denominator are both positive integers. Similarily,
+      <me>1/x = b/a</me>
+      is a rational number. This completes the inductive step, so by structural induction, all elements of <m>S</m> are positive rational numbers.
+    </p>
+  </solution>
+</task>
+
+<task>
+  <statement>
+    <p>
+      Prove that for any <m>x\in S</m> and for positive integer <m>n</m> we have <m>n\cdot x\in S</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Given <m>x\in S</m>, define, for each <m>n \ngeq 1</m>, the statement
+      <me>P(n): n \cdot x \in S </me>.
+      We prove <m>P(n)</m> is true for all <m>n \geq 1</m> by induction on the integers. The base case, proving that <m>P(1)</m> is true, follows because <m>1 \cdot x</m> is equal to <m>x</m>, which is in <m>S</m> by assumption.
+    </p>
+
+    <p>
+      For the inductive step, suppose that <m>P(n-1)</m> is true for some <m>n>1</m>. Then <m>(n-1)\cdot x\in S</m>. But we also know that <m>x\in S</m>. So, by the first recursive rule that defines the set <m>S</m> it follows that <m>(n-1)x+x\in S</m>. But <m>(n-1)\cdot x+x=n\cdot x</m>, and so <m>n\cdot x\in S</m>. Thus <m>P(n-1)</m> implies <m>P(n)</m>, and so by induction, <m>P(n)</m> is true for all <m>n \geq 1</m>.
+    </p>
+  </solution>
+</task>
+
+<task>
+  <statement>
+    <p>
+      (Challenge Problem) Prove that <m>S</m> is exactly equal to the set of positive rational numbers.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      If we apply the previous problem with <m>x = 1</m>, we conclude that <m>n \in S</m> for all positive integers <m>n</m>. Applying the second recursive rule that defines the set <m>S</m>, it follows that <m>1/n \in S</m> for any positive integer <m>n</m>. Finally, applying the previous problem again with <m>x = 1/n</m>, it follows that <m>m \cdot x = m/n</m> is in <m>S</m> for all positive integers <m>m</m>. We thus conclude that every positive integer is an element of <m>S</m>, that is, the set of all positive rational numbers is a subset of <m>S</m>. But the first part of the problem proved that <m>S</m> is a subset of the positive rational numbers. Since both sets are subsets of one another, we conclude the two sets are equal.
+    </p>
+  </solution>
+</task>
+</exercise>
+</page>
+
+<page>
+<exercise  workspace="0.3in">
+  <statement>
+    <p>
+      Let <m>A</m> be a propoopsition, and consider the set <m>S</m> of all propositions, recursively define by the following recursive rules:
+            <dl>
+        <li>
+          <title>Basis Rule</title>
+
+          <p>
+            <m>A \in S</m>
+          </p>
+        </li>
+
+        <li>
+          <title>Recursive Rule</title>
+
+          <p>
+           If <m>P,Q \in S</m>, then <m>P \wedge Q \in S</m>, <m>P \vee Q \in S</m>, and <m>P \rightarrow Q \in S</m>.
+         </p>
+       </li>
+     </dl>
+     Prove that for any <m>P\in S</m>, if <m>A</m> is true then <m>P</m> is true. <em>It follows that no element of <m>S</m> is logically equivalent to <m>\neg A</m></em>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      We prove this result by structural induction. The base case of the argument must argue that if <m>A</m> is true, then <m>A</m> is true. But this follows because the proposition <m>A \rightarrow A</m> is a <em>tautology</em>.
+    </p>
+
+    <p>
+      For the inductive step, suppose that <m>P,Q\in S</m> and that whenever <m>A</m> is true, <m>P</m> is true and also <m>Q</m> is true, <m>Q</m> is true. We must prove that if <m>A</m> is true, then <m>P \wedge Q</m>, <m>P \vee Q</m>, and <m>P \rightarrow Q</m> are true. But if <m>A</m> is true, then <m>P</m> and <m>Q</m> are both true, and so we can compute the truth values of the compound statements, that
+      <me>P \wedge Q = \top \wedge \top = \top</me>,
+      that
+      <me>P \vee Q = \top \vee \top = \top</me>,
+      and that
+      <me>P \rightarrow Q = \top \rightarrow \top = \top</me>.
+      All three compound propositions are true, which completes the proof of the inductive case of the argument. Thus by strong induction it follows that the claim is true for all elements of <m>S</m>, as desired.
+    </p>
+  </solution>
+</exercise>
+
+<exercise>
+  <introduction>
+    <p>
+      Consider the following (admittedly inefficient) recursive algorithm for computing the sum of two natural numbers:
+    </p>
+    <algorithm>
+      <statement>
+        <p>
+          <m>\textbf{RecSum}(n,m)</m> where <m>n,m \in \N</m>
+                <!--
+                <dl>
+                  <li>
+                    <title>Step 1:</title>
+                    <p>
+                      If <m>n = 0</m>, Return 0.
+                    </p>
+                  </li>
+                </dl>
+                <dl>
+                  <li>
+                    <title>Step 2:</title>
+                    <p>
+                      Else Return <m>(n\ \text{mod}\ 2) + \textbf{mystic}(\lfloor n/2 \rfloor)</m>.
+                    </p>
+                  </li>
+                </dl>
+              -->
+            </p>
+
+            <poem>
+              <stanza>
+                <line indent="1">
+                  If <m>m = 0</m>, return <m>n</m>.
+                </line>
+
+                <line indent="1">
+                  Else return <m>\textbf{RecSum}(n,m-1) + 1</m>.
+                </line>
+              </stanza>
+            </poem>
+          </statement>
+        </algorithm>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            Prove that this algorithm is correct.
+          </p>
+        </statement>
+      <solution>
+        <p>
+          We first prove partial correctness: assuming the algorithm always terminates, we will prove by induction that for any <m>m \in \N</m>, <m>\textbf{RecSum}(n,m) = n + m</m>. The base case is <m>m=0</m>. When this is true, the algorithm immediately returns <m>n</m>, which is correct since <m>n=n+0=n+m</m>.
+        </p>
+
+        <p>
+          Now, for the recursive case. Suppose that <m>m \geq 1</m>, and that <m>\textbf{RecSum}(n,m-1) = n + (m-1)</m>. Since <m>m \neq 0</m>, <m>\textbf{RecSum}</m> is recursively defined so that <me>\textbf{RecSum}(n,m) = \textbf{RecSum}(n,m-1) + 1</me>. But using our assumption, we calculate that
+          <me>\textbf{RecSum}(n,m) = \textbf{RecSum}(n,m-1) + 1 = n + (m-1) + 1 = n + m</me>.
+          Thus we have shown the algorithm correctly outputs <m>n + m</m> as required. So, we have proved the partial correctness of the algorithm.
+        </p>
+
+        <p>
+          To complete the proof of correctness, we must prove the algorithm always terminates. Fix <m>n \in \N</m>. We show by induction on <m>m</m> that on input <m>(n,m)</m>, the algorithm terminates. In the base case, when <m>m = 0</m>, the algorithm immediately terminates on the first line of input.
+        </p>
+
+        <p>
+          For the inductive step, assume that the algorithm terminates on an input <m>(n,m)</m>. Then, on an input <m>(n,m+1)</m>, the algorithm makes a recursive to itself, with intpu <m>(n,m)</m>. By the inductive hypothesis, the algorithm terminates on this input. The remaining steps of the algorithm all require a finite number of operations, so the algorithm terminates on <m>(n,m+1)</m>. By induction on the second input <m>m</m>, we thus conclude that the algorithm terminates on all valid inputs, which completes the proof of the correctness of the algorithm.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          What would go wrong in the previous algorithm if we had the same code but our inputs were arbitrary <em>integers</em> <m>n</m> and <m>m</m>? (As an added challenge, see if you can write your own similar recursive code that will actually work)
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          On an input <m>m</m> which is negative, the algorithm would never terminate: <m>\textbf{RecSum}(n,m)</m> would recursively call <m>\textbf{RecSum}(n,m-1)</m>, which would try to call <m>\textbf{RecSum}(n,m-2)</m> and so on. Since <m>m - k</m> is never equal to zero for any <m>k \geq 0</m>, the algorithm will never terminate.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          (Challenge Problem) Write a recursive algorithm that correctly computes the sum of two arbitrary integers, and prove that this algorithm is correct.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Consider the following algorithm:
+        </p>
+    <algorithm>
+      <statement>
+        <p>
+          <m>\textbf{RecSum}(n,m)</m> where <m>n,m \in \Z</m>
+                <!--
+                <dl>
+                  <li>
+                    <title>Step 1:</title>
+                    <p>
+                      If <m>n = 0</m>, Return 0.
+                    </p>
+                  </li>
+                </dl>
+                <dl>
+                  <li>
+                    <title>Step 2:</title>
+                    <p>
+                      Else Return <m>(n\ \text{mod}\ 2) + \textbf{mystic}(\lfloor n/2 \rfloor)</m>.
+                    </p>
+                  </li>
+                </dl>
+              -->
+            </p>
+
+            <poem>
+              <stanza>
+                <line indent="1">
+                  If <m>m = 0</m>, return <m>n</m>.
+                </line>
+
+                <line indent="1">
+                  If <m>m > 0</m>, return <m>\textbf{RecSum}(n,m-1) + 1</m>.
+                </line>
+
+                <line indent="1">
+                  If <m>m \lt 0</m>, return <m>\textbf{RecSum}(n,m+1) - 1</m>.
+                </line>
+              </stanza>
+            </poem>
+          </statement>
+        </algorithm>
+
+        <p>
+          We briefly outline the proof of the correctness of the algorithm. Let <m>P(k)</m> denote the statement that if <m>|m| = k</m>, then the algorithm terminates, and returns the correct value. Then one can argue by induction that <m>P(k)</m> is true for all natural numbers <m>k</m>, which is precisely the criteria for the partial correctness of the algorithm. The algorithm always terminates, which can also be proven in two inductions <emdash/> first, one can prove for induction that the algorithm terminates on an input <m>(n,m)</m> for <m>m \geq 0</m>, using the same argument as above. Then one can prove by another induction that for any <m>m \geq 0</m>, the algorithm terminates on an input <m>(n,-m)</m>, which covers all possible inputs.
+        </p>
+      </solution>
+    </task>
+    </exercise>
+  </page>
+
+  <page>
+
+    <exercise>
+      <statement>
+        <p>
+          Consider the following iterative algorithm <m>\textbf{Fact}(n)</m> which computes <m>n!</m> for any natural number <m>n</m>.
+        </p>
+
+        <algorithm>
+          <statement>
+            <p>
+          <m>\textbf{Fact}(n)</m> where <m>n \in \N</m>
+                <!--
+                <dl>
+                  <li>
+                    <title>Step 1:</title>
+                    <p>
+                      If <m>n = 0</m>, Return 0.
+                    </p>
+                  </li>
+                </dl>
+                <dl>
+                  <li>
+                    <title>Step 2:</title>
+                    <p>
+                      Else Return <m>(n\ \text{mod}\ 2) + \textbf{mystic}(\lfloor n/2 \rfloor)</m>.
+                    </p>
+                  </li>
+                </dl>
+              -->
+            </p>
+
+            <poem>
+              <stanza>
+                <line indent="1">
+                  <m>\text{factorial} \coloneqq 1</m>
+                </line>
+
+                <line indent="1">
+                  <m>\text{iteration} \coloneqq 0</m>
+                </line>
+
+                <line indent="1">
+                  While <m>\text{iteration} \lt n</m>:
+                </line>
+
+                <line indent="2">
+                  <m>\text{factorial} \coloneqq \text{factorial} \cdot (\text{iteration} + 1)</m>
+                </line>
+
+                <line indent="2">
+                  <m>\text{iteration} \coloneqq \text{iteration} + 1</m>
+                </line>
+
+                <line indent="1">
+                  Return <m>\text{factorial}</m>
+                </line>
+              </stanza>
+            </poem>
+          </statement>
+        </algorithm>
+
+        <p>
+          Prove that this algorithm is correct.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We begin by proving the partial correctness of the algorithm. Assume that the algorithm always terminates, that <m>n</m> is a given input, and that we run through the loop in the algorithm above <m>k_0</m> times. For each <m>0 \leq k \leq k_0</m>, let <m>f_k</m> and <m>i_k</m> denote the values of the variables <m>\text{factorial}</m> and <m>\text{iteration}</m> after running through the loop <m>k</m> times. We will prove by induction the following two loop invariants: that for each <m>k</m>, <m>f_k = i_k!</m> and that <m>i_k \leq n</m>.
+        </p>
+
+        <p>
+          The two equations <m>f_0 = i_0!</m> and <m>i_0 \leq n</m> follow because the variables <m>\text{factorial}</m> and <m>\text{iteration}</m> are both initialized as <m>1</m>, so that <m>f_0 = i_0 = 1</m>, and the two equations above become <m>1 = 1!</m> and <m>1 \leq n</m>, which are both evidently true.
+        </p>
+
+        <p>
+          Now assume that <m>f_k = i_k!</m> and that <m>i_k \leq n</m> for some <m>k \lt k_0</m>. Since <m>k \lt k_0</m>, it must be true that, in fact, <m>i_k</m> is <em>strictly</em> less than <m>n</m>. But this means that
+          <me>
+            i_{k+1} = i_k + 1 \leq n
+          </me>.
+          Also,
+          <me> f_{k+1} = f_k \cdot i_{k+1} = i_k! \cdot (i_k + 1) = (i_k + 1)! = i_{k+1}!</me>.
+          We have thus verified the required statements with <m>k</m> replaced by <m>k+1</m>, which completes the proof of the inductive case, and thus the entire induction.
+        </p>
+
+        <p>
+          Now we can finish our proof of partial correctness of the algorithm. The algorithm terminates after iterating through the loop <m>k_0</m> times, and since we do not run through the loop another time, the value of the variable <m>\text{iteration}</m> must be at least <m>n</m>, i.e. so <m>i_{k_0} \geq n</m>. But by induction, we have verified that <m>i_{k_0} \leq n</m>, and so we must in fact have <m>i_{k_0} = n</m>. But by induction, we have also verified that the value of the variable <m>\text{factorial}</m> at this point is <m>f_{k_0} = i_{k_0}!</m>, and so we find that the algorithm returns the value
+          <me>f_{k_0} = i_{k_0}! = n!</me>.
+          Thus the algorithm correctly outputs what was required.
+        </p>
+
+        <p>
+          To finish off the proof of correctness, we must prove the algorithm terminates. This follows because after <m>k</m> iterations of the algorithm, the value of the variable <m>\text{iteration}</m> is equal to <m>k+1</m>. Thus we see that after <m>n-1</m> iterations of the algorithm, the value of the variable <m>\text{iteration}</m> will be equal to <m>n</m>, and so the loop will terminate after this many iterations.
+        </p>
+      </solution>
+    </exercise>
+
+
+    <exercise>
+      <statement>
+        <p>
+          Consider the following algorithm <m>\textbf{Mystery}(n)</m> which takes as input a positive integer <m>n</m>. The algorithm <m>\textbf{IsOdd}</m> returns <m>\text{True}</m> when it's input is odd and returns <m>\text{False}</m> when it's input is even:
+        </p>
+
+        <algorithm>
+          <statement>
+            <p>
+              <m>\textbf{Mystery}(n)</m>, where <m>n \in N</m>
+            </p>
+
+          <poem>
+            <stanza>
+              <line indent="1">
+                If <m>\textbf{IsOdd}(n)</m>: Return <m>n</m>.
+              </line>
+
+              <line indent="1">
+                Else Return <m>\textbf{Mystery}(n/2)</m>.
+              </line>
+            </stanza>
+          </poem>
+        </statement>
+        </algorithm>
+
+        <p>
+          Describe the output of the algorithm <m>\textbf{Mystery}</m> on an arbitrary input, and then prove the correctness of the algorithm relative to that description.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We claim that <m>\textbf{Mystery}(n)</m> returns the largest odd number which divides <m>n</m>. We first prove the partial correctness of this algorithm by strong induction on <m>n</m>.
+        </p>
+
+        <p>
+          When <m>n</m> is odd, the algorithm immediately returns <m>n</m>, and indeed, for any integer <m>n</m>, <m>n</m> is the largest number dividing itself, so in this case certainly <m>n</m> is the largest <em>odd</em> number dividing itself. This accounts for the base case of the argument, since <m>n = 1</m> is odd.
+        </p>
+
+        <p>
+          Now suppose that <m>\textbf{Mystery}(m)</m> outputs the largest odd number dividing <m>m</m> for any <m>m \lt n</m>. If <m>n</m> is odd, then we have already shown that <m>\textbf{Mystery}(n)</m> correctly outputs the largest odd number dividing <m>n</m>. If <m>n</m> is even, then <m>\textbf{Mystery}(n) = \textbf{Mystery}(n/2)</m>. By induction, <m>\textbf{Mystery}(n)</m> is the largest odd number dividing <m>n/2</m>. But if <m>n</m> is even, then the set of odd numbers dividing <m>n/2</m> is <em>equal</em> to the set of odd numbers dividing <m>n</m> (we prove this claim in the following paragraph), which implies <m>\textbf{Mystery}(n)</m> is the largest odd number dividing <m>n</m>.
+        </p>
+
+        <p>
+          Since <m>n</m> is divisible by <m>n/2</m>, any number dividing <m>n/2</m> also divides <m>n</m>. Thus the set of odd numbers dividing <m>n/2</m> is a subset of the odd numbers dividing <m>n</m>. Conversely, suppose an odd number <m>m</m> divides <m>n</m>. Then we can write <m>n = km</m> for some integer <m>k</m>. Since <m>n</m> is even, and the product of odd numbers is odd, it follows that <m>k</m> must be even since <m>m</m> is odd. But this means <m>k = 2l</m> for some integer <m>l</m>, and so <m>n = 2lm</m>, and thus <m>n/2 = lm</m>, which proves <m>m</m> divides <m>n/2</m>, which proves the set of odd numbers dividing <m>n</m> is a subset of the set of odd numbers dividing by <m>n/2</m>. Combining the first part of the argument, we conclude the two sets are equal to one another.
+        </p>
+
+        <p>
+          Now we must prove the algorithm always terminates. We prove this by strong induction on <m>n</m>. When <m>n=1</m>, the algorithm immediately terminates, If we assume the algorithm <m>\textbf{Mystery}</m> terminates for all inputs <m>m \lt n</m>, then we argue by cases that the algorithm <m>\textbf{Mystery}</m> must terminate on the input <m>n</m>. If <m>n</m> is odd, then the algorithm immediately terminates. If <m>n</m> is even, then the algorithm calls <m>\textbf{Mystery}(n/2)</m> before returning <emdash/> since the algorithm terminates on an input <m>n/2</m> by assumption, the algorithm terminates on an input <m>n</m>. Thus by strong induction <m>\textbf{Mystery}</m> always terminates on all valid inputs, completing the proof of the correctness of the algorithm.
+        </p>
+      </solution>
+    </exercise>
+
+
+
+    <exercise>
+      <statement>
+        <p>
+          Consider the following recursive algorithm <m>\textbf{NumberOfPrimes}(n)</m> which takes as input a natural number <m>n\geq 1</m> and returns the total number of primes <m>p</m> with <m>1\leq p\leq n</m>:
+        </p>
+
+        <algorithm>
+          <statement>
+            <p>
+              <m>\textbf{NumberOfPrimes}(n)</m>, where <m>n \in \N</m>.
+            </p>
+            <poem>
+              <stanza>
+                <line indent="1">
+                  If <m>n = 1</m> Return <m>0</m>
+                </line>
+
+                <line indent="1">
+                  If <m>\textbf{IsPrime}(n)</m>, Return <m>1 + \textbf{NumberOfPrimes}(n-1)</m>
+                </line>
+
+                <line indent="1">
+                  Else Return <m>\textbf{NumberOfPrimes}(n-1)</m>
+                </line>
+              </stanza>
+            </poem>
+          </statement>
+        </algorithm>
+
+        <p>
+          Here <m>\textbf{IsPrime}(n)</m> is a algorithm which takes in a positive integer <m>n</m> and returns <m>\text{True}</m> if <m>n</m> is prime, and <m>\text{False}</m> otherwise. Prove that <m>\textbf{NumberOfPrimes}(n)</m> returns the correct number of primes between <m>1</m> and <m>n</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We outline the proof that the algorithm terminates. The algorithm immediately terminates when <m>n \geq 1</m>, and on any other input, the algorithm recursively calls itself with a <em>smaller input</em>, and so using the methods of the previous problems, one can argue by induction that the algorithm always terminates.
+        </p>
+
+        <p>
+          Now we prove partial correctness. Let <m>P_n</m> be the set of primes between <m>1</m> and <m>n</m>. We prove by induction that for each <m>n</m>, <m>\textbf{NumberOfPrimes}(n) = |P_n|</m>. When <m>n = 0</m>, <m>\textbf{NumberOfPrimes}(1) = 0</m>, which is the correct output since <m>P_1 = \emptyset</m>. Now assume that <m>\textbf{NumberOfPrimes}(n-1) = |P_{n-1}|</m>. If <m>n</m> is prime, then <m>P_n = P_{n-1} \cup \{ n \}</m>, and since <m>P_{n-1}</m> is disjoint from <m>\{ n \}</m>,
+          <me>|P_n| = |P_{n-1}| + 1</me>.
+          But by assumption,
+          <me>\textbf{NumberOfPrimes}(n) = \textbf{NumberOfPrimes}(n-1) + 1 = |P_{n-1}| + 1 = |P_n|</me>,
+          and so the algorithm returns the correct output in this case. On the other hand, if <m>n</m> is not prime, then <m>P_n = P_{n-1}</m>, and
+          <me>\textbf{NumberOfPrimes}(n) = \textbf{NumberOfPrimes}(n-1) = |P_{n-1}| = |P_n|</me>,
+          and so the algorithm also returns the correct output. In either case, the algorithm returns the correct output, completing the inductive case of the algorithm. Thus by induction, the algorithm is partially correct. Since we have already proven that algorithm always terminates, this completes the proof that the algorithm is correct.
+        </p>
+      </solution>
+    </exercise>
+  </page>
+
+
+<page>
+    <exercise>
+      <statement>
+        <p>
+          Write an <em>iterative</em> algorithm <m>\textbf{NumberOfPrimes}(n)</m> which returns the number of primes between <m>1</m> and <m>n</m>, for any positive integer <m>n</m>. Then, prove your algorithm is correct.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Here is a description of one such algorithm:
+        </p>
+
+          <algorithm>
+          <statement>
+            <p>
+              <m>\textbf{NumberOfPrimes}(n)</m>, where <m>n \in \N</m>.
+            </p>
+            <poem>
+              <stanza>
+                <line indent="1">
+                  <m>\text{numOfPrimes} \coloneqq 0</m>
+                </line>
+
+                <line indent="1">
+                  <m>\text{iteration} \coloneqq 0</m>
+                </line>
+
+                <line indent="1">
+                  While <m>\text{iteration} \lt n</m>:
+                </line>
+
+                <line indent="2">
+                  <m>\text{iteration} = \text{iteration} + 1</m>
+                </line>
+
+                <line indent="2">
+                  If <m>\textbf{IsPrime}(\text{iteration})</m>: <m>\text{numOfPrimes} = \text{numOfPrimes} + 1</m>
+                </line>
+
+                <line indent="1">
+                  Return <m>\text{numOfPrimes}</m>
+                </line>
+              </stanza>
+            </poem>
+          </statement>
+        </algorithm>
+
+        <p>
+          Let us begin by proving partial correctness. For <m>k \geq 0</m>, let <m>P_k</m> be the set of all primes between <m>1</m> and <m>k</m>. Suppose <m>n</m> is a given input, and on this input the algorithm iterates through the while loop <m>k_0</m> times. Let <m>p_k</m>, and <m>i_k</m> denote the values of the variables <m>\text{numOfPrimes}</m> and <m>\text{iteration}</m> after running through the while loop <m>k</m> times, for <m>0 \leq k \leq k_0</m>. We use the following two loop invariants, proved by induction, to prove the partial correctness of the algorithm: that <m>i_k \leq n</m> for all <m>k</m>, and that <m>p_k = |P_{i_k}|</m>. These loop invariants suffice to prove the partial correctness of the algorithm. When the while loop terminates, we must have <m>i_{k_0} \geq n</m>. But our first loop invariant implies that <m>i_{k_0} \leq n</m>, so that <m>i_{k_0} = n</m>. Our second loop invariant then implies
+          <me>p_{k_0} = |P_{i_{k_0}}| = |P_n|</me>.
+          This is the value outputed by the algorithm. The proof of partial correctness is thus complete, as soon as we prove the correctness of the loop invariants specified.
+        </p>
+
+        <p>
+          Let us now prove such correctness. We have <m>p_0 = 0</m> and <m>i_0 = 0</m>. Since <m>P_0 = \emptyset</m> has size zero, and the loop invariants become <m>0 = 0</m> andd <m>0 \leq n</m>, which are both evidently true. Thus the base case of the argument is completed. Next, we argue for the inductive case. If <m>p_k = |P_{i_k}|</m>, for <m>k \lt k_0</m>, then <m>i_k \lt n</m>, so that <m>i_{k+1} = i_k + 1 \leq n</m>, proving that the first loop invariant holds. If <m>i_{k+1}</m> is prime, then <m>p_{k+1} = p_k + 1</m>, while if <m>i_{k+1}</m> is not prime, <m>p_{k+1} = p_k</m>. In the former case,
+          <me>
+            P_{i_{k+1}} = P_{i_k + 1} = P_{i_k} \cup \{ i_k + 1 \}
+          </me>
+          has size one more than <m>P_{i_k}</m>, and in the latter case,
+          <me>
+            P_{i_{k+1}} = P_{i_k + 1} = P_{i_k}
+          </me>
+          has the same size, and so in either case we see that <m>p_{k+1} = |P_{i_{k+1}}|</m>, proving that the second loop invariant holds. This completes the proof of the induction, and thus of partial correctness.
+        </p>
+
+        <p>
+          To prove termination, notice that <m>i_k = k</m> for all <m>k</m>. Thus after <m>n</m> loop iterations, <m>i_n \geq n</m>, and so there will be no further loop iterations, and the algorithm will terminate.
+        </p>
+
+        <p>
+          The algorithm is both partially correct and always terminates, and thus the algorithm is correct.
+        </p>
+      </solution>
+    </exercise>
+
+
+    <exercise>
+      <statement>
+        <p>
+          (Challenge Problem) Consider the following recursively defined algorithm:
+        </p>
+
+        <algorithm>
+          <statement>
+            <p>
+              <m>\textbf{Snake}(n,m)</m>, where <m>n,m \in \N</m>.
+            </p>
+            <poem>
+              <stanza>
+                <line indent="1">
+                  If <m>n = 0</m> or <m>m = 0</m> Return <m>0</m>.
+                </line>
+
+                <line indent="1">
+                  If <m>n = 0</m> and <m>m \neq 0</m> Return <m>1 + \textbf{Snake}(m-1,0)</m>.
+                </line>
+
+                <line indent="1">
+                  Else Return <m>1 + \textbf{Snake}(n-1,m+1)</m>.
+                </line>
+              </stanza>
+            </poem>
+          </statement>
+        </algorithm>
+
+        <p>
+          Prove this algorithm always terminates. As an additional challenge, prove <m>\textbf{Snake}</m> defines a bijective function from <m>\N^2</m> to <m>\N</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          For each <m>k \geq 0</m>, define the statement
+          <me>P(k) : \textbf{Snake}(n,m)\ \text{terminates for all inputs}\ (n,m)\ \text{with}\ n + m = k</me>.
+          We prove <m>P(k)</m> is true for all <m>k \geq 0</m> by induction.
+        </p>
+
+        <p>
+          Let us prove <m>P(0)</m>, the base case of the induction. If <m>n + m = 0</m>, then <m>n = 0</m> and <m>m = 0</m>. In this case, the algorithm terminates immediately.
+        </p>
+
+        <p>
+          Now suppose <m>P(k-1)</m> is true. We now employ a <em>second induction</em>. Define the statements
+          <me>Q(i): \textbf{Snake}(i,k-i)\ \text{terminates}</me>.
+          Then <m>Q(0)</m>is true because on input <m>(0,k)</m> the algorithm <m>\textbf{Snake}</m> recursively calls itself on an input <m>(k-1,0)</m> before terminating, and the algorithm terminates on this latter input because we are assuming <m>P(k-1)</m> is true. If <m>Q(i-1)</m> is true, then on input <m>(i,k-i)</m>, the algorithm <m>\textbf{Snake}</m> recursively calls <m>(i-1,k-i+1)</m> before terminating, and the algorithm terminates on this latter input because we are assuming <m>Q(i-1)</m> is true. This completes the inductive proof that <m>Q(i)</m> is true for all <m>i</m>, and the truth of <m>Q(i)</m> for all <m>i</m> is by definition equivalent to the truth of the statement <m>P(k)</m>.
+        </p>
+
+        <p>
+          Let us now prove by induction that the algorithm defines a bijective function from <m>\N^2</m> to <m>\N</m>. By induction, we can prove that for all <m>k \geq 0</m>, there exists <m>n,m \in \N</m> such that <m>\textbf{Snake}(n,m) = k</m>. The case <m>k = 0</m> follows because <m>\textbf{Snake}(0,0) = 0</m>, and if <m>\text{Snake}(n,m) = k</m>, then (if <m>n \neq 0</m>), <m>\textbf{Snake}(n-1,m+1) = k</m>, and if <m>n = 0</m>, <m>\textbf{Snake}(m+1,0) = k</m>, completing the inductive proof of surjectivity.
+        </p>
+
+        <p>
+          The proof of injectivity is more involved, using the same kind of <sq>double induction</sq> used in the proof of termination. For <m>k \geq 0</m>, define the statement <m>P(k)</m>, which states that for all <m>n,m \in \N</m> such that <m>n + m = k</m>,
+          <me>\textbf{Snake}^{-1}(\textbf{Snake}(n,m)) = \{ (n,m) \}</me>.
+          The injectivity of <m>\textbf{Snake}</m> is equivalent to the truth of <m>P(k)</m> for each <m>k</m>.
+        </p>
+
+        <p>
+          That <m>P(0)</m> is true follows because <m>\textbf{Snake}(n,m) \gt 0</m> for all <m>(n,m) \neq 0</m>, and so
+          <me>\textbf{Snake}^{-1}(\textbf{Snake}(0,0)) = \textbf{Snake}^{-1}(0) = \{ (0,0) \}</me>.
+        </p>
+
+        <p>
+          Now suppose <m>P(k-1)</m> is true. For <m>0 \leq i \leq k</m>, define the statement
+          <me>Q(i) : \textbf{Snake}^{-1}(\textbf{Snake}(i,k-i)) = \{ (i,k-i) \}</me>.
+          We prove <m>Q(i)</m> is true for all <m>0 \leq i \leq k</m> by induction.
+        </p>
+
+        <p>
+          Let us begin by proving <m>Q(0)</m>. Suppose that <m>\textbf{Snake}(n,m) = \textbf{Snake}(0,k)</m> for some <m>(n,m) \in \N</m>. Now
+          <me>\textbf{Snake}(0,k) = 1 + \textbf{Snake}(k-1,0)</me>.
+          If <m>n = 0</m>, then
+          <me>\textbf{Snake}(n,m) = 1 + \textbf{Snake}(m-1,0)</me>,
+          and so it follows that <m>\textbf{Snake}(k-1,0) = \textbf{Snake}(m-1,0)</m>. Since <m>P(k-1)</m> is true, it follows that <m>k-1 = m-1</m>, and thus <m>(n,m) = (0,k)</m>. Alternatively, if <m>n \neq 0</m>, then
+          <me>\textbf{Snake}(n,m) = 1 + \textbf{Snake}(n-1,m+1)</me>
+          and thus <m>\textbf{Snake}(n-1,m+1) = \textbf{Snake}(k-1,0)</m>, and so again <m>P(k-1)</m> implies that <m>(n-1,m+1) = (k-1,0)</m>, which gives a contradiction, showing this case could have never occured in the first place. Thus we see that <m>Q(0)</m> is true.
+        </p>
+
+        <p>
+          Now suppose <m>Q(i-1)</m> is true. We employ the same strategy as the last argument. We have
+          <me>\textbf{Snake}(i,k-i) = 1 + \textbf{Snake}(i-1,k-i+1)</me>.
+          If <m>\textbf{Snake}(n,m) = \textbf{Snake}(i,k-i)</m>, then either <m>n = 0</m> and
+          <me>\textbf{Snake}(n,m) = 1 + \textbf{Snake}(m-1,0)</me>
+          or <m>n \neq 0</m> and
+          <me>\textbf{Snake}(n,m) = 1 + \textbf{Snake}(n-1,m+1)</me>.
+          Thus we conclude that either <m>\textbf{Snake}(i-1,k-i+1) = \textbf{Snake}(m-1,0)</m> or <m>\textbf{Snake}(i-1,k-i+1) = \textbf{Snake}(n-1,m+1)</m>, and under the assumption that <m>Q(i-1)</m>is true, it must be true that <m>(i-1,k-i+1) = (n-1,m+1)</m>, so that <m>(i,k-i) = (n,m)</m>, which completes the proof that <m>Q(i)</m> is true.
+        </p>
+
+        <p>
+          We have proved that <m>\textbf{Snake}</m> is both injective and surjective, and so the function is bijective.
+        </p>
+      </solution>
+    </exercise>
+
+
+
+
+
+  </page>
+</worksheet>
+</chapter>

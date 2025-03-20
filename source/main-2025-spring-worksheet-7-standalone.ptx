@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- we first include a file which contains the docinfo element: -->
+  <xi:include href="./docinfo.ptx" />
+
+  <article xml:id="art-2025-worksheet-7">
+    <xi:include href="worksheets/wkst-2025-spring-worksheet-7.ptx" xpointer="sec-2025-worksheet-7/3" />
+  </article>
+</pretext>

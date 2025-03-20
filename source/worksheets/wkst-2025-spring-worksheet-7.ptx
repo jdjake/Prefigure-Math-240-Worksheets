@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-2025-worksheet-7">
+  <title>Worksheet Seven</title>
+
+  <introduction>
+    <p>
+      The questions in this worksheet were given out in the sixth week of the course, the week of March 3rd-7th, 2025. They address questions about:
+
+      <ul>
+        <li>
+          Chapter 7: Computation.
+        </li>
+      </ul>
+    </p>
+  </introduction>
+
+  <worksheet xml:id="wkst-2025-worksheet-7" margin="0.7in">
+    <title>Worksheet Seven</title>
+
+    <introduction>
+      <p>
+        These exercises address questions testing knowledge of the basic theory of computation.
+      </p>
+    </introduction>
+
+    <page>
+      <!--
+      <exercisegroup>
+        <introduction>
+          <p>
+            The following questions test knowledge of asymptotic analysis.
+          </p>
+        </introduction>
+      -->
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Prove that <m>2n^3 - 4n</m> is in <m>\Theta(n^3)</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Our goal is to prove that <m>2n^3 - 4n</m> is <m>O(n^3)</m>, and also that <m>2n^3 - 4n</m> is <m>\Omega(n^3)</m>.
+          </p>
+
+          <p>
+            To prove <m>2n^3 - 4n</m> is <m>O(n^3)</m>, we must find a positive integer <m>n_0</m> and <m>c > 0</m> such that <m>2n^3 - 4n \leq cn^3</m> for all <m>n \geq n_0</m>. We calculate that for all <m>n \geq 1</m>,
+            <me>2n^3 - 4n \leq 2n^3</me>,
+            and so we see that letting <m>n_0 = 1</m> and <m>c = 2</m> are witnesses verifying that <m>2n^3 - 4n</m> is in <m>\Theta(n^3)</m>.
+          </p>
+          <p>
+            To prove <m>2n^3 - 4n</m> is <m>\Omega(n^3)</m>, we must find a positive integer <m>n_0</m> and <m>c > 0</m> such that <m>2n^3 - 4n \geq cn^3</m> for all <m>n \geq n_0</m>. Intuitively, this is true because <m>4n</m> is much smaller than <m>2n^3</m> for small <m>n</m>. In particular, for, say, <m>n \geq 10</m>, <m>n^3 \geq 100 n</m>, and so we calculate that
+            <me>2n^3 - 4n \geq 2n^3 - 4 ( n^3 / 100) \geq (2 - 4/100) n^3 \geq n^3 </me>.
+            Thus <m>n_0 = 10</m> and <m>c = 1</m> are witnesses verifying that <m>2n^3 - 4n</m> is <m>\Omega(n^3)</m>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Prove that <m>n \log n</m> is not <m>O(n)</m>. Is it <m>\Omega(n)</m>?
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            To show that <m>n \log n</m> is not <m>O(n)</m>, we must negate the statement that <m>n \log </m> is <m>O(n)</m>, i.e. the statement that there <em>exists</em> two quantities <m>n_0</m> and <m>c</m>, and <em>for all</em> <m>n \geq n_0</m>, the inequality <m>n \log n \leq cn</m> holds. Negating this statement, which switches quantifiers, we see that we are required to prove that <em>for all</em> quantities <m>n_0</m> and <m>c</m>, there <em>exists</em> <m>n \geq n_0</m> such that the inequality <m>n \log n \leq cn</m> fails to hold, i.e. the statement <m>n \log n \gt cn</m> holds.
+          </p>
+
+          <p>
+            We prove this statement directly. For <m>n \geq 1</m>, dividing both sides of the inequality <m>n \log n \gt cn</m> gives an equivalent inequality <m>\log n \gt c</m>, and taking the exponential of both sides then gives the equivalent inequality <m>n \gt 2^c</m>. Thus, given any <m>n_0</m> and <m>c</m>, if we pick <m>n = \max(\lceil 2^c \rceil + 1, n_0)</m>, then we find that both <m>n \geq n_0</m> and <m>n \gt 2^c</m>, so that the equation <m>n \log n \gt cn</m> holds, which completes the proof.
+          </p>
+
+          <p>
+            It <em>is</em> true that <m>n \log n</m> is <m>\Omega(n)</m>. We calculate that for <m>n \geq 2</m>, <m>\log n \geq \log 2</m>, since <m>\log</m> is an increasing function, and so
+            <me>n \log n \geq (\log 2) n</me>.
+            Thus if we pick <m>n_0 = 2</m> and <m>c = \log 2</m>, then these quantities act as witnesses verifying that <m>n \log n</m> is <m>\Omega(n)</m>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Find an integer <m>k</m> so that <m>f(n) = n^2 + \sin(n) + 1</m> is <m>\Theta(n^k)</m>, and prove that this statement is correct.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            For large <m>n</m>, <m>n^2</m> is the dominant factor in the sum defining <m>f</m>, which leads us to believe that <m>k = 2</m> is likely the right answer. Let's prove that this is the case.
+          </p>
+
+          <p>
+            We must first show <m>f</m> is <m>O(n^2)</m>. Using the inequality <m>\sin(n) \leq 1</m>, we see that for <m>n \geq 1</m>,
+            <me>f(n) = n^2 + \sin(n) + 1 \leq n^2 + 2 \leq n^2 + 2n^2 \leq 3n^2</me>.
+            Thus if we see <m>n_0 = 1</m> and <m>c = 3</m> then the inequality <m>f(n) \leq 3n^2</m> holds for all <m>n \geq n_0</m>, verifying that <m>f</m> is <m>O(n^2)</m>.
+          </p>
+
+          <p>
+            To show <m>f</m> is <m>\Omega(n^2)</m>, we use the inequality <m>\sin(n) \geq -1</m> to see that
+            <me>f(n) = n^2 + \sin(n) + 1 \geq n^2 - 1 + 1 \geq n^2</me>.
+            Thus witnesses that <m>f</m> is <m>\Omega(n^2)</m> are obtained by setting <m>n_0 = 1</m> and <m>c = 1</m>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Without citing this fact from the book, prove that if <m>f</m> is <m>O(g)</m> and <m>g</m> is <m>O(h)</m>, then <m>f</m> is <m>O(h)</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Let us give a direct proof of this statement, assuming that <m>f</m> is <m>O(g)</m>, and that <m>g</m> is <m>O(h)</m>, and then proving that <m>f</m> is <m>O(h)</m>. Given these assumptions, since <m>f</m> is <m>O(g)</m>, there is <m>n_1</m> and <m>c_1</m> such that
+            <me>f(n) \leq c_1 g(n)</me>
+            for <m>n \geq n_1</m>. Since <m>g</m> is <m>O(h)</m>, there is <m>n_2</m> and <m>c_2</m> such that
+            <me>g(n) \leq c_2 h(n)</me>
+            for <m>n \geq n_2</m>.
+          </p>
+
+          <p>
+            To verify that <m>f</m> is <m>O(h)</m>, we must find <m>n_0</m> and <m>c</m> such that <m>f(n) \leq c h(n)</m> for <m>n \geq n_0</m>. But if <m>n \geq \max(n_1,n_2)</m>, then both inequality <m>f(n) \leq c_1 g(n)</m> and <m>g(n) \leq c_2 h(n)</m> hold, so that we find
+            <me>f(n) \leq c_1 g(n) \leq c_1 c_2 h(n)</me>,
+            and so <m>n_0 = \max(n_1,n_2)</m> and <m>c = c_1 c_2</m> suffice.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Consider the function <m>f(n) = n^n</m>. Show that for all <m>k \in \N</m>, <m>f</m> is not <m>O(n^k)</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Let us prove this statement by contradiction. We assume <m>f</m> is <m>O(n^k)</m> for some <m>k</m>. Then there is <m>n_0</m> and <m>c</m> such that <m>n^n = f(n) \leq c n^k</m> for all <m>n \geq n_0</m>. Dividing both sides by <m>n^k</m>, we conclude that <m>n^{n-k} \leq c</m> for all <m>n \geq n_0</m>. But if <m>n \geq \max(n_0, c+1, k+1)</m>, then <m>n - k \geq 1</m> and <m>n \geq c+1</m>, so
+            <me>n^{n-k} \geq n^1 \geq c + 1</me>
+            and also <m>n^{n-k} \leq c</m>. Thus we conclude <m>c + 1 \leq c</m>. Subtracting <m>c</m> from both sides, we find that <m>1 \leq 0</m>, and we thus reach a contradiction.
+          </p>
+<!--
+            <p>Here is an alternate proof by contradiction, using the method of infinite descent you have previously found in proofs of irrationality. Suppose <m>f</m> is <m>O(n^k)</m> for some <m>k \in \N</m>. Pick <m>k</m> to be the <em>smallest</em> such <m>k</m>. Then <m>k \geq 1</m> <emdash/> since the function <m>f</m> is unbounded (any function which is <m>O(1)</m> is bounded). Since <m>f</m> is <m>O(n^k)</m>, there is <m>n_0</m> and <m>c</m> such that
+            <me>n^n = f(n) \leq c n^k</me> for <m>n \geq n_0</m>. Since <m>n+1 \geq n_0</m>, <m>f(n+1) \leq c (n+1)^k</m>. But then we find
+            <me>n^{n+1} \leq (n+1)^{n+1} = f(n+1) \leq c (n+1)^k \leq c (2n)^k \leq 2^k c n^k</me>.
+            Dividing both sides of the equation by <m>n</m> gives the equation <m>n^n \leq (2^k c) n^{k-1}</m>. Thus for <m>n \geq n_0</m>, and <m>c_1 = 2^k c</m>, <m>n^n \leq c_1 n^{k-1}</m>, which proves that <m>n^n = O(n^{k-1})</m>, contradicting the fact that <m>k</m> was the <em>least</em> such integer with this property.
+          </p>
+        -->
+      </solution>
+    </exercise>
+    <!-- </exercisegroup> -->
+
+
+
+
+
+    <!-- <exercisegroup>
+      <introduction>
+        <p>
+          These problems address analyzing the running time of algorithms. For each problem statement below, write pseudocode to solve the given problems, and then analyze the running time of the algorithm you have specified.
+        </p>
+      </introduction> -->
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Given two numbers <m>a \lt b</m> as input, find the sum <m>\sum_{i = a}^b i^2</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Here is pseudocode to find this answer. Let us call the algorithm to compute <m>\sum_{i = a}^b i^2</m>, <m>\textbf{S}(a,b)</m>.
+          </p>
+          <p>
+            <algorithm>
+              <statement>
+                <p>
+                  <m>\textbf{S}(n)</m> where <m>a \lt b</m>
+                </p>
+
+                <poem>
+                  <stanza>
+                    <line indent="1">
+                      <m>S \leftarrow 0</m>
+                    </line>
+                    <line indent="1">
+                      For <m>i = a</m> to <m>b</m>:
+                    </line>
+                    <line indent="2">
+                      <m>S \leftarrow S + i^2</m>
+                    </line>
+                    <line indent="1">
+                      Return <m>S</m>
+                    </line>
+                  </stanza>
+                </poem>
+              </statement>
+            </algorithm>
+          </p>
+          <p>
+            We perform a single assignment <m>S \leftarrow 0</m> at the beginning of the algorithm, which counts as <m>\Theta(1)</m> atomic operators. We then iterate over a for loop <m>b - a + 1</m> times. On each iteration of the for loop we perform <m>\Theta(1)</m> atomic operations: calculating <m>i^2</m>, calculating <m>S + i^2</m>, and assigning <m>S</m> to <m>S + i^2</m>. We then return <m>S</m>, which takes <m>\Theta(1)</m> operations. In total, the algorithm has time complexity
+            <me>\Theta(1) + (b - a + 1) \Theta(1) + \Theta(1) = \Theta(b - a + 1)</me>.
+          </p>
+
+          <p>
+            There is also an algorithm that takes <m>\Theta(1)</m> atomic operations, using the fact that
+            <me>\sum_{i = a}^b i^2 = \frac{b(b+1)(2b+1) - (a-1)a(2a-1)}{6}</me>.
+            Thus we only have to evaluate a single formula to compute <m>\sum_{i = a}^b i^2</m>.
+          </p>
+        </solution>
+      </exercise>
+    </page>
+    <page>
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Given two strings <m>(a_1,\dots,a_n)</m> and <m>(b_1,\dots,b_n)</m>, determine if they have any entries in common (regardless of the order in which they appear).
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Here is pseudocode to find this answer. Let us call the algorithm which computes this property <m>\textbf{Common}(a,b)</m>
+          </p>
+
+          <p>
+            <algorithm>
+              <statement>
+                <p>
+                  <m>\textbf{Common}(a,b)</m> where <m>a = (a_1,\dots,a_n)</m> and <m>b = (b_1,\dots,b_n)</m>
+                </p>
+
+                <poem>
+                  <stanza>
+                    <line indent="1">
+                      For <m>i = 1</m> to <m>n</m>:
+                    </line>
+                    <line indent="2">
+                      For <m>j = 1</m> to <m>n</m>:
+                    </line>
+                    <line indent="3">
+                      If <m>a_i = b_j</m>:
+                    </line>
+                    <line indent="4">
+                      Return <m>T</m>
+                    </line>
+                    <line indent="1">
+                      Return <m>F</m>
+                    </line>
+                  </stanza>
+                </poem>
+              </statement>
+            </algorithm>
+          </p>
+
+          <p>
+            The first for loop is iterated over <m>n</m> times, and for each iteration of this for loop, the second for loop also iterates <m>n</m> times. Thus the interior of that for loop is iterated over in total <m>n^2</m> times. The time complexity is therefore <m>\Theta(n^2)</m> atomic operations.
+          </p>
+
+          <p>
+            If we have a way of ordering the characters within the two strings, there is an algorithm with time complexity <m>\Theta(n \log n)</m> which performs this same task. If the number of characters is bounded, there is an algorithm with time complexity <m>\Theta(n)</m>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Given two strings <m>a = (a_1,\dots,a_n)</m> and <m>(b_1,\dots,b_n)</m>, check if one string is a rotation of the other (as examples, the string <m>(0,1,2)</m> has as rotations <m>(0,1,2)</m>, <m>(1,2,0)</m>, and <m>(2,0,1)</m>).
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Here is pseudocode to find this answer. Let us call the algorithm which computes this property <m>\textbf{Rotation}(a,b)</m>
+          </p>
+          <p>
+            <algorithm>
+              <statement>
+                <p>
+                  <m>\textbf{Rotation}(a,b)</m> where <m>a = (a_1,\dots,a_n)</m> and <m>b = (b_1,\dots,b_n)</m>
+                </p>
+
+                <poem>
+                  <stanza>
+                    <line indent="1">
+                      For <m>i = 1</m> to <m>n</m>:
+                    </line>
+                    <line indent="1">
+                      <m>\text{Is-Rotation} \leftarrow T</m>
+                    </line>
+                    <line indent="2">
+                      For <m>j = 1</m> to <m>n</m>:
+                    </line>
+                    <line indent="3">
+                      <m>k \leftarrow j \pmod{n}</m>
+                    </line>
+                    <line indent="3">
+                      If <m>a_i \neq a_k</m>:
+                    </line>
+                    <line indent="4">
+                      <m>\text{Is-Rotation} \leftarrow False</m>
+                    </line>
+                    <line indent="2">
+                      If <m>\text{Is-Rotation} = T</m>:
+                    </line>
+                    <line indent="3">
+                      Return <m>T</m>
+                    </line>
+                    <line indent="1">
+                      Return <m>F</m>
+                    </line>
+                  </stanza>
+                </poem>
+              </statement>
+            </algorithm>
+          </p>
+          <p>
+            The first for loop is iterated over <m>\Theta(n)</m> times. Thus the assignment of <m>\text{Is-Rotation}</m> to <m>T</m> is iterated over over <m>\Theta(n)</m> times. The inner for loop is always iterated over <m>\Theta(n)</m> times for each iteration of the first for loop, so each inner operation is iterated over at least <m>\Theta(n^2)</m> times. There are <m>\Theta(1)</m> atomic operations computed by the inner operations. Thus the time complexity of the algorithm is
+            <me>\Theta(n) + \Theta(n^2) \Theta(1) = \Theta(n^2)</me>.
+          </p>
+        </solution>
+      </exercise>
+      <!-- </exercisegroup> -->
+
+    <!-- <exercisegroup>
+      <introduction>
+        <p>
+          These questions test knowledge of finite state machines.
+        </p>
+      </introduction> -->
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Consider the following finite state machine with output, whose input alphabet and output alphabet both equal to <m>\{ 0, 1, 2 \}</m>, starting at the state marked <m>A</m>. What will the output look like when given the input <m>12021</m>? Next, given <em>any</em> string of inputs, can you find a nice characterization of what the final output will be?
+          </p>
+
+          <p>
+            <figure xml:id="fig-FSMO-12021-diagram">
+              <image width="30%" xml:id="fig-FSMO-12021-diagram-tikz">
+                <shortdescription>
+                  A diagram describing a finite state machine with output.
+                </shortdescription>
+                <description>
+                  <p>
+                    A diagram describing a finite state machine with output. The diagram is a graph, with three vertices labelled <m>A</m>, <m>B</m>, and <m>C</m>. An arrow labelled <q>Start</q> points to the vertex <m>A</m>. There are nine more arrows, listed below:
+                    <ul>
+                      <li>
+                        There is an arrow from <m>A</m> to itself, labelled <m>0/0</m>.
+                      </li>
+                      <li>
+                        There is an arrow from <m>A</m> to <m>B</m>, labelled <m>1/1</m>.
+                      </li>
+                      <li>
+                        There is an arrow from <m>A</m> to <m>C</m>, labelled <m>2/2</m>.
+                      </li>
+                      <li>
+                        There is an arrow from <m>B</m> to <m>A</m>, labelled <m>2/0</m>.
+                      </li>
+                      <li>
+                        There is an arrow from <m>B</m> to itself, labelled <m>0/1</m>.
+                      </li>
+                      <li>
+                        There is an arrow from <m>B</m> to <m>C</m>, labelled <m>1/2</m>.
+                      </li>
+                      <li>
+                        There is an arrow from <m>C</m> to <m>A</m>, labelled <m>1/0</m>.
+                      </li>
+                      <li>
+                        There is an arrow from <m>C</m> to <m>B</m>, labelled <m>2/1</m>.
+                      </li>
+                      <li>
+                        There is an arrow from <m>C</m> to itself, labelled <m>0/2</m>.
+                      </li>
+                    </ul>
+                  </p>
+                </description>
+                <latex-image>
+                \begin{tikzpicture}[scale=0.2]
+                \tikzstyle{every node}+=[inner sep=0pt]
+                \draw [black] (22.9,-38.9) circle (3);
+                \draw (22.9,-38.9) node {$A$};
+                \draw [black] (52.4,-38.9) circle (3);
+                \draw (52.4,-38.9) node {$B$};
+                \draw [black] (37.4,-14.5) circle (3);
+                \draw (37.4,-14.5) node {$C$};
+                \draw [black] (25.788,-38.091) arc (103.90856:76.09144:49.347);
+                \fill [black] (49.51,-38.09) -- (48.86,-37.41) -- (48.61,-38.38);
+                \draw (37.65,-36.14) node [above] {$1/1$};
+                \draw [black] (49.452,-39.457) arc (-80.49453:-99.50547:71.469);
+                \fill [black] (25.85,-39.46) -- (26.55,-40.08) -- (26.72,-39.1);
+                \draw (37.65,-40.94) node [below] {$2/0$};
+                \draw [black] (55.347,-39.397) arc (108.16235:-179.83765:2.25);
+                \draw (58.46,-44.23) node [right] {$0/1$};
+                \fill [black] (53.8,-41.54) -- (53.57,-42.46) -- (54.52,-42.15);
+                \draw [black] (21.404,-41.487) arc (-2.30993:-290.30993:2.25);
+                \draw (16.67,-43.98) node [left] {$0/0$};
+                \fill [black] (19.94,-39.29) -- (19.16,-38.75) -- (19.12,-39.75);
+                \draw [black] (36.077,-11.82) arc (234:-54:2.25);
+                \draw (37.4,-7.25) node [above] {$0/2$};
+                \fill [black] (38.72,-11.82) -- (39.6,-11.47) -- (38.79,-10.88);
+                \draw [black] (50.396,-36.668) arc (-139.27928:-157.55813:71.582);
+                \fill [black] (38.49,-17.3) -- (38.33,-18.23) -- (39.25,-17.84);
+                \draw (43.03,-28.74) node [left] {$1/2$};
+                \draw [black] (39.729,-16.389) arc (48.74838:14.4142:38.933);
+                \fill [black] (51.77,-35.97) -- (52.05,-35.07) -- (51.08,-35.32);
+                \draw (47.86,-23.99) node [right] {$2/1$};
+                \draw [black] (36.313,-17.296) arc (-22.35899:-39.08385:77.236);
+                \fill [black] (24.84,-36.61) -- (25.73,-36.3) -- (24.95,-35.67);
+                \draw (31.93,-28.63) node [right] {$1/0$};
+                \draw [black] (23.617,-35.988) arc (164.20668:134.35048:43.949);
+                \fill [black] (35.18,-16.52) -- (34.26,-16.72) -- (34.96,-17.44);
+                \draw (27.48,-24.24) node [left] {$2/2$};
+                \draw [black] (12.2,-32.9) -- (20.28,-37.43);
+                \draw (11.54,-31.69) node [left] {$Start$};
+                \fill [black] (20.28,-37.43) -- (19.83,-36.61) -- (19.34,-37.48);
+                \end{tikzpicture}
+              </latex-image>
+            </image>
+          </figure>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          While reading <m>12021</m>, the machine has the following trajectory:
+          <ul>
+            <li>The machine reads <m>1</m>, moving from <m>A</m> to <m>B</m> and outputting <m>1</m>.</li>
+            <li>The machine reads <m>2</m>, moving from <m>B</m> to <m>A</m> and outputting <m>0</m>.</li>
+            <li>The machine reads <m>0</m>, moving from <m>A</m> to <m>A</m> and outputting <m>0</m>.</li>
+            <li>The machine reads <m>2</m>, moving from <m>A</m> to <m>C</m> and outputting <m>2</m>.</li>
+            <li>The machine reads <m>1</m>, moving from <m>C</m> to <m>A</m> and outputting <m>0</m>.</li>
+          </ul>
+          The final output is <m>10020</m>.
+        </p>
+
+        <p>
+          Before directly giving the answer, let's assess the evidence. First, note that each time the machine reads a <m>1</m> it move anticlockwise around the diagrma of the machine, each time the machine read a <m>0</m> it moves clockwise, and each time the machine reads a <m>0</m> it remains in the same state. If we relabel the states <m>A</m>, <m>B</m>, and <m>C</m> <m>0</m>, <m>1</m>, and <m>2</m>, then the machine always outputs the name of the state it is entering. Proceeding around the circle, we might be lead to think about clock arithmetic, i.e. modulo arithmetic. And indeed, the machine takes the string <m>s_1 \cdots s_n</m>, and outputs <m>t_1 \cdots t_n</m>, where <m>t_i = s_1 + \cdots + s_i \pmod{3}</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise workspace="0.3in">
+      <statement>
+        <p>
+          Describe a finite state machine with input alphabet <m>\{ 0, 1 \}</m> which accepts the strings <q><m>001</m></q>, <q><m>11</m></q>, and <q><m>101</m></q>, but rejects all other strings.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Here is one such choice:
+          <figure xml:id="fig-FSM-exercise-001-or-11-or-101-diagram">
+            <image width="30%" xml:id="fig-FSM-exercise-001-or-11-or-101-diagram-tikz">
+              <shortdescription>
+                A diagram describing a finite state machine accepting the three strings 001, 11, and 101.
+              </shortdescription>
+              <description>
+                <p>
+                  A diagram describing a finite state machine. The diagram is a graph, with nine vertices labelled <m>q_0</m> through <m>q_8</m>. There are fifteen arrows, listen below
+                  <ul>
+                    <li>There is an arrow from the left edge of the diagram to <m>q_0</m>, with no label.</li>
+                    <li>There is an arrow from <m>q_0</m> to <m>q_1</m>, labelled <m>0</m>.</li>
+                    <li>There is an arrow from <m>q_0</m> to <m>q_4</m>, labelled <m>1</m>.</li>
+                    <li>There is an arrow from <m>q_1</m> to <m>q_2</m>, labelled <m>0</m>.</li>
+                    <li>There is an arrow from <m>q_1</m> to <m>q_8</m>, labelled <m>1</m>.</li>
+                    <li>There is an arrow from <m>q_2</m> to <m>q_8</m>, labelled <m>0</m>.</li>
+                    <li>There is an arrow from <m>q_2</m> to <m>q_3</m>, labelled <m>1</m>.</li>
+                    <li>There is an arrow from <m>q_3</m> to <m>q_8</m>, labelled <m>0,1</m>.</li>
+                    <li>There is an arrow from <m>q_4</m> to <m>q_6</m>, labelled <m>0</m>.</li>
+                    <li>There is an arrow from <m>q_4</m> to <m>q_5</m>, labelled <m>1</m>.</li>
+                    <li>There is an arrow from <m>q_5</m> to <m>q_8</m>, labelled <m>0,1</m>.</li>
+                    <li>There is an arrow from <m>q_6</m> to <m>q_8</m>, labelled <m>0</m>.</li>
+                    <li>There is an arrow from <m>q_6</m> to <m>q_7</m>, labelled <m>1</m>.</li>
+                    <li>There is an arrow from <m>q_7</m> to <m>q_8</m>, labelled <m>0,1</m>.</li>
+                    <li>There is an arrow from <m>q_8</m> to itself, labelled <m>1</m>.</li>
+                  </ul>
+                  In addition, the vertices <m>q_3</m>, <m>q_5</m>, and <m>q_7</m> have been circled.
+                </p>
+              </description>
+              <latex-image>
+              \begin{tikzpicture}[scale=0.2]
+              \tikzstyle{every node}+=[inner sep=0pt]
+              \draw [black] (20.9,-46.7) circle (3);
+              \draw (20.9,-46.7) node {$q_0$};
+              \draw [black] (32.1,-42.9) circle (3);
+              \draw (32.1,-42.9) node {$q_1$};
+              \draw [black] (44,-44.9) circle (3);
+              \draw (44,-44.9) node {$q_2$};
+              \draw [black] (12.6,-36.2) circle (3);
+              \draw (12.6,-36.2) node {$q_4$};
+              \draw [black] (54.8,-50.5) circle (3);
+              \draw (54.8,-50.5) node {$q_3$};
+              \draw [black] (54.8,-50.5) circle (2.4);
+              \draw [black] (18.3,-24.4) circle (3);
+              \draw (18.3,-24.4) node {$q_5$};
+              \draw [black] (18.3,-24.4) circle (2.4);
+              \draw [black] (24.7,-12.4) circle (3);
+              \draw (24.7,-12.4) node {$q_6$};
+              \draw [black] (42.8,-22.3) circle (3);
+              \draw (42.8,-22.3) node {$q_7$};
+              \draw [black] (42.8,-22.3) circle (2.4);
+              \draw [black] (30.4,-29.6) circle (3);
+              \draw (30.4,-29.6) node {$q_8$};
+              \draw [black] (23.74,-45.74) -- (29.26,-43.86);
+              \fill [black] (29.26,-43.86) -- (28.34,-43.65) -- (28.66,-44.59);
+              \draw (27.4,-45.33) node [below] {$0$};
+              \draw [black] (35.06,-43.4) -- (41.04,-44.4);
+              \fill [black] (41.04,-44.4) -- (40.34,-43.78) -- (40.17,-44.76);
+              \draw (37.61,-44.49) node [below] {$0$};
+              \draw [black] (19.04,-44.35) -- (14.46,-38.55);
+              \fill [black] (14.46,-38.55) -- (14.56,-39.49) -- (15.35,-38.87);
+              \draw (16.19,-42.87) node [left] {$1$};
+              \draw [black] (14.8,-52.6) -- (18.74,-48.79);
+              \fill [black] (18.74,-48.79) -- (17.82,-48.98) -- (18.52,-49.7);
+              \draw [black] (46.66,-46.28) -- (52.14,-49.12);
+              \fill [black] (52.14,-49.12) -- (51.66,-48.31) -- (51.2,-49.19);
+              \draw (48.41,-48.2) node [below] {$1$};
+              \draw [black] (13.9,-33.5) -- (17,-27.1);
+              \fill [black] (17,-27.1) -- (16.2,-27.6) -- (17.1,-28.04);
+              \draw (14.74,-29.23) node [left] {$1$};
+              \draw [black] (10.63,-33.946) arc (-145.04396:-268.85392:13.867);
+              \fill [black] (21.72,-12.14) -- (20.91,-11.65) -- (20.93,-12.65);
+              \draw (8.94,-18.59) node [left] {$0$};
+              \draw [black] (27.33,-13.84) -- (40.17,-20.86);
+              \fill [black] (40.17,-20.86) -- (39.71,-20.04) -- (39.23,-20.92);
+              \draw (32.75,-17.85) node [below] {$1$};
+              \draw [black] (31.72,-39.92) -- (30.78,-32.58);
+              \fill [black] (30.78,-32.58) -- (30.39,-33.43) -- (31.38,-33.31);
+              \draw (31.92,-36.11) node [right] {$1$};
+              \draw [black] (33.214,-30.63) arc (65.35604:17.91103:18.881);
+              \fill [black] (33.21,-30.63) -- (33.73,-31.42) -- (34.15,-30.51);
+              \draw (39.99,-33.79) node [right] {$0$};
+              \draw [black] (33.299,-28.841) arc (100.04896:-1.21286:18.57);
+              \fill [black] (33.3,-28.84) -- (34.17,-29.19) -- (34,-28.21);
+              \draw (50.38,-32.53) node [above] {$0,1$};
+              \draw [black] (40.21,-23.82) -- (32.99,-28.08);
+              \fill [black] (32.99,-28.08) -- (33.93,-28.1) -- (33.42,-27.24);
+              \draw (34.85,-25.45) node [above] {$0,1$};
+              \draw [black] (26.215,-14.988) arc (27.9956:8.67431:36.508);
+              \fill [black] (30.07,-26.62) -- (30.44,-25.75) -- (29.45,-25.9);
+              \draw (29.4,-19.94) node [right] {$0$};
+              \draw [black] (21.06,-25.58) -- (27.64,-28.42);
+              \fill [black] (27.64,-28.42) -- (27.11,-27.64) -- (26.71,-28.56);
+              \draw (22.65,-27.52) node [below] {$0,1$};
+              \draw [black] (28.841,-32.149) arc (-3.72436:-291.72436:2.25);
+              \draw (24.07,-34.5) node [left] {$0,1$};
+              \fill [black] (27.43,-29.91) -- (26.66,-29.36) -- (26.6,-30.36);
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+      </p>
+    </solution>
+  </exercise>
+</page>
+
+<page>
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        What language is accepted by the finite state machine below?
+      </p>
+
+      <p>
+        <figure xml:id="fig-FSM-acceptance-exercise-diagram">
+          <image width="50%" xml:id="fig-FSM-acceptance-exercise-diagram-tikz">
+            <shortdescription>
+              A diagram describing a finite state machine with output.
+            </shortdescription>
+            <description>
+              <p>
+                A diagram describing a finite state machine. The diagram is a graph, with four vertices labelled <m>q_0</m>, <m>q_1</m>, <m>q_2</m>, and <m>q_3</m>. There are eleven arrows, listen below
+                <ul>
+                  <li>There is an arrow from the left edge of the diagram to <m>A</m>, with no label.</li>
+                  <li>There is an arrow from <m>q_0</m> to <m>q_1</m>, labelled <m>a</m>.</li>
+                  <li>There is an arrow from <m>q_0</m> to <m>q_2</m>, labelled <m>b</m>.</li>
+                  <li>There is an arrow from <m>q_0</m> to <m>q_3</m>, labelled <m>c</m>.</li>
+                  <li>There is an arrow from <m>q_1</m> to <m>q_4</m>, labelled <m>a</m>.</li>
+                  <li>There is an arrow from <m>q_1</m> to <m>q_2</m>, labelled <m>b</m>.</li>
+                  <li>There is an arrow from <m>q_1</m> to <m>q_3</m>, labelled <m>c</m>.</li>
+                  <li>There is an arrow from <m>q_2</m> to <m>q_1</m>, labelled <m>a</m>.</li>
+                  <li>There is an arrow from <m>q_2</m> to <m>q_4</m>, labelled <m>b</m>.</li>
+                  <li>There is an arrow from <m>q_2</m> to <m>q_3</m>, labelled <m>c</m>.</li>
+                  <li>There is an arrow from <m>q_3</m> to <m>q_1</m>, labelled <m>a</m>.</li>
+                  <li>There is an arrow from <m>q_3</m> to <m>q_2</m>, labelled <m>b</m>.</li>
+                  <li>There is an arrow from <m>q_3</m> to <m>q_4</m>, labelled <m>c</m>.</li>
+                  <li>There is an arrow from <m>q_4</m> to <m>q_4</m>, labelled <m>a</m>, <m>b</m>, <m>c</m>.</li>
+                </ul>
+              </p>
+            </description>
+            <latex-image>
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (26.6,-34.5) circle (3);
+            \draw (26.6,-34.5) node {$q_0$};
+            \draw [black] (26.6,-34.5) circle (2.4);
+            \draw [black] (39.1,-34.5) circle (3);
+            \draw (39.1,-34.5) node {$q_2$};
+            \draw [black] (39.1,-34.5) circle (2.4);
+            \draw [black] (39.1,-19.7) circle (3);
+            \draw (39.1,-19.7) node {$q_1$};
+            \draw [black] (39.1,-19.7) circle (2.4);
+            \draw [black] (39.1,-48.9) circle (3);
+            \draw (39.1,-48.9) node {$q_3$};
+            \draw [black] (39.1,-48.9) circle (2.4);
+            \draw [black] (52.2,-34.5) circle (3);
+            \draw (52.2,-34.5) node {$q_4$};
+            \draw [black] (18.7,-34.5) -- (23.6,-34.5);
+            \fill [black] (23.6,-34.5) -- (22.8,-34) -- (22.8,-35);
+            \draw [black] (28.54,-32.21) -- (37.16,-21.99);
+            \fill [black] (37.16,-21.99) -- (36.27,-22.28) -- (37.03,-22.93);
+            \draw (32.3,-25.66) node [left] {$a$};
+            \draw [black] (29.6,-34.5) -- (36.1,-34.5);
+            \fill [black] (36.1,-34.5) -- (35.3,-34) -- (35.3,-35);
+            \draw (32.85,-35) node [below] {$b$};
+            \draw [black] (28.57,-36.77) -- (37.13,-46.63);
+            \fill [black] (37.13,-46.63) -- (36.99,-45.7) -- (36.23,-46.36);
+            \draw (32.31,-43.15) node [left] {$c$};
+            \draw [black] (38.457,-31.571) arc (-170.71296:-189.28704:27.706);
+            \fill [black] (38.46,-22.63) -- (37.83,-23.34) -- (38.82,-23.5);
+            \draw (37.59,-27.1) node [left] {$a$};
+            \draw [black] (39.677,-22.643) arc (8.301:-8.301:30.872);
+            \fill [black] (39.68,-31.56) -- (40.29,-30.84) -- (39.3,-30.69);
+            \draw (40.5,-27.1) node [right] {$b$};
+            \draw [black] (36.38,-50.155) arc (-70.32928:-289.67072:16.838);
+            \fill [black] (36.38,-50.16) -- (35.46,-49.95) -- (35.79,-50.9);
+            \draw (13.37,-34.3) node [left] {$c$};
+            \draw [black] (41.656,-18.137) arc (116.69601:-116.69601:18.092);
+            \fill [black] (41.66,-18.14) -- (42.6,-18.22) -- (42.15,-17.33);
+            \draw (68.38,-34.3) node [right] {$a$};
+            \draw [black] (42.1,-34.5) -- (49.2,-34.5);
+            \fill [black] (49.2,-34.5) -- (48.4,-34) -- (48.4,-35);
+            \draw (45.65,-35) node [below] {$b$};
+            \draw [black] (41.12,-46.68) -- (50.18,-36.72);
+            \fill [black] (50.18,-36.72) -- (49.27,-36.97) -- (50.01,-37.65);
+            \draw (46.19,-43.16) node [right] {$c$};
+            \draw [black] (38.447,-45.974) arc (-170.67567:-189.32433:26.377);
+            \fill [black] (38.45,-45.97) -- (38.81,-45.1) -- (37.82,-45.27);
+            \draw (37.6,-41.7) node [left] {$c$};
+            \draw [black] (39.688,-37.44) arc (8.37354:-8.37354:29.25);
+            \fill [black] (39.69,-37.44) -- (39.31,-38.3) -- (40.3,-38.16);
+            \draw (40.5,-41.7) node [right] {$b$};
+            \draw [black] (41.09,-21.95) -- (50.21,-32.25);
+            \fill [black] (50.21,-32.25) -- (50.06,-31.32) -- (49.31,-31.99);
+            \draw (46.19,-25.65) node [right] {$a$};
+            \draw [black] (54.88,-33.177) arc (144:-144:2.25);
+            \draw (59.45,-34.5) node [right] {$a,b,c$};
+            \fill [black] (54.88,-35.82) -- (55.23,-36.7) -- (55.82,-35.89);
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      We see that any input which enters the state <m>q_4</m> is never accepted. Also notice that the state <m>q_1</m> is always entered when the input <m>a</m> is read, state <m>q_2</m> is entered when the input <m>b</m> is read, and the state <m>q_3</m> is always entered when the input <m>c</m> is read. Moreover, in each of these states, we only ever enter the <sq>failure state</sq> <m>q_4</m> when reading the input we read in order to enter these states. Thus this finite state machine accepts exactly the strings which do not contain two copies of the same letter next to one another.
+    </p>
+  </solution>
+</exercise>
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        Consider a finite state machine with input <m>\{ 0, 1 \}</m> which has exactly two states <m>A</m> and <m>B</m>, where <m>A</m> is the starting state, and such that upon reading a <m>0</m>, the machine stays in the state it is currently in, and upon reading a <m>1</m>, the machine switches to the opposite state to that which it is currently in. There are four possible ways to assign accepting states to this machine. For each of these possibilities, classify the set of strings accepted by the machine.
+      </p>
+    </statement>
+
+    <hint>
+      <p>
+        Drawing some pictures may help you think through this problem.
+      </p>
+    </hint>
+
+    <solution>
+      <p>
+        There are four ways to assign accepting states to the machine: we could have no accepting states, have only <m>A</m> as an accepting state, have only <m>B</m> as an accepting state, or have both <m>A</m> and <m>B</m> as accepting states. The first and last possibility are the easiest to consider. If there are no accepting states, no strings are accepted by the machine; if all states are accepting, all strings are accepted by the machine. To consider the other possiblities, we note that after reading a certain portion of a string, the machine will be in state <m>A</m> if it has read an <em>even</em> number of <m>1</m>s so far, and in state <m>B</m> if it has read an <em>odd</em> number of <m>1</m>s. Thus if <m>A</m> is the only accepting state, then the machine accepts precisely the strings with an even number of <m>1</m>s, and if <m>B</m> is the only accepting state, then the machine accepts precisely the strings with an odd number of <m>1</m>s.
+      </p>
+    </solution>
+  </exercise>
+  <!-- </exercisegroup> -->
+
+
+
+
+<!-- <exercisegroup>
+<introduction>
+  <p>
+    These questions are challenge problems.
+  </p>
+</introduction> -->
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Consider the two functions
+      <sidebyside width="45%">
+        <p><me>f(n) = \begin{cases} n: \amp n\ \text{is even}, \\ 1: \amp n\ \text{is odd}. \end{cases}</me></p>
+        <p><me>g(n) = \begin{cases} 1: \amp n\ \text{is even}, \\ n: \amp n\ \text{is odd}. \end{cases}</me></p>
+      </sidebyside>
+    </p>
+
+    <p>
+      Show that <m>f</m> is not <m>O(g)</m>, <em>and</em> that <m>g</m> is not <m>O(f)</m>.
+    </p>
+
+    <p>
+      Note that for two numbers <m>a</m> and <m>b</m> one always has that <m>a</m> is smaller than or equal to <m>b</m>, or that <m>b</m> is smaller than or equal to <m>a</m>. The above statement shows the analogous statement is not true for the growth rates of two functions.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      To show <m>f</m> is not <m>O(g)</m>, we must show that for any <m>c</m>, there are arbitrarily large integers <m>n</m> such that <m>f(n) \gt c g(n)</m>. But if <m>n</m> is even, then <m>f(n) = n</m> and <m>g(n) = 1</m>. Thus for all even integers <m>n \geq c + 1</m>, the inequality <m>f(n) \gt c g(n)</m> holds.
+    </p>
+
+    <p>
+      The proof that <m>g</m> is not <m>O(f)</m> is similar, considering odd integers rather than even integers.
+    </p>
+  </solution>
+</exercise>
+</page>
+
+<page>
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Show that for any <m>f: \Z^+ \to \R^{\geq}</m> there is some other function <m>g</m> so that <m>f</m> is <m>O(g)</m> but <m>g</m> is not <m>O(f)</m>. This statement can be interpreted as the statement that <q>there is no fastest growing function</q>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      Let <m>g(n) = n f(n)</m>. Then <m>f(n) \leq g(n)</m> for all <m>n</m>, so that <m>f</m> is <m>O(g)</m>. On the other hand, if <m>g</m> was <m>O(f)</m>, then we would be able to find <m>n_0</m> and <m>c</m> so that <m>g(n) \leq c f(n)</m> for all <m>n \geq n_0</m>. Thus <m>n f(n) \leq c f(n)</m> for all <m>n \geq n_0</m>, and dividing both sides by <m>f(n)</m> we conclude that <m>n \leq c</m>, which gives a contradiction if we choose <m>n \geq \max(n_0,c)</m>. Thus <m>g</m> is not <m>O(f)</m>.
+    </p>
+      <!--
+
+      <p>
+        We prove this result in cases. It is either true that (a) <m>f</m> is bounded, i.e. there exists a constant <m>c_0 > 0</m> so that <m>f(n) \leq c_0</m> for all <m>n</m>, or (b) <m>f</m> is unbounded, and there does not exist such a <m>c_0</m>.
+      </p>
+
+      <p>
+        Let us suppose that <m>f</m> is bounded. Then <m>f(n) \leq c \leq cn</m> for all <m>n</m>, so we see that <m>f</m> is <m>O(n)</m>. On the other hand, <m>n</m> is not <m>O(f)</m>, since if <m>n \leq c f(n)</m> held for all <m>n \geq n_0</m>, then we would conclude
+        <me>n \leq c f(n) \leq c c_0</me>,
+        which gives a contradiction for <m>n \geq cc_0 + 1</m>.
+      </p>
+
+      <p>
+        On the other hand, let us suppose that <m>f</m>is unbounded. Let <m>g(n) = \max(1, f(n)^2)</m>. Then for any <m>n</m>, either (i) <m>f(n) \leq 1</m>, so that <m>g(n) = 1</m>, and <m>f(n) \leq g(n)</m>, or (ii) <m>f(n) \geq 1</m>, so that <m>f(n) \leq f(n^2)</m>, and thus <m>f(n) \leq g(n)</m>. In either case, we see that for all <m>n \geq 1</m>, <m>f(n) \leq g(n)</m>, and so <m>f</m> is <m>O(g)</m>. On the other hand <m>g</m> is not <m>O(f)</m>. If it was true that <m>n_0</m> and <m>c</m> existed so that <m>g(n) \leq c f(n)</m> held for all <m>n \geq n_0</m>, then for all <m>n \geq n_0</m>, either (i) <m>f(n) \leq 1</m>, or (ii) <m>f(n) \geq 1</m>, <m>g(n) = f(n)^2</m>, and we conclude <m>f(n)^2 \leq c f(n)</m>. Dividing both sides by <m>f(n)</m>, we find that <m>f(n) \leq c</m> for all <m>n \geq n_0</m>, and so <m>f</m>is a bounded function, i.e. we can set <m>c_0 = \max(f(1),\dots,f(n_0-1),c)</m> in the first paragraph. This gives a contradiction to the assumption that <m>f</m> is unbounded, so it cannot be true that <m>g</m> is <m>O(f)</m>.
+      </p>
+    -->
+  </solution>
+</exercise>
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Suppose that you are given, for each positive integer <m>i \in \Z</m>, a function <m>f_i: \Z^+ \to \R^{\geq}</m>. Find a function <m>g: \Z^+ \to \R^{\geq}</m> such that <em>for every <m>i</m></em>, <m>f_i</m> is <m>O(g)</m>.
+    </p>
+  </statement>
+
+  <hint>
+    <p>
+      Show that it would suffice to find <m>g</m> so that <m>f_i(n) \leq g(n)</m> for all <m>n \geq 0</m> and all <m>i = 1, \dots, n</m>.
+    </p>
+  </hint>
+
+  <solution>
+    <p>
+      Let <m>g(n) = f_1(n) + \cdots + f_n(n)</m>. Fix <m>i</m>. We will show <m>f_i</m> is <m>O(g)</m>. Set <m>n_0 = i</m> and <m>c = 1</m>. Then for <m>n \geq i</m>
+      <me>g(n) = f_1(n) + \cdots + f_n(n) \geq f_i(n)</me>,
+      so <m>f_i(n) \leq g(n) = c g(n)</m>.
+    </p>
+  </solution>
+</exercise>
+
+<exercise workspace="0.3in">
+  <statement>
+    <p>
+      Prove that there is no finite state machine with output and with input alphabet <m>\{ 0, 1 \}</m> which accepts precisely the strings whose number of <m>0</m>s is less than or equal to the number of <m>1</m>s.
+    </p>
+  </statement>
+
+  <hint>
+    <p>
+      Consider how many different states would be needed to get from a string with <m>n</m> <m>0</m>s to a string with <m>n</m> <m>0</m>s followed by <m>n</m> <m>1</m>s.
+    </p>
+  </hint>
+
+  <solution>
+    <p>
+      We prove the result by contradiction. Suppose there was such a finite state machine, and let <m>N</m> be the number of states of such a machine. Consider the <m>N+1</m> strings <m>1^{N+1}</m>, <m>1^{N+1}0, \dots, 1^{N+1} 0^N</m>. Each of these strings is accepted by the machine, so all the states the machine travels between from when it reads <m>1^{N+1}</m> to <m>1^{N+1} 0^N</m> must be accepting states. By the pigeonhole principle, the machine must be in the same state once it upon reading <m>1^{N+1} 0^i</m> and upon reading <m>1^{N+1} 0^j</m> for some <m>i \lt j</m>. But this means that the machine returns to this state every time it reads <m>k \coloneqq j-i</m> repeated <m>0</m>s, and thus the machine will end at this state upon reading any strings of the form <m>1^{N+1} 0^i 0^{Mk}</m> for all <m>M > 0</m>. But if <m>M</m> is suitably large, such strings will contain more <m>0</m>s than <m>1</m>s, and still be accepted by the machine, and so we reach a contradiction, proving that such a machine cannot exist.
+    </p>
+  </solution>
+</exercise>
+
+<exercise workspace="0.3in">
+  <introduction>
+    <p>
+      Fix an alphabet <m>\Sigma</m>, and suppose that <m>S</m> and <m>T</m> are regular languages over this alphabet, in the sense that for each language, there is some finite state machine that accepts precisely that language. Argue that the following are also regular languages:
+    </p>
+
+    <p>
+      <ol marker="(a)">
+        <li>
+          The empty set <m>\emptyset \subset \Sigma^*</m>.
+        </li>
+
+        <li>
+          The complement <m>\Sigma^* - S</m> of <m>S</m>.
+        </li>
+
+        <li>
+          <p>
+            The intersection <m>S \cap T</m>.
+          </p>
+        </li>
+
+        <li>
+          The union <m>S \cup T</m>.
+        </li>
+
+        <li>
+          Any singleton <m>\{ w \}</m>, i.e. any subset of <m>\Sigma^*</m> containing a single string.
+        </li>
+      </ol>
+    </p>
+  </introduction>
+
+  <solution>
+    <p>
+      <ol marker="(a)">
+        <li>
+          <p>
+            Any finite state machine with no accepting states has the empty set as it's language, so the empty set is a regular language.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Take a finite state machine which accepts <m>S</m>, and flip all the accepting states to obtain a new finite state machine <emdash/> all accepting states become non accepting states, and vice versa. This machine will accept <m>\Sigma^* - S</m>, proving <m>\Sigma^* - S</m> is a regular language.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Let <m>A</m> be a finite state machine accepting <m>S</m>, and let <m>B</m> be a finite state machine accepting <m>T</m>. The idea is to construct a finite state machine <m>C</m> which simulates both <m>A</m> and <m>B</m>, and accepts a string <m>s</m> precisely when both machines accept <m>s</m>. The set of state of <m>C</m> will be the cartesian product of the states of <m>A</m> and <m>B</m>. If <m>\alpha_0</m> and <m>\beta_0</m> are the starting states of <m>A</m> and <m>B</m>, then <m>(\alpha_0,\beta_0)</m> is the starting state of <m>C</m>. If, upon reading a character <m>c</m>, <m>A</m> transitions from a state <m>\alpha_1</m> to a state <m>\alpha_2</m>, and <m>B</m> transitions from a state <m>\beta_1</m> to a state <m>\beta_2</m>, then <m>C</m> will transition from the state <m>(\alpha_1,\beta_1)</m> to the state <m>(\alpha_2,\beta_2)</m>. A state <m>(\alpha,\beta)</m> in <m>C</m> is an accepting state precisely when both <m>\alpha</m> <em>and</em> <m>\beta</m> are accepting states.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Consider the finite state machine of the previous problem, but replace <em>and</em> with <em>or</em>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Suppose <m>w = s_1 \cdots s_n</m>. We consider a finite state machine with <m>n+2</m> states, which we label <m>q_{-1}, q_0, \dots, q_n</m>. We start in state <m>q_0</m>, and <m>q_n</m> is the only accepting state. The transition function for <m>0 \leq i \leq n-1</m> takes <m>q_i</m> to <m>q_{i+1}</m> upon reading the character <m>s_{i+1}</m>. Any other transition ends at <m>q_{-1}</m>. This machine will accept <m>w</m>, and no other strings.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+
+<!--
+  <task>
+    <statement>
+      <p>
+        The empty set <m>\emptyset \subset \Sigma^*</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Any finite state machine with no accepting states has the empty set as it's language, so the empty set is a regular language.
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        The complement <m>\Sigma^* - S</m> of <m>S</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Take a finite state machine which accepts <m>S</m>, and flip all the accepting states to obtain a new finite state machine <emdash/> all accepting states become non accepting states, and vice versa. This machine will accept <m>\Sigma^* - S</m>, proving <m>\Sigma^* - S</m> is a regular language.
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        The intersection <m>S \cap T</m>.
+      </p>
+    </statement>
+
+    <hint>
+      <p>
+        One choice is to construct a finite state machine whose states are the cartesian product of the set of states from a finite state machine accepting <m>S</m>, and the set of states from a finite state machine accepting <m>T</m>.
+      </p>
+    </hint>
+
+    <solution>
+      <p>
+        Let <m>A</m> be a finite state machine accepting <m>S</m>, and let <m>B</m> be a finite state machine accepting <m>T</m>. The idea is to construct a finite state machine <m>C</m> which simulates both <m>A</m> and <m>B</m>, and accepts a string <m>s</m> precisely when both machines accept <m>s</m>. The set of state of <m>C</m> will be the cartesian product of the states of <m>A</m> and <m>B</m>. If <m>\alpha_0</m> and <m>\beta_0</m> are the starting states of <m>A</m> and <m>B</m>, then <m>(\alpha_0,\beta_0)</m> is the starting state of <m>C</m>. If, upon reading a character <m>c</m>, <m>A</m> transitions from a state <m>\alpha_1</m> to a state <m>\alpha_2</m>, and <m>B</m> transitions from a state <m>\beta_1</m> to a state <m>\beta_2</m>, then <m>C</m> will transition from the state <m>(\alpha_1,\beta_1)</m> to the state <m>(\alpha_2,\beta_2)</m>. A state <m>(\alpha,\beta)</m> in <m>C</m> is an accepting state precisely when both <m>\alpha</m> <em>and</em> <m>\beta</m> are accepting states.
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        The union <m>S \cup T</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        Consider the finite state machine of the previous problem, but replace <em>and</em> with <em>or</em>.
+      </p>
+    </solution>
+  </task>
+
+  <task>
+    <statement>
+      <p>
+        Any singleton <m>\{ w \}</m>, i.e. any subset of <m>\Sigma^*</m> containing a single string.
+      </p>
+
+      <p>
+        Note that together with TODO and TODO, this implies all finite subsets of <m>\Sigma^*</m> are regular languages.
+      </p>
+
+      <solution>
+        <p>
+          Suppose <m>w = s_1 \cdots s_n</m>. We consider a finite state machine with <m>n+2</m> states, which we label <m>q_{-1}, q_0, \dots, q_n</m>. We start in state <m>q_0</m>, and <m>q_n</m> is the only accepting state. The transition function for <m>0 \leq i \leq n-1</m> takes <m>q_i</m> to <m>q_{i+1}</m> upon reading the character <m>s_{i+1}</m>. Any other transition ends at <m>q_{-1}</m>. This machine will accept <m>w</m>, and no other strings.
+        </p>
+      </solution>
+    </statement>
+  </task>
+-->
+</exercise>
+<!-- </exercisegroup> -->
+</page>
+
+</worksheet>
+</chapter>

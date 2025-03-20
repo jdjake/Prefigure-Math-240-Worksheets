@@ -1,0 +1,1107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-2025-worksheet-5">
+  <title>Worksheet Five</title>
+
+  <introduction>
+    <p>
+      The questions in this worksheet were given out in the fifth week of the course, the week of February 24th-28th, 2025. They review content tested by the first midterm of the course, addressing questions about:
+
+      <ul>
+        <li>
+          Chapter 3: Sets.
+        </li>
+      </ul>
+    </p>
+  </introduction>
+
+  <worksheet xml:id="wkst-2025-worksheet-5" margin="0.7in">
+    <title>Worksheet Five</title>
+
+    <introduction>
+      <p>
+        The questions in this worksheet were given out in the fifth week of the course, the week of February 17th-21st, 2025. They address questions about about set theory.
+      </p>
+    </introduction>
+
+    <page>
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Find the cardinalities of the sets <m>A = \{ 1, 4, 6, 9 \}</m>, <m>B = \{ \}</m>, <m>C = \{ \{ 5 \} \}</m>, and <m>D = \{ 1, 4 \}</m>. Which sets are subsets of one another?
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Simply by counting, we see <m>|A| = 4</m>, <m>|B| = 0</m>, and <m>|D| = 2</m>. The set <m>C</m> is a little trickier <mdash/> the set contains exactly one element, the set <m>\{ 5 \}</m>, and so <m>|C| = 1</m>.
+          </p>
+
+          <p>
+            The set <m>B</m> is a subset of the sets <m>A</m>, <m>C</m>, and <m>D</m>, since the empty set is a subset of every set. We also have <m>D \subset A</m>.
+          </p>
+        </solution>
+      </exercise>
+
+
+
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Find the cardinality of the set <m>F = \{ 4,4,4,4,6,6,6,6,8,8,8,8,e \}</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            To solve this problem, it is important to recall that sets do not have notions of duplicates. Thus <m>F = \{  4,6,8,e \}</m>, which evidently contains 4 distinct elements, so <m>|F| = 4</m>.
+          </p>
+        </solution>
+      </exercise>
+
+
+
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Let <m>A = \{ 1, 4 \}</m> and <m>B = \{ 1, 4, 6, 9 \}</m>. Is <m>A</m> a subset of <m>B</m>? Is <m>B</m> a subset of <m>A</m>? If <m>A</m> a subset of <m>A</m>?
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            The set <m>A</m> is a subset of <m>B</m>, and <m>A</m> is a subset of <m>A</m>, but <m>B</m> is not a subset of <m>A</m>.
+          </p>
+        </solution>
+      </exercise>
+
+
+
+
+      <exercise workspace="0.3in">
+        <statement>
+          <p>
+            Let <m>I = \{ -1, 1 \}</m> and <m>E = \{ x \in \Z: \exists y \in \Z (x = y^2) \}</m>. Is <m>I</m> a subset of <m>E</m>?
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            The set <m>I</m> is not a subset of <m>E</m>. It <em>would</em> be a subset if both <m>-1</m> and <m>1</m> were elements of <m>E</m>, but <m>-1</m> is not an element of <m>E</m>; to see why, note that any element of <m>E</m> is a square of an integer, and thus <em>non-negative</em>.
+          </p>
+        </solution>
+      </exercise>
+
+
+
+
+      <exercise workspace="0.6in">
+        <statement>
+          <p>
+            List all elements of the power set of <m>A = \{ 1,2,3 \}</m> and find the cardinality of this power set. Do the same for the power set of <m>B = \emptyset</m>.
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            It suffices to find all subsets of <m>A</m>, which we list below:
+            <me>\mathcal{P}(A) = \{ \emptyset, \{ 1 \}, \{ 2 \}, \{ 3 \}, \{ 1,2 \}, \{ 1,3 \}, \{  2,3 \}, \{ 1,2,3 \} \}</me>.
+            By inspection, we see that <m>|\mathcal{P}(A)| = 8</m>.
+          </p>
+
+          <p>
+            Next, we must find all subsets of <m>B</m>. There is only <em>one</em> such subset, the empty set, and thus
+            <me>\mathcal{P}(B) = \{ \emptyset \}</me>.
+            Since <m>\mathcal{P}(B)</m> contains a single object, <m>|\mathcal{P}(B)| = 1</m>.
+          </p>
+
+          <p>A good way to check your answers is to remember that for any finite set <m>X</m>, the formula <m>|\mathcal{P}(X)| = 2^{|X|}</m> holds.</p>
+        </solution>
+      </exercise>
+    </page>
+
+    <page>
+      <exercise workspace="0.6in">
+        <statement>
+          <p>
+            How many <em>proper</em> subsets does the set <m>A = \{ 5,6 \}</m> have? More generally, for any finite set <m>A</m> how many proper subsets does <m>A</m> have, in terms of the cardinality <m>|A|</m> of the set <m>A</m>?
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            Recall that a <em>proper</em> subset of a set <m>A</m> is a subset that is not equal to <m>A</m>. Since any finite set <m>A</m> has <m>2^{|A|}</m> subsets, it follows that any finite set <m>A</m> has <m>2^{|A|} - 1</m> proper subsets. In particular, the set <m>A = \{ 5, 6 \}</m> has
+            <me>2^{|A|} - 1 = 2^2 - 1 = 3</me>
+            proper subsets.
+          </p>
+        </solution>
+      </exercise>
+
+
+
+
+      <exercise workspace="0.8in">
+        <statement>
+          <p>
+            Given <m>A = \{ \pi, 12 \}</m>, give an example of an element of <m>\mathcal{P}(\mathcal{P}(A))</m>. What is the cardinality of <m>\mathcal{P}(\mathcal{P}(A))</m>?
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            The empty set is always an element of <m>\mathcal{P}(B)</m> for any set <m>B</m>, so in particular, if <m>B = \mathcal{P}(A)</m>, then we see that <m>\emptyset \in \mathcal{P}(\mathcal{P}(A))</m>. There are many other examples of elements in <m>\mathcal{P}(\mathcal{P}(A))</m>, however. For instance, the set <m>S = \{ \emptyset, \{ \pi \}, \{ \pi, 12 \} \}</m> is also an element of <m>\mathcal{P}(\mathcal{P}(A))</m>.
+
+            To find the cardinality of <m>\mathcal{P}(\mathcal{P}(A))</m>, we calculate that
+            <me>|\mathcal{P}(\mathcal{P}(A))| = 2^{|\mathcal{P}(A)|} = 2^{2^{|A|}} = 2^{2^{2}} = 2^4 = 16</me>.
+          </p>
+        </solution>
+      </exercise>
+
+
+
+
+      <exercise workspace="0.6in">
+        <statement>
+          <p>
+            Let <m>A = \{ -1, 0, 1 \}</m>, <m>B = \{ 0,5 \}</m>, <m>C = \{-10, 0 \}</m>, and <m>D = \{ -10, 5 \}</m>. Find the following:
+          </p>
+
+          <p>
+            <ol marker="(a)">
+              <li>
+                <m>A \cup B</m>
+              </li>
+              <li>
+                <m>B \cap C</m>
+              </li>
+              <li>
+                <m>(A \cup B \cup C) \cap D</m>
+              </li>
+              <li>
+                <m>(A - B) \cup C</m>
+              </li>
+              <li>
+                <m>(A \cup D) - (B \cup C)</m>
+              </li>
+              <li>
+                <m>A \oplus C</m>
+              </li>
+            </ol>
+          </p>
+        </statement>
+
+        <solution>
+          <p>
+            <ol marker="(a)">
+              <li>
+                <p>
+                  <m>A \cup B = \{ -1, 0, 1, 5 \}</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>B \cap C = \{ 0 \}</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>(A \cup B \cup C) \cap D = \{ -10,-1,0,1,5 \} \cap \{ -10, 5 \} = \{ -10, 5 \}</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>(A - B) \cup C = \{ -1, 1 \} \cup \{ -10, 0 \} = \{ -10,-1,0,1 \}</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>(A \cup D) - (B \cup C) = \{ -10, -1, 0, 1, 5 \} - \{ -10, 0, 5 \} = \{ -1, 1 \}</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>A \oplus C = \{ -10, 1, 1 \}</m>.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+
+        <!--
+
+        <task>
+          <statement>
+            <p>
+              <m>A \cup B</m>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              <m>A \cup B = \{ -1, 0, 1, 5 \}</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <m>B \cap C</m>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              <m>B \cap C = \{ 0 \}</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <m>(A \cup B \cup C) \cap D</m>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              <m>(A \cup B \cup C) \cap D = \{ -10,-1,0,1,5 \} \cap \{ -10, 5 \} = \{ -10, 5 \}</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <m>(A - B) \cup C</m>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              <m>(A - B) \cup C = \{ -1, 1 \} \cup \{ -10, 0 \} = \{ -10,-1,0,1 \}</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <m>(A \cup D) - (B \cup C)</m>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              <m>(A \cup D) - (B \cup C) = \{ -10, -1, 0, 1, 5 \} - \{ -10, 0, 5 \} = \{ -1, 1 \}</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              <m>A \oplus C</m>
+            </p>
+          </statement>
+
+          <solution>
+            <p>
+              <m>A \oplus C = \{ -10, 1, 1 \}</m>.
+            </p>
+          </solution>
+        </task>
+      -->
+    </exercise>
+
+    <exercise workspace="0.6in">
+      <statement>
+        <p>
+          If the universal set is the set <m>\Z^+</m> of all positive integers, what is the complement of the set <m>E = \{ x \in \Z : \exists y \in \Z (x = y^2) \}</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          The complement of <m>E</m> is the set of all positive integers which are not in <m>E</m>, which are precisely the set of positive integers which <em>aren't</em> perfect squares. Thus we can write
+          <me>\overline{E} = \{ x \in \Z^+ : x\ \text{is not a perfect square} \}</me>.
+          Alternatively, the set <m>E</m> is the set of all positive integers which satisfy the logical statement
+          <me>\neg (\exists y \in \Z (x = y^2)) \equiv \forall y \in \Z (x \neq y^2)</me>.
+          We can thus also write the complement <m>\overline{E}</m> of <m>E</m> as
+          <me>\overline{E} = \{ x \in \Z^+ : \forall y \in \Z (x \neq y^2) \}</me>.
+        </p>
+      </solution>
+    </exercise>
+  </page>
+
+
+
+  <page>
+
+
+
+
+    <exercise workspace="0.6in">
+      <statement>
+        <p>
+          Let <m>P</m> be the set of all prime numbers and let <m>E</m> be as in the previous problem. What is the smallest positive integer not contained in <m>P \cup E</m>?
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          In order, we can write
+          <me>E = \{ 1^2, 2^2, 3^2, \dots \} = \{ 1, 4, 9, \dots \}</me>,
+          and
+          <me>P = \{ 2, 3, 5, 7, 11, \dots \}</me>.
+          Thus
+          <me>P \cup E = \{ 1,2,3,4,5,7,9,11,\dots \}</me>.
+          We see that <m>6</m> is the smallest positive integer that is not contained in <m>P \cup E</m>.
+        </p>
+      </solution>
+    </exercise>
+
+
+
+
+    <exercise workspace="0.6in">
+      <statement>
+        <p>
+          Let <m>B = \{ -2, 3 \}</m> and <m>C = \{ 1, 5 \}</m>. Write out <m>B \times C</m> and <m>C \times B</m> in full. Is it true that <m>B \times C = C \times B</m>? Is it true that <m>|B \times C| = |C \times B|</m>?
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We write
+          <me>B \times C = \{ (-2,1), (-2,5), (3,1), (3,5) \}</me>
+          and
+          <me>C \times B = \{ (1,-2), (1,3), (5,-2), (5,3) \}</me>.
+          These are evidently not equal as sets: in fact, for the sets <m>B</m> and <m>C</m> given above the sets <m>B \times C</m> and <m>C \times B</m> are actually <em>disjoint</em>. It's important to remember that the Cartesian product of sets contains <em>ordered</em> tuples of elements. While it may be true that <m>\{ -2, 1 \} = \{ 1, -2 \}</m>, it is not true that <m>(-2,1) = (1,-2)</m>, since order matters in the specification of ordered tuples.
+        </p>
+
+        <p>
+          On the other hand, it <em>is</em> true that the two sets have the same cardinality.
+        </p>
+
+        <p>
+          This problem can serve as a warning that though the Cartesian product <m>B \times C</m> shares the same notation as as the multiplication of numbers, it does not share all the properties that the multiplication of numbers posesses. In this case, while multiplication of numbers is commutative, the example above shows that the Cartesian product of sets is <em>not</em> commutative. That is, it is not always true that <m>B \times C = C \times B</m>, though it is always true that <m>|B \times C| = |C \times B|</m>. One way to see this is because the formula <m>|B \times C| = |B| \times |C|</m> always holds, which <em>is</em> the multiplication of two numbers.
+        </p>
+      </solution>
+    </exercise>
+
+
+
+
+    <exercise workspace="0.6in">
+      <statement>
+        <p>
+          If <m>S</m> is a set of cardinality 7, and <m>T</m> is a set of cardinality 9, what is the cardinality of <m>S \times \mathcal{P}(T)</m>?
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We calculate that
+          <me>|S \times \mathcal{P}(T)| = |S| \cdot |\mathcal{P}(T)| = |S| \cdot 2^{|T|} = 7 \cdot 2^9</me>.
+        </p>
+      </solution>
+    </exercise>
+
+
+
+
+    <exercise workspace="0.6in">
+      <statement>
+        <p>
+          Describe some specific partition of the set <m>A = \{ 0, 1, 2, 3, 4, 5 \}</m> into three non-empty subsets.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          There are many choices here. We describe two examples below, though yours might look different. To check your answer, your partition of <m>A</m> into three sets <m>A_1</m>, <m>A_2</m>, and <m>A_3</m> must have the property that (a) the sets <m>A_1</m>, <m>A_2</m> and <m>A_3</m> are disjoint, (b) <m>A_1 \cup A_2 \cup A_3 = A</m>, and (c) none of the sets <m>A_1</m>, <m>A_2</m>, and <m>A_3</m> can be empty.
+        </p>
+
+        <p>
+          One example is given by writing
+          <me>A = \{ 0 \} \cup \{ 1 \} \cup \{ 2,3,4,5 \}</me>.
+          Another example is given by writing
+          <me>A = \{ 0,3 \} \cup \{ 1,4 \} \cup \{ 2, 5 \}</me>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise workspace="0.6in">
+      <statement>
+        <p>
+          Show that if <m>A \subset B</m> and <m>C \subset D</m>, then <m>A \times C \subset B \times D</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We give a <em>direct proof</em> of the implication. Thus we assume <m>A \subset B</m> and <m>C \subset D</m>, and our goal is to prove that <m>A \times C \subset B \times D</m>. To prove one set is a subset of another, we must prove the implication that for any <m>z \in A \times C</m>, <m>z \in B \times D</m>.
+        </p>
+        <p>
+          If <m>z \in A \times C</m>, then by definition of the cartesian product, there must exist <m>x \in A</m> and <m>y \in C</m> such that <m>z = (x,y)</m>. Since <m>A \subset B</m>, <m>x \in B</m>, and since <m>C \subset D</m>, <m>y \in D</m>. But this means by definition that <m>(x,y) \in B \times D</m>. Thus <m>z \in B \times D</m>, which completes the proof.
+        </p>
+      </solution>
+    </exercise>
+  </page>
+
+
+
+  <page>
+    <exercise workspace="0.3in">
+      <statement>
+        <p>
+          Express the blue region in the Venn diagram below using set operations (Note that several answers are possible here).
+
+          <figure xml:id="fig-ex-14-venn-diagram">
+            <image width="30%" xml:id="fig-ex-14-venn-diagram-tikz">
+              <shortdescription>
+                A Venn diagram consisting of three interlocking circles.
+              </shortdescription>
+              <description>
+                <p>
+                  A Venn diagram consisting of three interlocking circles. The three circles are labelled <m>U</m>, <m>V</m>, and <m>W</m>. The only regions that are shaded blue are contained in the circle labelled <m>W</m>, and all regions are shaded, except for the region which is outside of both <m>U</m> and <m>V</m>.
+                </p>
+              </description>
+              <latex-image>
+              \begin{tikzpicture}
+              % Shade the required region (U ∩ W but not V) correctly underneath
+              \begin{scope}
+              \clip (0,1.2) circle(1.5);
+              \clip (1.2,-0.8) circle(1.5);
+              \fill[cyan] (0.6,0.2) circle(1.5);
+              \end{scope}
+
+              % Ensure V ∩ W is shaded underneath
+              \begin{scope}
+              \clip (-1.2,-0.8) circle(1.5);
+              \clip (1.2,-0.8) circle(1.5);
+              \fill[cyan] (0,-0.8) circle(1.5);
+              \end{scope}
+
+              % Define the circles
+              \draw (0,1.2) circle(1.5);
+              \draw (-1.2,-0.8) circle(1.5);
+              \draw (1.2,-0.8) circle(1.5);
+
+              % Label the circles in the center
+              \node at (0,1.2) {$U$};
+              \node at (-1.2,-0.8) {$V$};
+              \node at (1.2,-0.8) {$W$};
+
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        There are many ways to write this region. One option is
+        <me>(V \cap W) \cup (U \cap W)</me>.
+        Another option is to write the shaded region as
+        <me>(V \cap W \cap \overline{U}) \cup (V \cap W \cap U) \cup (U \cap W \cap \overline{V})</me>,
+        which has the advantage in that the unions in the expression are <em>disjoint unions</em>, which can often be useful in certain computations, especially when one needs to count the cardinality of the shaded regions.
+      </p>
+    </solution>
+  </exercise>
+
+
+
+
+  <exercise workspace="0.4in">
+    <introduction>
+      <p>
+        Consider any two sets <m>A</m> and <m>B</m>.
+      </p>
+    </introduction>
+
+    <task>
+      <statement>
+        <p>
+          Is it always true that <m>\mathcal{P}(A \cap B) = \mathcal{P}(A) \cap \mathcal{P}(B)</m>? If yes, then prove it, otherwise give a counterexample.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          The statement <em>is true</em>. To prove two sets are equal, it suffices to prove each is a subset of the other. Thus in this case we must show that <m>\mathcal{P}(A \cap B) \subset \mathcal{P}(A) \cap \mathcal{P}(B)</m> and <m>\mathcal{P}(A) \cap \mathcal{P}(B) \subset \mathcal{P}(A \cap B)</m>.
+        </p>
+
+        <p>
+          To prove <m>\mathcal{P}(A \cap B) \subset \mathcal{P}(A) \cap \mathcal{P}(B)</m>, we must show that for any <m>S</m>, if <m>S \in \mathcal{P}(A \cap B)</m>, then <m>S \in \mathcal{P}(A)</m> and <m>S \in \mathcal{P}(B)</m>, i.e. that if <m>S \subset A \cap B</m> then <m>S \subset A</m> and <m>S \subset B</m>. We give a direct proof of this implication. So assume <m>S \subset A \cap B</m>. To prove <m>S \subset A</m> and <m>S \subset B</m>, we must show that for any <m>x</m>, if <m>x \in S</m> then <m>x \in A</m> and <m>x \in B</m>. Since <m>x \in S</m> and using the assumption that <m>S \subset A \cap B</m>, it follows that <m>x \in A \cap B</m>. Thus <m>x \in A</m> and <m>x \in B</m>. But this completes the argument.
+        </p>
+
+        <p>
+          For the other direction, to prove that <m>\mathcal{P}(A) \cap \mathcal{P}(B) \subset \mathcal{P}(A \cap B)</m>, we must prove that for any <m>S</m>, if <m>S \in \mathcal{P}(A) \cap \mathcal{P}(B)</m>, then <m>S \in \mathcal{P}(A \cap B)</m>, i.e. that if <m>S \subset A</m> and <m>S \subset B</m>, then <m>S \subset A \cap B</m>. We prove this directly. We must show, given the assumption that <m>S \subset A</m> and <m>S \subset B</m>, that for any <m>x</m>, if <m>x \in S</m> then <m>x \in A \cap B</m>. Since <m>x \in S</m> and <m>S \subset A</m>, it follows that <m>x \in A</m>. Since <m>x \in S</m> and <m>S \subset B</m>, it follows that <m>x \in B</m>. But then <m>x \in A</m> and <m>x \in B</m>, so <m>x \in A \cap B</m>.
+        </p>
+
+        <p>
+          The last two paragraphs complete the proof of the equality of the sets <m>\mathcal{P}(A \cap B)</m> and <m>\mathcal{P}(A)</m> and <m>\mathcal{P}(B)</m>.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          Is it always true that <m>\mathcal{P}(A \cup B) = \mathcal{P}(A) \cup \mathcal{P}(B)</m>? If yes, then prove it, otherwise give a counterexample.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          This statement is <em>false</em>. Here is one counterexample, though there are many others. Let <m>A = \{ 0 \}</m> and let <m>B = \{ 1 \}</m>. Then the set <m>\{ 0, 1 \}</m> is an element of <m>\mathcal{P}(A \cup B)</m>, but is not an element of <m>\mathcal{P}(A)</m>, nor an element of <m>\mathcal{P}(B)</m>. Since <m>\mathcal{P}(A \cup B)</m> contains an element that is not an element of <m>\mathcal{P}(A) \cup \mathcal{P}(B)</m>, it follows the two sets are not equal.
+        </p>
+      </solution>
+    </task>
+  </exercise>
+
+
+
+
+  <exercise workspace="0.3in">
+    <statement>
+      <p>
+        Given <m>S = \{ n \in \Z: \exists k \in \Z (n = 5k+2) \}</m> and <m>T = \{ m \in \Z: \exists j \in \Z  (m = 5j-3) \}</m>, prove that <m>S = T</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        To prove that <m>S = T</m>, we must show that <m>S \subset T</m> and <m>T \subset S</m>.
+      </p>
+
+      <p>
+        To prove that <m>S \subset T</m>, we must show that for any <m>n</m>, if <m>n \in S</m> then <m>n \in T</m>. We prove this implication directly. If <m>n \in S</m>, then by definition, there exists an integer <m>k</m> such that <m>n = 5k+2</m>. But then
+        <me>n = 5k+2 = 5(k+1) - 3 = 5j - 3</me>,
+        where <m>j \coloneqq k+1</m>. So we see that the statement <m>\exists j \in \Z (n = 5j-3)</m>, and so <m>n \in T</m>. Since <m>n</m> was arbitrary, this shows that <m>S \subset T</m>.
+      </p>
+
+      <p>
+        To prove that <m>T \subset S</m>, we must show that for any <m>m</m>, if <m>m \in T</m> then <m>m \in S</m>. We also prove this implication directly. If <m>m \in T</m>, then by definition there exists an integer <m>j</m> with <m>m = 5j - 3</m>. But then
+        <me>m = 5j - 3 = 5(j-1) + 2 = 5k + 2</me>,
+        where <m>k \coloneqq j-1</m>. So we see that the statement <m>\exists k \in \Z (m = 5k+2)</m>, and so <m>m \in S</m>. Since <m>m</m> was arbitrary, this shows that <m>T \subset S</m>.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise workspace="0.4in">
+    <statement>
+      <p>
+        For any set <m>A</m>, simplify the expressions <m>A \oplus \{ \}</m> and <m>A \oplus A</m> as much as possible.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We have
+        <me>A \oplus \emptyset = (A \cup \emptyset) - (A \cap \emptyset) = A - \emptyset = A</me>
+        and
+        <me>A \oplus A = (A \cup A) - (A \cap A) = A - A = \emptyset</me>.
+      </p>
+    </solution>
+  </exercise>
+</page>
+
+
+
+<page>
+  <exercise workspace="0.8in">
+    <statement>
+      <p>
+        For each of the following claims, determine if they are true for all finite sets <m>A</m> and <m>B</m>. If they are false, find a counterexample.
+        <aside>
+          <p>
+            We do not ask you to give a proof if the statements are true, since the statements involve cardinality, and we haven't really discussed a precise definition of cardinality in this course.
+          </p>
+        </aside>
+      </p>
+
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              <m>|A \cup B| = |A| + |B|</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>|A - B| = |A| - |B|</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>|A \times B| = |A| |B|</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              If <m>A \cap B = \emptyset</m>, then <m>|A \cup B| = |A| + |B|</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              If <m>B \subset A</m>, then <m>|A - B| = |A| - |B|</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              If <m>A \subset B</m>, then <m>|A| \leq |B|</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <ol marker="(a)">
+          <li>
+            <p>
+              This statement is in general false. One counterexample is obtained by setting <m>A = B = \{ 1 \}</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              This statement is in general false. To obtain one counterexample, consider the case where <m>A = \{ 0, 1 \}</m> and <m>B = \{ 0, 3 \}</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              This statement is true.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              This statement is true.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              This statement is true.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              This statement is true.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+
+    <!--
+
+    <task>
+      <statement>
+        <p>
+          <m>|A \cup B| = |A| + |B|</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          This statement is in general false. One counterexample is obtained by setting <m>A = B = \{ 1 \}</m>.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>|A - B| = |A| - |B|</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          This statement is in general false. To obtain one counterexample, consider the case where <m>A = \{ 0, 1 \}</m> and <m>B = \{ 0, 3 \}</m>.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>|A \times B| = |A| |B|</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          This statement is true.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          If <m>A \cap B = \emptyset</m>, then <m>|A \cup B| = |A| + |B|</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          This statement is true.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          If <m>B \subset A</m>, then <m>|A - B| = |A| - |B|</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          This statement is true.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          If <m>A \subset B</m>, then <m>|A| \leq |B|</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          This statement is true.
+        </p>
+      </solution>
+    </task>
+  -->
+</exercise>
+
+<exercise workspace="0.8in">
+  <statement>
+    <p>
+      Prove the following for for any sets <m>A,B</m>, and <m>C</m>:
+    </p>
+
+    <p>
+      <ol marker="(a)">
+        <li>
+          <p>
+            <m>(A \cup B) \times C = (A \times C) \cup (B \times C)</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            <m>(A \cap B) \times C = (A \times C) \cap (B \times C)</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>A</m> and <m>B</m> are disjoint then <m>A \times C</m> and <m>B \times C</m> are disjoint.
+          </p>
+        </li>
+
+        <li>
+         <p>
+          Now using your answers and your answer to Question 9, what is the algebraic property these facts demonstrate?
+        </p>
+      </li>
+    </ol>
+  </p>
+</statement>
+
+<solution>
+  <p>
+    <ol marker="(a)">
+      <li>
+    <p>
+      We must prove that <m>(A \cup B) \times C \subset (A \times C) \cup (B \times C)</m> and <m>(A \times C) \cup (B \times C) \subset (A \cup B) \times C</m>.
+    </p>
+
+    <p>
+      To prove the first statement, we must prove that any element of <m>(A \cup B) \times C</m> is an element of <m>(A \times C) \cup (B \times C)</m>, an implication we prove directly. Any element of <m>(A \cup B) \times C</m> can be written as  <m>(x,y)</m>, where <m>x \in A \cup B</m> and <m>y \in C</m>. Since <m>x \in A \cup B</m>, either <m>x \in A</m> or <m>x \in B</m>, naturally leading to a proof by cases. In the first case, where <m>x \in A</m>, we have <m>(x,y) \in A \times C</m>, and thus <m>(x,y) \in (A \times C) \cup (B \times C)</m>. In the second case, where <m>x \in B</m>, we have <m>(x,y) \in B \times C</m>, and thus <m>(x,y) \in (A \times C) \cup (B \times C)</m>. In either case, we have proved that <m>(x,y) \in (A \times C) \cup (B \times C)</m>, and thus this statement is true in general, completing the proof.
+    </p>
+
+    <p>
+      To prove the second statement, we must prove that any element of <m>(A \times C) \cup (B \times C)</m> is an element of <m>(A \cup B) \times C</m>, an implication we also prove directly. Any element of <m>(A \times C) \cup (B \times C)</m> is either an element of <m>A \times C</m>, or an element of <m>B \times C</m>, leading to a proof by cases. One can shorten the argument using question TODO. Any element of <m>A  \times C</m> is an element of <m>(A \cup B) \times C</m> since <m>A \subset A \cup B</m> and <m>C \subset C</m>. Any element of <m>B \times C</m> is an element of <m>(A \cup B) \times C</m> since <m>B \subset A \cup B</m> and <m>C \subset C</m>. In either case we see the element of <m>(A \cup B) \times C</m>, and thus the statement is true in general, completing the proof.
+    </p>
+      </li>
+
+      <li>
+    <p>
+      To prove <m>(A \cap B) \times C \subset (A \times C) \cap (B \times C)</m>, we use question TODO. Since <m>A \cap B \subset A</m> and <m>C \subset C</m>, <m>(A \cap B) \times C \subset A \times C</m>. Since <m>A \cap B \subset B</m> and <m>C \subset C</m>, <m>(A \cap B) \times C \subset B \times C</m>. Since <m>(A \cap B) \times C</m> is a subset of both <m>A \times C</m> and <m>B \times C</m>, it follows that <m>(A \cap B) \times C</m> is a subset of the intersection of both sets by question TODO.
+    </p>
+
+    <p>
+      To prove <m>(A \times C) \cap (B \times C) \subset (A \cap B) \times C</m>, we must show any element of <m>(A \times C) \cap (B \times C)</m> is an element of <m>(A \cap B) \times C</m>. Any element of <m>(A \times C) \cap (B \times C)</m> is an element of <m>A \times C</m> and an element of <m>B \times C</m>, so by definition, these statements respectively imply the element can be written as <m>(x,y)</m>, where <m>x \in A</m> and <m>x \in B</m>, and where <m>y \in C</m>. But then <m>x \in A \cap B</m>, so <m>(x,y) \in (A \cap B) \times C</m>, which completes the proof.
+    </p>
+      </li>
+
+      <li>
+    <p>
+      This statement follows from part TODO of this question. Namely, if <m>A \cap B = \emptyset</m>, then
+      <me>(A \times C) \cap (B \times C) = (A \cap B) \times C = \emptyset \times C = \emptyset</me>.
+    </p>
+      </li>
+
+      <li>
+  <p>
+    Parts TODO and TODO of this question show that, respectively, the Cartesian product operator <m>\times</m> is <em>distributive</em> over the union operator, and the intersection operator, i.e. they mirror the distributive law <m>(x + y) \cdot z = x \cdot z + y \cdot z</m>, which says that multiplication operator <em>distributes</em> over the addition operator.
+  </p>
+      </li>
+    </ol>
+  </p>
+</solution>
+
+<!--
+<task workspace="1in">
+  <statement>
+    <p>
+      <m>(A \cup B) \times C = (A \times C) \cup (B \times C)</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      We must prove that <m>(A \cup B) \times C \subset (A \times C) \cup (B \times C)</m> and <m>(A \times C) \cup (B \times C) \subset (A \cup B) \times C</m>.
+    </p>
+
+    <p>
+      To prove the first statement, we must prove that any element of <m>(A \cup B) \times C</m> is an element of <m>(A \times C) \cup (B \times C)</m>, an implication we prove directly. Any element of <m>(A \cup B) \times C</m> can be written as  <m>(x,y)</m>, where <m>x \in A \cup B</m> and <m>y \in C</m>. Since <m>x \in A \cup B</m>, either <m>x \in A</m> or <m>x \in B</m>, naturally leading to a proof by cases. In the first case, where <m>x \in A</m>, we have <m>(x,y) \in A \times C</m>, and thus <m>(x,y) \in (A \times C) \cup (B \times C)</m>. In the second case, where <m>x \in B</m>, we have <m>(x,y) \in B \times C</m>, and thus <m>(x,y) \in (A \times C) \cup (B \times C)</m>. In either case, we have proved that <m>(x,y) \in (A \times C) \cup (B \times C)</m>, and thus this statement is true in general, completing the proof.
+    </p>
+
+    <p>
+      To prove the second statement, we must prove that any element of <m>(A \times C) \cup (B \times C)</m> is an element of <m>(A \cup B) \times C</m>, an implication we also prove directly. Any element of <m>(A \times C) \cup (B \times C)</m> is either an element of <m>A \times C</m>, or an element of <m>B \times C</m>, leading to a proof by cases. One can shorten the argument using question TODO. Any element of <m>A  \times C</m> is an element of <m>(A \cup B) \times C</m> since <m>A \subset A \cup B</m> and <m>C \subset C</m>. Any element of <m>B \times C</m> is an element of <m>(A \cup B) \times C</m> since <m>B \subset A \cup B</m> and <m>C \subset C</m>. In either case we see the element of <m>(A \cup B) \times C</m>, and thus the statement is true in general, completing the proof.
+    </p>
+  </solution>
+</task>
+
+<task workspace="1in">
+  <statement>
+    <p>
+      <m>(A \cap B) \times C = (A \times C) \cap (B \times C)</m>.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      To prove <m>(A \cap B) \times C \subset (A \times C) \cap (B \times C)</m>, we use question TODO. Since <m>A \cap B \subset A</m> and <m>C \subset C</m>, <m>(A \cap B) \times C \subset A \times C</m>. Since <m>A \cap B \subset B</m> and <m>C \subset C</m>, <m>(A \cap B) \times C \subset B \times C</m>. Since <m>(A \cap B) \times C</m> is a subset of both <m>A \times C</m> and <m>B \times C</m>, it follows that <m>(A \cap B) \times C</m> is a subset of the intersection of both sets by question TODO.
+    </p>
+
+    <p>
+      To prove <m>(A \times C) \cap (B \times C) \subset (A \cap B) \times C</m>, we must show any element of <m>(A \times C) \cap (B \times C)</m> is an element of <m>(A \cap B) \times C</m>. Any element of <m>(A \times C) \cap (B \times C)</m> is an element of <m>A \times C</m> and an element of <m>B \times C</m>, so by definition, these statements respectively imply the element can be written as <m>(x,y)</m>, where <m>x \in A</m> and <m>x \in B</m>, and where <m>y \in C</m>. But then <m>x \in A \cap B</m>, so <m>(x,y) \in (A \cap B) \times C</m>, which completes the proof.
+    </p>
+  </solution>
+</task>
+
+<task workspace="1in">
+  <statement>
+    <p>
+      If <m>A</m> and <m>B</m> are disjoint then <m>A \times C</m> and <m>B \times C</m> are disjoint.
+    </p>
+  </statement>
+
+  <solution>
+    <p>
+      This statement follows from part TODO of this question. Namely, if <m>A \cap B = \emptyset</m>, then
+      <me>(A \times C) \cap (B \times C) = (A \cap B) \times C = \emptyset \times C = \emptyset</me>.
+    </p>
+  </solution>
+</task>
+
+<task workspace="0.3in">
+  <statement>
+   <p>
+    Now using your answers and your answer to Question 9, what is the algebraic property these facts demonstrate?
+  </p>
+</statement>
+
+<solution>
+  <p>
+    Parts TODO and TODO of this question show that, respectively, the Cartesian product operator <m>\times</m> is <em>distributive</em> over the union operator, and the intersection operator, i.e. they mirror the distributive law <m>(x + y) \cdot z = x \cdot z + y \cdot z</m>, which says that multiplication operator <em>distributes</em> over the addition operator.
+  </p>
+</solution>
+</task>
+-->
+</exercise>
+
+
+
+
+<exercise workspace="0.6in">
+  <statement>
+    <p>
+      Show that <m>\mathcal{P}(A \times B) = \mathcal{P}(A) \times \mathcal{P}(B))</m> is <em>not</em> true for all sets <m>A</m> and <m>B</m>.
+    </p>
+  </statement>
+
+  <hint>
+    <p>
+      It would suffice to find an example where the two sets had different cardinalities.
+    </p>
+  </hint>
+
+  <solution>
+    <p>
+      To show the statement is not true, we must find a counterexample, and there are many possible choices. One simple option is obtained by picking two sets <m>A</m> and <m>B</m> each containing a single element. Then
+      <me>|\mathcal{P}(A \times B)| = 2^{|A \times B|} = 2^{|A| |B|} = 2^{1 \cdot 1} = 2</me>
+      and
+      <me>|\mathcal{P}(A) \times \mathcal{P}(B)| = |\mathcal{P}(A)||\mathcal{P}(B)| = 2^{|A|} 2^{|B|} = 2^1 \cdot 2^1 = 4</me>.
+      Since <m>\mathcal{P}(A \times B)</m> and <m>\mathcal{P}(A) \times \mathcal{P}(B)</m> have different cardinalities, they cannot be equal to one another.
+    </p>
+  </solution>
+</exercise>
+</page>
+
+
+
+<page>
+  <exercise workspace="1in">
+    <statement>
+      <p>
+        Find all partitions of the set <m>A = \{ 1, 2, 3 \}</m>. How many are there? Consider a partition as a family of subsets of <m>A</m>, so that the order of the partition does not matter.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        A methodical way to find all the partitions is to find all partitions of <m>A</m> into one subset, all partitions of <m>A</m> into two subsets, and all ways to partition <m>A</m> into three subsets. We can't partition <m>A</m> into more than three subsets, since in a partition none of the sets can be empty, and if a set <m>A</m> is the disjoint union of <m>n</m> sets <m>A_1, \dots, A_n</m>, then <me>3 = |A| = |A_1| + \cdots + |A_n|</me>.
+        If <m>|A_i| \geq 1</m> for all <m>i</m>, then <m>|A_1| + \cdots + |A_n| \geq n</m>, and so we see that <m>n \leq 3</m>.
+      </p>
+
+      <p>
+        There is only way to partition <m>A</m> into a single set <m>A_1</m>, we just set <m>A_1 = A</m>.
+      </p>
+
+      <p>
+        There are three ways to partition <m>A</m> into two subsets: the choices are writing <m>A = \{ 1 \} \cup \{ 2, 3 \}</m>, <m>A = \{ 2 \} \cup \{ 1,3 \}</m>, and <m>A = \{3 \} \cup \{ 1,2 \}</m>.
+      </p>
+
+      <p>
+        There is a single way to partition <m>A</m> into three subsets: we write <m>A = \{ 1 \} \cup \{ 2 \} \cup \{ 3 \}</m>.
+      </p>
+
+      <p>
+        We thus conclude that there are <m>1 + 3 + 1 = 5</m> different partitions of the set <m>A</m>.
+      </p>
+    </solution>
+  </exercise>
+
+
+
+
+  <exercise workspace="1in">
+    <statement>
+      <p>
+        Let <m>A = \N</m>, <m>B = \{ n \in \N: n \geq 1 \}</m>, and <m>C = \{ n \in \N : n \geq 2 \}</m>. Notice that all three sets are infinite. What is the cardinality of <m>A - B</m>? What about the cardinality of <m>A - C</m>? What about <m>A - A</m>?
+      </p>
+    </statement>
+
+    <solution>
+      Since
+      <me>A - B = \{ x \in \N : n \lt 1 \} = \{ 0 \}</me>,
+      the set <m>A - B</m> has cardinality <m>|A - B| = 1</m>. The set
+      <me>A - C = \{ x \in \N : n \lt 2 \} = \{ 0, 1 \}</me>
+      has cardinality <m>2</m>. The set <m>A - A = \emptyset</m> has cardinality <m>0</m>.
+    </solution>
+
+    <conclusion>
+      <p>
+        Because of these results, there is no nice way to define something like <m>\infty - \infty</m>. If we take infinitely many things away from an infinite set, we have no idea what the cardinality of the result will be without looking into the particular features of the case at hand.
+      </p>
+    </conclusion>
+  </exercise>
+
+
+
+
+  <exercise workspace="1in">
+    <introduction>
+      <p>
+        (Challenge) Let <m>p_{n,k}</m> denote the number of ways to partition a set of cardinality <m>n</m> into exactly <m>k</m> different sets.
+      </p>
+    </introduction>
+
+    <task>
+      <statement>
+        <p>
+          See if you can compute various values of <m>p_{n,k}</m> for various values of <m>n</m> and <m>k</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Here are some computations of <m>p_{n,k}</m> for <m>n \leq 4</m>.
+        </p>
+
+        <p>
+          We have <m>p_{1,1} = 1</m>.
+        </p>
+
+        <p>
+          We have <m>p_{2,1} = 1</m> and <m>p_{2,2} = 1</m>.
+        </p>
+
+        <p>
+          We have <m>p_{3,1} = 1</m>, <m>p_{3,2} = 3</m>, and <m>p_{3,3} = 1</m>.
+        </p>
+
+        <p>
+          We have <m>p_{4,1} = 1</m>, <m>p_{4,2} = 7</m>, <m>p_{4,3} = 6</m>, and <m>p_{4,4} = 1</m>.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          See if you can compute <m>p_{n+1,k}</m> in terms of <m>p_{n,i}</m>.
+        </p>
+      </statement>
+
+      <hint>
+        <p>
+          Think about the different ways you can go from a partition of a set with <m>n</m> elements into a partition of a set with <m>n+1</m> elements.
+        </p>
+      </hint>
+
+      <solution>
+        <p>
+          Consider all partitions of <m>\{ 1, \dots, n+1 \}</m> into <m>k</m> sets <m>A_1, \dots, A_k</m>. Since we consider partitions obtained from rearranging these sets as the same partition, we may assume without loss of generality that in each partition, <m>n+1 \in A_k</m>. If <m>A_k = \{ n+1 \}</m>, then <m>A_1, \dots, A_{k-1}</m> give a partition of <m>\{ 1, \dots, n \}</m> into <m>k-1</m> sets, and there is a one to one correspondence between such partitions. If <m>|A_k| > 2</m>, then <m>A_1, \dots, A_k - \{ n+1 \}</m> is a partition of <m>\{ 1, \dots, n \}</m> into <m>k</m> sets, and such partitions are again in <m>k</m> to one correspondence, since given any such partition of <m>\{ 1, \dots, n \}</m>, there are <m>k</m> different ways to insert <m>n+1</m> into the partition to obtain a partition of <m>\{ 1, \dots, n+1 \}</m>. Thus we obtain the recursive formula
+          <me>p_{n+1,k} = p_{n,k-1} + k p_{n,k}</me>.
+        </p>
+      </solution>
+    </task>
+  </exercise>
+</page>
+
+</worksheet>
+</chapter>
